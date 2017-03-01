@@ -4,10 +4,10 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="Lifetime and closure won&#39;t play well under certain circumstances..">
   <meta name="generator" content="Hugo 0.19" />
 
-  <title>Tags &middot; Buring Ashes</title>
+  <title>Closure, Lifetime, and HRT &middot; Buring Ashes</title>
 
   
   
@@ -36,8 +36,6 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
   
-  
-  <link rel="alternate" type="application/rss+xml" title="Buring Ashes" href="https://daseinphaos.github.io/tags/index.xml" />
   
 
   
@@ -101,10 +99,6 @@
   <div class="pure-menu social">
   <ul class="pure-menu-list">
 
-    
-    <li class="pure-menu-item">
-      <a class="pure-menu-link" href="https://daseinphaos.github.io/tags/index.xml"><i class="fa fa-rss fa-fw"></i>RSS</a>
-    </li>
     
 
     
@@ -204,28 +198,82 @@
 
 
 <div class="header">
-  <h1>Tags</h1>
+  <h1>Closure, Lifetime, and HRT</h1>
+  <h2>Lifetime and closure won&#39;t play well under certain circumstances..</h2>
 </div>
 <div class="content">
-  <ul>
+
+  <div class="post-meta">
+
+  <div>
+    <i class="fa fa-calendar fa-fw"></i>
+    <time>01 Mar 2017, 00:00</time>
+  </div>
+
+  
+
+  
+
   
   
-    <li>
-      <a href="closure">closure</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-    <li>
-      <a href="hrt">hrt</a>
-      <span>&#40;1&#41;</span>
-    </li>
+  <div>
+    <i class="fa fa-tags fa-fw"></i>
+    
+      <a class="post-taxonomy-tag" href="https://daseinphaos.github.io/tags/rust">rust</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://daseinphaos.github.io/tags/closure">closure</a>&nbsp;&#47;
+    
+      <a class="post-taxonomy-tag" href="https://daseinphaos.github.io/tags/hrt">HRT</a>
+    
+  </div>
   
-    <li>
-      <a href="rust">rust</a>
-      <span>&#40;1&#41;</span>
-    </li>
   
-  </ul>
+
+</div>
+
+  
+
+<h2 id="intro">Intro</h2>
+
+<p>So here is the thing. Can we write something like</p>
+
+<pre><code class="language-rust">use std::collections::HashMap;
+let mut hashmap: HashMap&lt;i32, i32&gt; = HashMap::new();
+let closure = |x| hashmap.entry(x).or_insert(x+1);
+println!(&quot;{:?}&quot;, closure(2));
+</code></pre>
+
+<p>in Rust?</p>
+
+<p>The answer is, unfortunately, no.</p>
+
+<p><em>more to come&hellip;</em></p>
+
+
+  
+<div class="prev-next-post pure-g">
+  <div class="pure-u-1-24" style="text-align: left;">
+    
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-2-24">
+    &nbsp;
+  </div>
+  <div class="pure-u-10-24">
+    
+  </div>
+  <div class="pure-u-1-24" style="text-align: right;">
+    
+  </div>
+</div>
+
+
+
+  
+
 </div>
 
 </div>
@@ -237,3 +285,4 @@
 
 </body>
 </html>
+

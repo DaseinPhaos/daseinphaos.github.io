@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Burning Ashes</title>
-    <link>/index.xml</link>
+    <link>https://daseinphaos.github.io/index.xml</link>
     <description>Recent content on Burning Ashes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 01 Mar 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://daseinphaos.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>About</title>
-      <link>/about/</link>
+      <link>https://daseinphaos.github.io/about/</link>
       <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/about/</guid>
+      <guid>https://daseinphaos.github.io/about/</guid>
       <description>&lt;p&gt;C++/Rust developer.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Closure, Lifetime, and HRT</title>
-      <link>/post/closure-lifetime-hrt/</link>
+      <link>https://daseinphaos.github.io/post/closure-lifetime-hrt/</link>
       <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/closure-lifetime-hrt/</guid>
+      <guid>https://daseinphaos.github.io/post/closure-lifetime-hrt/</guid>
       <description>
 
 &lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;

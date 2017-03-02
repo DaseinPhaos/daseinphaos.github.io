@@ -322,7 +322,81 @@ impl&lt;'a&gt; FnOnce&lt;(usize,)&gt; for Closure&lt;'a&gt; {
 }
 </code></pre>
 
-<p>So far, so good.</p>
+<p>So far, so good. Now let&rsquo;s try to implement <code>FnMut</code> as well:</p>
+
+<pre><code class="language-rust">// ...
+
+impl&lt;'a&gt; FnMut&lt;(usize,)&gt; for Closure&lt;'a&gt; {
+    extern &quot;rust-call&quot;
+    fn call_mut(&amp;mut self, (i,): (usize, )) -&gt; &amp;'a mut i32 {
+        self.inner.get_mut(i).unwrap()
+    }
+}
+</code></pre>
+
+<p>Boom! Now here is that error once again:</p>
+
+<pre><code>error[E0495]: cannot infer an appropriate lifetime for lifetime parameter in function call due to conflicting requirements
+   --&gt; src\main.rs:120:9
+    |
+120 |         self.inner.get_mut(i).unwrap()
+    |         ^^^^^^^^^^
+    |
+note: first, the lifetime cannot outlive the anonymous lifetime #1 defined on the body at 119:59...
+   --&gt; src\main.rs:119:60
+    |
+119 |       fn call_mut(&amp;mut self, (i,): (usize, )) -&gt; &amp;'a mut i32 {
+    |  ____________________________________________________________^ starting here...
+120 | |         self.inner.get_mut(i).unwrap()
+121 | |     }
+    | |_____^ ...ending here
+note: ...so that reference does not outlive borrowed content
+   --&gt; src\main.rs:120:9
+    |
+120 |         self.inner.get_mut(i).unwrap()
+    |         ^^^^^^^^^^
+note: but, the lifetime must be valid for the lifetime 'a as defined on the body at 119:59...
+   --&gt; src\main.rs:119:60
+    |
+119 |       fn call_mut(&amp;mut self, (i,): (usize, )) -&gt; &amp;'a mut i32 {
+    |  ____________________________________________________________^ starting here...
+120 | |         self.inner.get_mut(i).unwrap()
+121 | |     }
+    | |_____^ ...ending here
+note: ...so that reference does not outlive borrowed content
+   --&gt; src\main.rs:120:9
+    |
+120 |         self.inner.get_mut(i).unwrap()
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: aborting due to previous error
+</code></pre>
+
+<p>Although this time, one might reasonably argue that the error message is indeed helpful.</p>
+
+<p>It turns out that, returning <code>&amp;'a mut i32</code> is not feasible for the shorter-live invocation of <code>call_mut</code>. What we&rsquo;ve really wanted for the return type of <code>call_mut</code>, was something like:</p>
+
+<pre><code class="language-rust">// ...
+
+impl&lt;'a&gt; FnMut&lt;(usize,)&gt; for Closure&lt;'a&gt; {
+    extern &quot;rust-call&quot;
+    fn&lt;'b&gt; call_mut(&amp;'b mut self, (i,): (usize, )) -&gt; &amp;'b mut i32 {
+        self.inner.get_mut(i).unwrap()
+    }
+}
+</code></pre>
+
+<p>That is, we want the returned reference to live only as long as the invocation scope of <code>call_mut</code> ( i.e. <code>'b</code>), nothing more. Certainly not the entire scope of the <code>Closure</code> ( i.e. <code>'a</code>).</p>
+
+<p>Now clearly the code above won&rsquo;t compile either.</p>
+
+<p>For one thing, we can&rsquo;t &ldquo;generically&rdquo; implement a trait method across what it&rsquo;d otherwise not; for the other, even if we can, to maintain the subtype-invariance of <code>type Output</code> (note that <code>FnOnce</code> and <code>FnMut</code> shares the same output type, which I think is fairly reasonable), <code>'b</code> would <em>have</em> to a subtype of <code>'a</code> (i.e. it have to outlive <code>'a</code>, or at least live as long), which makes the method totally useless for us.</p>
+
+<p>So is there anyway that we can actually solve this?</p>
+
+<p>Intuitively, one might think that generics can help us out here. If we could make a generic <code>impl</code> of <code>FnMut</code> (thus <code>FnOnce</code> as well) over all possible lifetimes <code>'b</code>&hellip; Ok, that&rsquo;s apparently impossible either, as <code>type Output</code> is an associate type rather than an input type.</p>
+
+<p>For me, I see only one way out, that is, the introducing of higher ranked types (HRT).</p>
 
 <p><em>more to come&hellip;</em></p>
 

@@ -110,7 +110,81 @@ impl&amp;lt;&#39;a&amp;gt; FnOnce&amp;lt;(usize,)&amp;gt; for Closure&amp;lt;&#3
 }
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;So far, so good.&lt;/p&gt;
+&lt;p&gt;So far, so good. Now let&amp;rsquo;s try to implement &lt;code&gt;FnMut&lt;/code&gt; as well:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;// ...
+
+impl&amp;lt;&#39;a&amp;gt; FnMut&amp;lt;(usize,)&amp;gt; for Closure&amp;lt;&#39;a&amp;gt; {
+    extern &amp;quot;rust-call&amp;quot;
+    fn call_mut(&amp;amp;mut self, (i,): (usize, )) -&amp;gt; &amp;amp;&#39;a mut i32 {
+        self.inner.get_mut(i).unwrap()
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Boom! Now here is that error once again:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;error[E0495]: cannot infer an appropriate lifetime for lifetime parameter in function call due to conflicting requirements
+   --&amp;gt; src\main.rs:120:9
+    |
+120 |         self.inner.get_mut(i).unwrap()
+    |         ^^^^^^^^^^
+    |
+note: first, the lifetime cannot outlive the anonymous lifetime #1 defined on the body at 119:59...
+   --&amp;gt; src\main.rs:119:60
+    |
+119 |       fn call_mut(&amp;amp;mut self, (i,): (usize, )) -&amp;gt; &amp;amp;&#39;a mut i32 {
+    |  ____________________________________________________________^ starting here...
+120 | |         self.inner.get_mut(i).unwrap()
+121 | |     }
+    | |_____^ ...ending here
+note: ...so that reference does not outlive borrowed content
+   --&amp;gt; src\main.rs:120:9
+    |
+120 |         self.inner.get_mut(i).unwrap()
+    |         ^^^^^^^^^^
+note: but, the lifetime must be valid for the lifetime &#39;a as defined on the body at 119:59...
+   --&amp;gt; src\main.rs:119:60
+    |
+119 |       fn call_mut(&amp;amp;mut self, (i,): (usize, )) -&amp;gt; &amp;amp;&#39;a mut i32 {
+    |  ____________________________________________________________^ starting here...
+120 | |         self.inner.get_mut(i).unwrap()
+121 | |     }
+    | |_____^ ...ending here
+note: ...so that reference does not outlive borrowed content
+   --&amp;gt; src\main.rs:120:9
+    |
+120 |         self.inner.get_mut(i).unwrap()
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: aborting due to previous error
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Although this time, one might reasonably argue that the error message is indeed helpful.&lt;/p&gt;
+
+&lt;p&gt;It turns out that, returning &lt;code&gt;&amp;amp;&#39;a mut i32&lt;/code&gt; is not feasible for the shorter-live invocation of &lt;code&gt;call_mut&lt;/code&gt;. What we&amp;rsquo;ve really wanted for the return type of &lt;code&gt;call_mut&lt;/code&gt;, was something like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;// ...
+
+impl&amp;lt;&#39;a&amp;gt; FnMut&amp;lt;(usize,)&amp;gt; for Closure&amp;lt;&#39;a&amp;gt; {
+    extern &amp;quot;rust-call&amp;quot;
+    fn&amp;lt;&#39;b&amp;gt; call_mut(&amp;amp;&#39;b mut self, (i,): (usize, )) -&amp;gt; &amp;amp;&#39;b mut i32 {
+        self.inner.get_mut(i).unwrap()
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That is, we want the returned reference to live only as long as the invocation scope of &lt;code&gt;call_mut&lt;/code&gt; ( i.e. &lt;code&gt;&#39;b&lt;/code&gt;), nothing more. Certainly not the entire scope of the &lt;code&gt;Closure&lt;/code&gt; ( i.e. &lt;code&gt;&#39;a&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Now clearly the code above won&amp;rsquo;t compile either.&lt;/p&gt;
+
+&lt;p&gt;For one thing, we can&amp;rsquo;t &amp;ldquo;generically&amp;rdquo; implement a trait method across what it&amp;rsquo;d otherwise not; for the other, even if we can, to maintain the subtype-invariance of &lt;code&gt;type Output&lt;/code&gt; (note that &lt;code&gt;FnOnce&lt;/code&gt; and &lt;code&gt;FnMut&lt;/code&gt; shares the same output type, which I think is fairly reasonable), &lt;code&gt;&#39;b&lt;/code&gt; would &lt;em&gt;have&lt;/em&gt; to a subtype of &lt;code&gt;&#39;a&lt;/code&gt; (i.e. it have to outlive &lt;code&gt;&#39;a&lt;/code&gt;, or at least live as long), which makes the method totally useless for us.&lt;/p&gt;
+
+&lt;p&gt;So is there anyway that we can actually solve this?&lt;/p&gt;
+
+&lt;p&gt;Intuitively, one might think that generics can help us out here. If we could make a generic &lt;code&gt;impl&lt;/code&gt; of &lt;code&gt;FnMut&lt;/code&gt; (thus &lt;code&gt;FnOnce&lt;/code&gt; as well) over all possible lifetimes &lt;code&gt;&#39;b&lt;/code&gt;&amp;hellip; Ok, that&amp;rsquo;s apparently impossible either, as &lt;code&gt;type Output&lt;/code&gt; is an associate type rather than an input type.&lt;/p&gt;
+
+&lt;p&gt;For me, I see only one way out, that is, the introducing of higher ranked types (HRT).&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;more to come&amp;hellip;&lt;/em&gt;&lt;/p&gt;
 </description>

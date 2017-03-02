@@ -72,7 +72,37 @@ error: aborting due to previous error
 
 &lt;p&gt;So, a trip into manually implementing closures&amp;hellip;&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;to be continued..&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;First thing first, let&amp;rsquo;s try to define how our &lt;code&gt;Closure&lt;/code&gt; would layout.&lt;/p&gt;
+
+&lt;p&gt;As a simple glimpse, we&amp;rsquo;d like the closure to be able to return a mutable reference into its captured &lt;code&gt;vector&lt;/code&gt;. As such, at the minimum, the &lt;code&gt;Closure&lt;/code&gt; struct should also take such a mutable reference:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;struct Closure&amp;lt;&#39;a&amp;gt; {
+    inner: &amp;amp;&#39;a mut Vec&amp;lt;i32&amp;gt;, // Assuming `i32` for simplicity
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next, let&amp;rsquo;s try adding function-like behavior for our struct. To achieve this we would have to implement &lt;code&gt;FnMut&lt;/code&gt;: we wanted the closure to be reusable (once the last returned borrow gets out of scope), thus it can&amp;rsquo;t simply be an one-off shot. However, due to the current definition of the &lt;code&gt;Fn&lt;/code&gt;-series of traits, implementing &lt;code&gt;FnMut&lt;/code&gt; would also require the &lt;code&gt;FnOnce&lt;/code&gt; trait to be implemented. Also, we have to pack the input parameters into a tuple ( even if under our cases there is only one input parameter). Anyway, let&amp;rsquo;s just get the &lt;code&gt;FnOnce&lt;/code&gt; done first.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;// Requeried as custom-implementing `Fn`s is unstable for now
+#![feature(unboxed_closures)]
+#![feature(fn_traits)]
+
+// struct definition here...
+
+impl&amp;lt;&#39;a&amp;gt; FnOnce&amp;lt;(usize,)&amp;gt; for Closure&amp;lt;&#39;a&amp;gt; {
+    // directy returning reference rather than `Option` for simplicity
+    type Output = &amp;amp;&#39;a mut i32;
+
+    extern &amp;quot;rust-call&amp;quot; 
+    fn call_once(self, (i,): (usize, )) -&amp;gt; &amp;amp;&#39;a mut i32 {
+        self.inner.get_mut(i).unwrap()
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;So far, so good.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;more to come&amp;hellip;&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     

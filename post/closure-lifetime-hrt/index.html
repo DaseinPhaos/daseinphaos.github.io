@@ -294,7 +294,37 @@ error: aborting due to previous error
 
 <p>So, a trip into manually implementing closures&hellip;</p>
 
-<p><em>to be continued..</em></p>
+<p>First thing first, let&rsquo;s try to define how our <code>Closure</code> would layout.</p>
+
+<p>As a simple glimpse, we&rsquo;d like the closure to be able to return a mutable reference into its captured <code>vector</code>. As such, at the minimum, the <code>Closure</code> struct should also take such a mutable reference:</p>
+
+<pre><code class="language-rust">struct Closure&lt;'a&gt; {
+    inner: &amp;'a mut Vec&lt;i32&gt;, // Assuming `i32` for simplicity
+}
+</code></pre>
+
+<p>Next, let&rsquo;s try adding function-like behavior for our struct. To achieve this we would have to implement <code>FnMut</code>: we wanted the closure to be reusable (once the last returned borrow gets out of scope), thus it can&rsquo;t simply be an one-off shot. However, due to the current definition of the <code>Fn</code>-series of traits, implementing <code>FnMut</code> would also require the <code>FnOnce</code> trait to be implemented. Also, we have to pack the input parameters into a tuple ( even if under our cases there is only one input parameter). Anyway, let&rsquo;s just get the <code>FnOnce</code> done first.</p>
+
+<pre><code class="language-rust">// Requeried as custom-implementing `Fn`s is unstable for now
+#![feature(unboxed_closures)]
+#![feature(fn_traits)]
+
+// struct definition here...
+
+impl&lt;'a&gt; FnOnce&lt;(usize,)&gt; for Closure&lt;'a&gt; {
+    // directy returning reference rather than `Option` for simplicity
+    type Output = &amp;'a mut i32;
+
+    extern &quot;rust-call&quot; 
+    fn call_once(self, (i,): (usize, )) -&gt; &amp;'a mut i32 {
+        self.inner.get_mut(i).unwrap()
+    }
+}
+</code></pre>
+
+<p>So far, so good.</p>
+
+<p><em>more to come&hellip;</em></p>
 
 
   

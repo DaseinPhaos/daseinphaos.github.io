@@ -2,40 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Burning Ashes</title>
-    <link>https://daseinphaos.github.io/index.xml</link>
+    <link>/index.xml</link>
     <description>Recent content on Burning Ashes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 01 Mar 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://daseinphaos.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>About</title>
-      <link>https://daseinphaos.github.io/about/</link>
+      <link>/about/</link>
       <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://daseinphaos.github.io/about/</guid>
+      <guid>/about/</guid>
       <description>&lt;p&gt;C++/Rust developer.&lt;/p&gt;
-
-&lt;p&gt;Wanna-be game-dev.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Closure, Lifetime, and HRT</title>
-      <link>https://daseinphaos.github.io/post/closure-lifetime-hrt/</link>
+      <link>/post/closure-lifetime-hrt/</link>
       <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://daseinphaos.github.io/post/closure-lifetime-hrt/</guid>
+      <guid>/post/closure-lifetime-hrt/</guid>
       <description>
 
 &lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
 
 &lt;p&gt;So here is the thing. Can we write something like&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;use std::collections::HashMap;
-let mut hashmap: HashMap&amp;lt;i32, i32&amp;gt; = HashMap::new();
-let closure = |x| hashmap.entry(x).or_insert(x+1);
+&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;let mut vector = vec![1, 2, 3];
+let mut closure = |x| vector.get_mut(x);
 println!(&amp;quot;{:?}&amp;quot;, closure(2));
 &lt;/code&gt;&lt;/pre&gt;
 
@@ -43,7 +40,49 @@ println!(&amp;quot;{:?}&amp;quot;, closure(2));
 
 &lt;p&gt;The answer is, unfortunately, no.&lt;/p&gt;
 
-&lt;p&gt;&lt;em&gt;more to come&amp;hellip;&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Compiling it as of &lt;code&gt;rust 1.15.1&lt;/code&gt; would yield some error message like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;error[E0495]: cannot infer an appropriate lifetime for lifetime parameter in function call due to conflicting requirements
+   --&amp;gt; src\main.rs:100:23
+    |
+100 |     let closure = |x| vector.get_mut(x);
+    |                       ^^^^^^
+    |
+note: first, the lifetime cannot outlive the lifetime  as defined on the body at 100:22...
+   --&amp;gt; src\main.rs:100:23
+    |
+100 |     let closure = |x| vector.get_mut(x);
+    |                       ^^^^^^^^^^^^^^^^^
+note: ...so that closure can access `vector`
+   --&amp;gt; src\main.rs:100:23
+    |
+100 |     let closure = |x| vector.get_mut(x);
+    |                       ^^^^^^
+note: but, the lifetime must be valid for the scope of call-site for function at 100:22...
+   --&amp;gt; src\main.rs:100:23
+    |
+100 |     let closure = |x| vector.get_mut(x);
+    |                       ^^^^^^^^^^^^^^^^^
+note: ...so that return value is valid for the call
+   --&amp;gt; src\main.rs:100:19
+    |
+100 |     let closure = |x| vector.get_mut(x);
+    |                   ^^^^^^^^^^^^^^^^^^^^^
+
+error: aborting due to previous error
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;One got to admit that such an error message is nowhere near helpful. So let&amp;rsquo;s try to figure out what&amp;rsquo;s &lt;em&gt;really&lt;/em&gt; going on here on our own.&lt;/p&gt;
+
+&lt;p&gt;Back to the original closure. The intention was quiet simple: we wanted the closure to capture the &lt;code&gt;vector&lt;/code&gt; in its environment. Upon subsequent invocations to the closure, a mutable reference to an element of the captured &lt;code&gt;vector&lt;/code&gt; would be returned. Nothing fancy, just a tiny bit of a wrapper of the &lt;code&gt;get_mut&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;p&gt;However, to our surprise, such a tiny code snippet failed the borrow checker, leaving us some mysterious error message.&lt;/p&gt;
+
+&lt;p&gt;To solve the mystery, let&amp;rsquo;s try to implement such a closure struct by hand - closure by itself is already mysterious enough, maybe we can figure this out if we get that mess cleared out of the picture.&lt;/p&gt;
+
+&lt;p&gt;So, a trip into manually implementing closures&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;to be continued..&lt;/em&gt;&lt;/p&gt;
 </description>
     </item>
     

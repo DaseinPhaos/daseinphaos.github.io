@@ -12,8 +12,15 @@
   </url>
   
   <url>
-    <loc>https://daseinphaos.github.io/contact/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
+    <loc>https://daseinphaos.github.io/highlightjs/CHANGES/</loc>
+  </url>
+  
+  <url>
+    <loc>https://daseinphaos.github.io/highlightjs/README/</loc>
+  </url>
+  
+  <url>
+    <loc>https://daseinphaos.github.io/highlightjs/README.ru/</loc>
   </url>
   
   <url>
@@ -25,6 +32,11 @@
   <url>
     <loc>https://daseinphaos.github.io/tags/closure/</loc>
     <lastmod>2017-03-01T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://daseinphaos.github.io/highlightjs/</loc>
     <priority>0</priority>
   </url>
   

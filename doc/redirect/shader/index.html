@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `shader` mod in crate `redirect`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, shader">
+
+    <title>redirect::shader - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module shader</p><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#constants">Constants</a></li></ul></div><p class='location'><a href='../index.html'>redirect</a></p><script>window.sidebarCurrent = {name: 'shader', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>redirect</a>::<wbr><a class="mod" href=''>shader</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/redirect/shader/mod.rs.html#9-210' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>executable code snippet for GPU</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.CsShaderBytecode.html"
+                                  title='struct redirect::shader::CsShaderBytecode'>CsShaderBytecode</a></td>
+                           <td class='docblock-short'>
+                                <p>a compiled piece of CS shader byte code</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DsShaderBytecode.html"
+                                  title='struct redirect::shader::DsShaderBytecode'>DsShaderBytecode</a></td>
+                           <td class='docblock-short'>
+                                <p>a compiled piece of DS shader byte code</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GsShaderBytecode.html"
+                                  title='struct redirect::shader::GsShaderBytecode'>GsShaderBytecode</a></td>
+                           <td class='docblock-short'>
+                                <p>a compiled piece of GS shader byte code</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.HsShaderBytecode.html"
+                                  title='struct redirect::shader::HsShaderBytecode'>HsShaderBytecode</a></td>
+                           <td class='docblock-short'>
+                                <p>a compiled piece of HS shader byte code</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PsShaderBytecode.html"
+                                  title='struct redirect::shader::PsShaderBytecode'>PsShaderBytecode</a></td>
+                           <td class='docblock-short'>
+                                <p>a compiled piece of PS shader byte code</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ShaderBuilder.html"
+                                  title='struct redirect::shader::ShaderBuilder'>ShaderBuilder</a></td>
+                           <td class='docblock-short'>
+                                <p>shader builder</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ShaderCompileFlags.html"
+                                  title='struct redirect::shader::ShaderCompileFlags'>ShaderCompileFlags</a></td>
+                           <td class='docblock-short'>
+                                <p>shader compile flags. <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/gg615083(v=vs.85).aspx">more</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ShaderMacro.html"
+                                  title='struct redirect::shader::ShaderMacro'>ShaderMacro</a></td>
+                           <td class='docblock-short'>
+                                <p>shader macros</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.VsShaderBytecode.html"
+                                  title='struct redirect::shader::VsShaderBytecode'>VsShaderBytecode</a></td>
+                           <td class='docblock-short'>
+                                <p>a compiled piece of VS shader byte code</p>
+                           </td>
+                       </tr></table><h2 id='constants' class='section-header'><a href="#constants">Constants</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_ALL_RESOURCES_BOUND.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_ALL_RESOURCES_BOUND'>SHADER_COMPILE_ALL_RESOURCES_BOUND</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_AVOID_FLOW_CONTROL.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_AVOID_FLOW_CONTROL'>SHADER_COMPILE_AVOID_FLOW_CONTROL</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_DEBUG.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_DEBUG'>SHADER_COMPILE_DEBUG</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_ENABLE_BACKWARDS_COMPATIBILITY.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_ENABLE_BACKWARDS_COMPATIBILITY'>SHADER_COMPILE_ENABLE_BACKWARDS_COMPATIBILITY</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_ENABLE_STRICTNESS.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_ENABLE_STRICTNESS'>SHADER_COMPILE_ENABLE_STRICTNESS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_ENABLE_UNBOUNDED_DESCRIPTOR_TABLES.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_ENABLE_UNBOUNDED_DESCRIPTOR_TABLES'>SHADER_COMPILE_ENABLE_UNBOUNDED_DESCRIPTOR_TABLES</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_FORCE_PS_SOFTWARE_NO_OPT.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_FORCE_PS_SOFTWARE_NO_OPT'>SHADER_COMPILE_FORCE_PS_SOFTWARE_NO_OPT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_FORCE_VS_SOFTWARE_NO_OPT.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_FORCE_VS_SOFTWARE_NO_OPT'>SHADER_COMPILE_FORCE_VS_SOFTWARE_NO_OPT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_IEEE_STRICTNESS.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_IEEE_STRICTNESS'>SHADER_COMPILE_IEEE_STRICTNESS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_NO_PRESHADER.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_NO_PRESHADER'>SHADER_COMPILE_NO_PRESHADER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_OPTIMIZATION_LEVEL0.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_OPTIMIZATION_LEVEL0'>SHADER_COMPILE_OPTIMIZATION_LEVEL0</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_OPTIMIZATION_LEVEL1.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_OPTIMIZATION_LEVEL1'>SHADER_COMPILE_OPTIMIZATION_LEVEL1</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_OPTIMIZATION_LEVEL2.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_OPTIMIZATION_LEVEL2'>SHADER_COMPILE_OPTIMIZATION_LEVEL2</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_OPTIMIZATION_LEVEL3.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_OPTIMIZATION_LEVEL3'>SHADER_COMPILE_OPTIMIZATION_LEVEL3</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_PACK_MATRIX_COLUMN_MAJOR.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_PACK_MATRIX_COLUMN_MAJOR'>SHADER_COMPILE_PACK_MATRIX_COLUMN_MAJOR</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_PACK_MATRIX_ROW_MAJOR.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_PACK_MATRIX_ROW_MAJOR'>SHADER_COMPILE_PACK_MATRIX_ROW_MAJOR</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_PARTIAL_PRECISION.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_PARTIAL_PRECISION'>SHADER_COMPILE_PARTIAL_PRECISION</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_PREFER_FLOW_CONTROL.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_PREFER_FLOW_CONTROL'>SHADER_COMPILE_PREFER_FLOW_CONTROL</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_RESOURCES_MAY_ALIAS.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_RESOURCES_MAY_ALIAS'>SHADER_COMPILE_RESOURCES_MAY_ALIAS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_SKIP_OPTIMIZATION.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_SKIP_OPTIMIZATION'>SHADER_COMPILE_SKIP_OPTIMIZATION</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_SKIP_VALIDATION.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_SKIP_VALIDATION'>SHADER_COMPILE_SKIP_VALIDATION</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.SHADER_COMPILE_WARNINGS_ARE_ERRORS.html"
+                                  title='constant redirect::shader::SHADER_COMPILE_WARNINGS_ARE_ERRORS'>SHADER_COMPILE_WARNINGS_ARE_ERRORS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "redirect";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

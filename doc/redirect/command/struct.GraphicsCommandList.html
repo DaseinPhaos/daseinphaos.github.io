@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `GraphicsCommandList` struct in crate `redirect`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, GraphicsCommandList">
+
+    <title>redirect::command::GraphicsCommandList - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc struct">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Struct GraphicsCommandList</p><div class="block items"><ul><li><a href="#fields">Fields</a></li><li><a href="#methods">Methods</a></li></ul></div><p class='location'><a href='../index.html'>redirect</a>::<wbr><a href='index.html'>command</a></p><script>window.sidebarCurrent = {name: 'GraphicsCommandList', ty: 'struct', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Struct <a href='../index.html'>redirect</a>::<wbr><a href='index.html'>command</a>::<wbr><a class="struct" href=''>GraphicsCommandList</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/redirect/command/list.rs.html#44-46' title='goto source code'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct GraphicsCommandList {
+    pub ptr: ComPtr&lt;<a class="struct" href="../../winapi/d3d12/struct.ID3D12GraphicsCommandList.html" title="struct winapi::d3d12::ID3D12GraphicsCommandList">ID3D12GraphicsCommandList</a>&gt;,
+}</pre><div class='docblock'><p>a list of graphics commands, including execution intrumenting APIs etc.
+TODO: distinct bundle from direct command lists at type level?</p>
+</div><h2 id='fields' class='fields'>Fields</h2><span id='structfield.ptr' class="structfield">
+                           <span id='ptr.v' class='invisible'>
+                           <code>ptr: ComPtr&lt;<a class="struct" href="../../winapi/d3d12/struct.ID3D12GraphicsCommandList.html" title="struct winapi::d3d12::ID3D12GraphicsCommandList">ID3D12GraphicsCommandList</a>&gt;</code>
+                           </span></span><h2 id='methods'>Methods</h2><h3 class='impl'><span class='in-band'><code>impl <a class="struct" href="../../redirect/command/struct.GraphicsCommandList.html" title="struct redirect::command::GraphicsCommandList">GraphicsCommandList</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/redirect/command/list.rs.html#48-510' title='goto source code'>[src]</a></span></h3>
+<div class='impl-items'><h4 id='method.set_graphics_rootsig' class="method"><span id='set_graphics_rootsig.v' class='invisible'><code>fn <a href='#method.set_graphics_rootsig' class='fnname'>set_graphics_rootsig</a>(&amp;mut self, rootsig: &amp;<a class="struct" href="../../redirect/pipeline/rootsig/struct.RootSig.html" title="struct redirect::pipeline::rootsig::RootSig">RootSig</a>)</code></span></h4>
+<div class='docblock'><p>set the graphics root signature. TODO: distince root signatures</p>
+</div><h4 id='method.set_graphics_root_constant' class="method"><span id='set_graphics_root_constant.v' class='invisible'><code>fn <a href='#method.set_graphics_root_constant' class='fnname'>set_graphics_root_constant</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;param_index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;value: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;param_offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>)</code></span></h4>
+<div class='docblock'><p>set a constant in the graphics root signature</p>
+</div><h4 id='method.set_graphics_root_constants' class="method"><span id='set_graphics_root_constants.v' class='invisible'><code>fn <a href='#method.set_graphics_root_constants' class='fnname'>set_graphics_root_constants</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;param_index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;values: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;param_offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>)</code></span></h4>
+<div class='docblock'><p>set a group of constants in the graphics root signature</p>
+</div><h4 id='method.set_graphics_root_cbv' class="method"><span id='set_graphics_root_cbv.v' class='invisible'><code>fn <a href='#method.set_graphics_root_cbv' class='fnname'>set_graphics_root_cbv</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;param_index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;resource: &amp;mut <a class="struct" href="../../redirect/resource/struct.RawResource.html" title="struct redirect::resource::RawResource">RawResource</a><br>)</code></span></h4>
+<div class='docblock'><p>set a cbv in the graphics root signature</p>
+</div><h4 id='method.set_graphics_root_srv' class="method"><span id='set_graphics_root_srv.v' class='invisible'><code>fn <a href='#method.set_graphics_root_srv' class='fnname'>set_graphics_root_srv</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;param_index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;resource: &amp;mut <a class="struct" href="../../redirect/resource/struct.RawResource.html" title="struct redirect::resource::RawResource">RawResource</a><br>)</code></span></h4>
+<div class='docblock'><p>set a srv in the graphics root signature</p>
+</div><h4 id='method.set_graphics_root_uav' class="method"><span id='set_graphics_root_uav.v' class='invisible'><code>fn <a href='#method.set_graphics_root_uav' class='fnname'>set_graphics_root_uav</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;param_index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;resource: &amp;mut <a class="struct" href="../../redirect/resource/struct.RawResource.html" title="struct redirect::resource::RawResource">RawResource</a><br>)</code></span></h4>
+<div class='docblock'><p>set a uav in the graphics root signature</p>
+</div><h4 id='method.set_graphics_root_dt' class="method"><span id='set_graphics_root_dt.v' class='invisible'><code>fn <a href='#method.set_graphics_root_dt' class='fnname'>set_graphics_root_dt</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;param_index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;base_descriptor: <a class="struct" href="../../redirect/descriptor/heap/struct.GpuDescriptorHandle.html" title="struct redirect::descriptor::heap::GpuDescriptorHandle">GpuDescriptorHandle</a><br>)</code></span></h4>
+<div class='docblock'><p>set a decriptor table in the graphics root signature</p>
+</div><h4 id='method.set_compute_rootsig' class="method"><span id='set_compute_rootsig.v' class='invisible'><code>fn <a href='#method.set_compute_rootsig' class='fnname'>set_compute_rootsig</a>(&amp;mut self, rootsig: &amp;<a class="struct" href="../../redirect/pipeline/rootsig/struct.RootSig.html" title="struct redirect::pipeline::rootsig::RootSig">RootSig</a>)</code></span></h4>
+<div class='docblock'><p>set the compute root signature. TODO: distince root signatures</p>
+</div><h4 id='method.set_compute_root_constant' class="method"><span id='set_compute_root_constant.v' class='invisible'><code>fn <a href='#method.set_compute_root_constant' class='fnname'>set_compute_root_constant</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;param_index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;value: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;param_offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>)</code></span></h4>
+<div class='docblock'><p>set a constant in the compute root signature</p>
+</div><h4 id='method.set_compute_root_constants' class="method"><span id='set_compute_root_constants.v' class='invisible'><code>fn <a href='#method.set_compute_root_constants' class='fnname'>set_compute_root_constants</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;param_index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;values: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;param_offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>)</code></span></h4>
+<div class='docblock'><p>set a group of constants in the compute root signature</p>
+</div><h4 id='method.set_compute_root_cbv' class="method"><span id='set_compute_root_cbv.v' class='invisible'><code>fn <a href='#method.set_compute_root_cbv' class='fnname'>set_compute_root_cbv</a>(&amp;mut self, param_index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, resource: &amp;mut <a class="struct" href="../../redirect/resource/struct.RawResource.html" title="struct redirect::resource::RawResource">RawResource</a>)</code></span></h4>
+<div class='docblock'><p>set a cbv in the compute root signature</p>
+</div><h4 id='method.set_compute_root_srv' class="method"><span id='set_compute_root_srv.v' class='invisible'><code>fn <a href='#method.set_compute_root_srv' class='fnname'>set_compute_root_srv</a>(&amp;mut self, param_index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, resource: &amp;mut <a class="struct" href="../../redirect/resource/struct.RawResource.html" title="struct redirect::resource::RawResource">RawResource</a>)</code></span></h4>
+<div class='docblock'><p>set a srv in the compute root signature</p>
+</div><h4 id='method.set_compute_root_uav' class="method"><span id='set_compute_root_uav.v' class='invisible'><code>fn <a href='#method.set_compute_root_uav' class='fnname'>set_compute_root_uav</a>(&amp;mut self, param_index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, resource: &amp;mut <a class="struct" href="../../redirect/resource/struct.RawResource.html" title="struct redirect::resource::RawResource">RawResource</a>)</code></span></h4>
+<div class='docblock'><p>set a uav in the compute root signature</p>
+</div><h4 id='method.set_compute_root_dt' class="method"><span id='set_compute_root_dt.v' class='invisible'><code>fn <a href='#method.set_compute_root_dt' class='fnname'>set_compute_root_dt</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;param_index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;base_descriptor: <a class="struct" href="../../redirect/descriptor/heap/struct.GpuDescriptorHandle.html" title="struct redirect::descriptor::heap::GpuDescriptorHandle">GpuDescriptorHandle</a><br>)</code></span></h4>
+<div class='docblock'><p>set a decriptor table in the compute root signature</p>
+</div><h4 id='method.clear_dsv' class="method"><span id='clear_dsv.v' class='invisible'><code>fn <a href='#method.clear_dsv' class='fnname'>clear_dsv</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;heap: &amp;mut <a class="struct" href="../../redirect/descriptor/heap/struct.DsvHeap.html" title="struct redirect::descriptor::heap::DsvHeap">DsvHeap</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;flags: <a class="struct" href="../../redirect/command/struct.DepthStencilClearFlags.html" title="struct redirect::command::DepthStencilClearFlags">DepthStencilClearFlags</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;depth: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;stencil: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u8.html">u8</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;rects: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="type" href="../../redirect/format/type.Rect.html" title="type redirect::format::Rect">Rect</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>&gt;<br>)</code></span></h4>
+<div class='docblock'><p>record a command to clear the dsv. <a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn903840(v=vs.85).aspx">more info</a></p>
+</div><h4 id='method.clear_uav_f32' class="method"><span id='clear_uav_f32.v' class='invisible'><code>fn <a href='#method.clear_uav_f32' class='fnname'>clear_uav_f32</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;heap: &amp;mut <a class="struct" href="../../redirect/descriptor/heap/struct.CbvSrvUavHeap.html" title="struct redirect::descriptor::heap::CbvSrvUavHeap">CbvSrvUavHeap</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;resource: &amp;mut <a class="struct" href="../../redirect/resource/struct.RawResource.html" title="struct redirect::resource::RawResource">RawResource</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;values: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;rects: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="type" href="../../redirect/format/type.Rect.html" title="type redirect::format::Rect">Rect</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>&gt;<br>)</code></span></h4>
+<div class='docblock'><p>record a command to clear uav. <a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn903849(v=vs.85).aspx">more info</a></p>
+</div><h4 id='method.clear_uav_u32' class="method"><span id='clear_uav_u32.v' class='invisible'><code>fn <a href='#method.clear_uav_u32' class='fnname'>clear_uav_u32</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;heap: &amp;mut <a class="struct" href="../../redirect/descriptor/heap/struct.CbvSrvUavHeap.html" title="struct redirect::descriptor::heap::CbvSrvUavHeap">CbvSrvUavHeap</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;resource: &amp;mut <a class="struct" href="../../redirect/resource/struct.RawResource.html" title="struct redirect::resource::RawResource">RawResource</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;values: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;rects: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="type" href="../../redirect/format/type.Rect.html" title="type redirect::format::Rect">Rect</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>&gt;<br>)</code></span></h4>
+<div class='docblock'><p>record a command to clear uav. <a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn903849(v=vs.85).aspx">more info</a></p>
+</div><h4 id='method.clear_rtv' class="method"><span id='clear_rtv.v' class='invisible'><code>fn <a href='#method.clear_rtv' class='fnname'>clear_rtv</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;heap: &amp;mut <a class="struct" href="../../redirect/descriptor/heap/struct.RtvHeap.html" title="struct redirect::descriptor::heap::RtvHeap">RtvHeap</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;values: &amp;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;rects: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="type" href="../../redirect/format/type.Rect.html" title="type redirect::format::Rect">Rect</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>&gt;<br>)</code></span></h4>
+<div class='docblock'><p>record clearing a rtv</p>
+</div><h4 id='method.copy_resource' class="method"><span id='copy_resource.v' class='invisible'><code>fn <a href='#method.copy_resource' class='fnname'>copy_resource</a>(&amp;mut self, dst: &amp;mut <a class="struct" href="../../redirect/resource/struct.RawResource.html" title="struct redirect::resource::RawResource">RawResource</a>, src: &amp;mut <a class="struct" href="../../redirect/resource/struct.RawResource.html" title="struct redirect::resource::RawResource">RawResource</a>)</code></span></h4>
+<div class='docblock'><p>record a resource copy operation.</p>
+
+<h1 id='restrictions' class='section-header'><a href='#restrictions'>restrictions</a></h1>
+<ul>
+<li>must be different resources</li>
+<li>must be the same type</li>
+<li>must have identical dimensions</li>
+<li>must have compatible formats</li>
+<li><a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn903859(v=vs.85).aspx">more</a></li>
+</ul>
+</div><h4 id='method.copy_buffer_region' class="method"><span id='copy_buffer_region.v' class='invisible'><code>fn <a href='#method.copy_buffer_region' class='fnname'>copy_buffer_region</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;dst: &amp;mut <a class="struct" href="../../redirect/resource/struct.RawResource.html" title="struct redirect::resource::RawResource">RawResource</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;dst_offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;src: &amp;mut <a class="struct" href="../../redirect/resource/struct.RawResource.html" title="struct redirect::resource::RawResource">RawResource</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;src_offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;size: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a><br>)</code></span></h4>
+<div class='docblock'><p>record a buffer copy operation</p>
+</div><h4 id='method.copy_texture_region' class="method"><span id='copy_texture_region.v' class='invisible'><code>fn <a href='#method.copy_texture_region' class='fnname'>copy_texture_region</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;dst: <a class="struct" href="../../redirect/resource/struct.TextureCopyLocation.html" title="struct redirect::resource::TextureCopyLocation">TextureCopyLocation</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;dstx: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;dsty: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;dstz: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;src: <a class="struct" href="../../redirect/resource/struct.TextureCopyLocation.html" title="struct redirect::resource::TextureCopyLocation">TextureCopyLocation</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;src_box: &amp;<a class="struct" href="../../redirect/format/struct.Box3u.html" title="struct redirect::format::Box3u">Box3u</a><br>)</code></span></h4>
+<div class='docblock'><p>record a texture copy operation. <a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn903862(v=vs.85).aspx">more info</a></p>
+</div><h4 id='method.dispatch' class="method"><span id='dispatch.v' class='invisible'><code>fn <a href='#method.dispatch' class='fnname'>dispatch</a>(&amp;mut self, x: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, y: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, z: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></h4>
+<div class='docblock'><p>execute a command list from a thread group. <a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn903871(v=vs.85).aspx">more info</a></p>
+</div><h4 id='method.execute_bundle' class="method"><span id='execute_bundle.v' class='invisible'><code>fn <a href='#method.execute_bundle' class='fnname'>execute_bundle</a>(&amp;mut self, bundle: &amp;mut Self)</code></span></h4>
+<div class='docblock'><p>execute a bundle. <a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn903882(v=vs.85).aspx">more</a></p>
+</div><h4 id='method.ia_set_primitive_topology' class="method"><span id='ia_set_primitive_topology.v' class='invisible'><code>fn <a href='#method.ia_set_primitive_topology' class='fnname'>ia_set_primitive_topology</a>(&amp;mut self, topology: <a class="struct" href="../../redirect/pipeline/ia/struct.PrimitiveTopology.html" title="struct redirect::pipeline::ia::PrimitiveTopology">PrimitiveTopology</a>)</code></span></h4>
+<div class='docblock'><p>set primitive topology</p>
+</div><h4 id='method.ia_set_ibv' class="method"><span id='ia_set_ibv.v' class='invisible'><code>fn <a href='#method.ia_set_ibv' class='fnname'>ia_set_ibv</a>(&amp;mut self, ibv: &amp;<a class="struct" href="../../redirect/pipeline/ia/struct.IndexBufferView.html" title="struct redirect::pipeline::ia::IndexBufferView">IndexBufferView</a>)</code></span></h4>
+<div class='docblock'><p>set the index buffer</p>
+</div><h4 id='method.ia_set_vbvs' class="method"><span id='ia_set_vbvs.v' class='invisible'><code>fn <a href='#method.ia_set_vbvs' class='fnname'>ia_set_vbvs</a>(&amp;mut self, start_slot: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, vbvs: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="struct" href="../../redirect/pipeline/ia/struct.VertexBufferView.html" title="struct redirect::pipeline::ia::VertexBufferView">VertexBufferView</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>)</code></span></h4>
+<div class='docblock'><p>set the vertex buffer</p>
+</div><h4 id='method.so_set_targets' class="method"><span id='so_set_targets.v' class='invisible'><code>fn <a href='#method.so_set_targets' class='fnname'>so_set_targets</a>(&amp;mut self, start_slot: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, sovs: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="struct" href="../../redirect/pipeline/so/struct.StreamOutputBufferView.html" title="struct redirect::pipeline::so::StreamOutputBufferView">StreamOutputBufferView</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>)</code></span></h4>
+<div class='docblock'><p>set the stream output buffer views</p>
+</div><h4 id='method.rs_set_scissors' class="method"><span id='rs_set_scissors.v' class='invisible'><code>fn <a href='#method.rs_set_scissors' class='fnname'>rs_set_scissors</a>(&amp;mut self, scissors: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="type" href="../../redirect/format/type.Rect.html" title="type redirect::format::Rect">Rect</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>)</code></span></h4>
+<div class='docblock'><p>set scissor rectangles</p>
+</div><h4 id='method.rs_set_viewports' class="method"><span id='rs_set_viewports.v' class='invisible'><code>fn <a href='#method.rs_set_viewports' class='fnname'>rs_set_viewports</a>(&amp;mut self, viewports: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="struct" href="../../redirect/format/struct.Viewport.html" title="struct redirect::format::Viewport">Viewport</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>)</code></span></h4>
+<div class='docblock'><p>set viewports</p>
+</div><h4 id='method.om_set_blend_factor' class="method"><span id='om_set_blend_factor.v' class='invisible'><code>fn <a href='#method.om_set_blend_factor' class='fnname'>om_set_blend_factor</a>(&amp;mut self, factors: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.f32.html">f32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 4]</a>)</code></span></h4>
+<div class='docblock'><p>set the blend factor</p>
+</div><h4 id='method.om_set_stencil_ref' class="method"><span id='om_set_stencil_ref.v' class='invisible'><code>fn <a href='#method.om_set_stencil_ref' class='fnname'>om_set_stencil_ref</a>(&amp;mut self, stencil_ref: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>)</code></span></h4>
+<div class='docblock'><p>set the stencil reference</p>
+</div><h4 id='method.om_set_rtv_dsv_continuous' class="method"><span id='om_set_rtv_dsv_continuous.v' class='invisible'><code>fn <a href='#method.om_set_rtv_dsv_continuous' class='fnname'>om_set_rtv_dsv_continuous</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;rtv_heap: &amp;mut <a class="struct" href="../../redirect/descriptor/heap/struct.RtvHeap.html" title="struct redirect::descriptor::heap::RtvHeap">RtvHeap</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;rtv_offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;num_rtvs: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;dsv_heap: &amp;mut <a class="struct" href="../../redirect/descriptor/heap/struct.DsvHeap.html" title="struct redirect::descriptor::heap::DsvHeap">DsvHeap</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;dsv_offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>)</code></span></h4>
+<div class='docblock'><p>set rtv and dsvs</p>
+</div><h4 id='method.om_set_rtv_dsv_discontinuous' class="method"><span id='om_set_rtv_dsv_discontinuous.v' class='invisible'><code>fn <a href='#method.om_set_rtv_dsv_discontinuous' class='fnname'>om_set_rtv_dsv_discontinuous</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;rtvs: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">&amp;[</a><a class="struct" href="../../redirect/descriptor/heap/struct.CpuDescriptorHandle.html" title="struct redirect::descriptor::heap::CpuDescriptorHandle">CpuDescriptorHandle</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.slice.html">]</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;dsv_heap: &amp;mut <a class="struct" href="../../redirect/descriptor/heap/struct.DsvHeap.html" title="struct redirect::descriptor::heap::DsvHeap">DsvHeap</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;dsv_offset: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>)</code></span></h4>
+<div class='docblock'><p>set rtv and dsvs</p>
+</div><h4 id='method.resolve_ms' class="method"><span id='resolve_ms.v' class='invisible'><code>fn <a href='#method.resolve_ms' class='fnname'>resolve_ms</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;dst: &amp;mut <a class="struct" href="../../redirect/resource/struct.RawResource.html" title="struct redirect::resource::RawResource">RawResource</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;dst_sub: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;src: &amp;mut <a class="struct" href="../../redirect/resource/struct.RawResource.html" title="struct redirect::resource::RawResource">RawResource</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;src_sub: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;format: <a class="type" href="../../redirect/format/type.DxgiFormat.html" title="type redirect::format::DxgiFormat">DxgiFormat</a><br>)</code></span></h4>
+<div class='docblock'><p>resolve a multisampled resource into a non-MS resource. <a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn903897(v=vs.85).aspx">more</a></p>
+</div><h4 id='method.resource_barrier' class="method"><span id='resource_barrier.v' class='invisible'><code>fn <a href='#method.resource_barrier' class='fnname'>resource_barrier</a>(&amp;mut self, barriers: &amp;<a class="struct" href="../../redirect/resource/struct.ResourceBarrierBuilder.html" title="struct redirect::resource::ResourceBarrierBuilder">ResourceBarrierBuilder</a>)</code></span></h4>
+<div class='docblock'><p>synchronizaing multiple access to resources. <a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn903898(v=vs.85).aspx">more</a></p>
+</div><h4 id='method.reset' class="method"><span id='reset.v' class='invisible'><code>fn <a href='#method.reset' class='fnname'>reset</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;alloc: &amp;mut <a class="struct" href="../../redirect/command/struct.CommandAllocator.html" title="struct redirect::command::CommandAllocator">CommandAllocator</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;initial_state: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../redirect/pipeline/struct.PipelineState.html" title="struct redirect::pipeline::PipelineState">PipelineState</a>&gt;<br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="struct" href="../../redirect/error/struct.WinError.html" title="struct redirect::error::WinError">WinError</a>&gt;</code></span></h4>
+<div class='docblock'><p>reset a command list back to the initial state. <a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn903895(v=vs.85).aspx">more</a></p>
+</div><h4 id='method.clear_state' class="method"><span id='clear_state.v' class='invisible'><code>fn <a href='#method.clear_state' class='fnname'>clear_state</a>(&amp;mut self, initial_state: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../redirect/pipeline/struct.PipelineState.html" title="struct redirect::pipeline::PipelineState">PipelineState</a>&gt;)</code></span></h4>
+<div class='docblock'><p>reset the state of a direct command list back to the state it was in when created.
+initial_state has to match this state</p>
+</div><h4 id='method.set_pipeline_state' class="method"><span id='set_pipeline_state.v' class='invisible'><code>fn <a href='#method.set_pipeline_state' class='fnname'>set_pipeline_state</a>(&amp;mut self, state: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;&amp;<a class="struct" href="../../redirect/pipeline/struct.PipelineState.html" title="struct redirect::pipeline::PipelineState">PipelineState</a>&gt;)</code></span></h4>
+<div class='docblock'><p>set the pipeline state</p>
+</div><h4 id='method.close' class="method"><span id='close.v' class='invisible'><code>fn <a href='#method.close' class='fnname'>close</a>(&amp;mut self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">()</a>, <a class="struct" href="../../redirect/error/struct.WinError.html" title="struct redirect::error::WinError">WinError</a>&gt;</code></span></h4>
+<div class='docblock'><p>close the current recording</p>
+</div></div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "redirect";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["CreateDXGIFactory",""],["CreateDXGIFactory1",""],["CreateDXGIFactory2",""],["DXGIGetDebugInterface1",""]]});

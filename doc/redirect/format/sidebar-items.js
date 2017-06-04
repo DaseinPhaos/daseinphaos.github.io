@@ -1,0 +1,1 @@
+initSidebarItems({"fn":[["from_wchar_slice","convert a possibly null ended `[WCHAR]` into a `OsString`"]],"struct":[["Bool","ffi for win32 boolean values"],["Box3u","a 3D box"],["Viewport",""]],"type":[["DxgiFormat",""],["Rect",""]]});

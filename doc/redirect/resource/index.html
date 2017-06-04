@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `resource` mod in crate `redirect`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, resource">
+
+    <title>redirect::resource - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module resource</p><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#enums">Enums</a></li><li><a href="#constants">Constants</a></li></ul></div><p class='location'><a href='../index.html'>redirect</a></p><script>window.sidebarCurrent = {name: 'resource', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>redirect</a>::<wbr><a class="mod" href=''>resource</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/redirect/resource/mod.rs.html#9-359' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>resource</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.CommittedResource.html"
+                                  title='struct redirect::resource::CommittedResource'>CommittedResource</a></td>
+                           <td class='docblock-short'>
+                                <p>a committed resource, backed up by an implicit heap</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.GpuVAddress.html"
+                                  title='struct redirect::resource::GpuVAddress'>GpuVAddress</a></td>
+                           <td class='docblock-short'>
+                                <p>GPU virtual device</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Heap.html"
+                                  title='struct redirect::resource::Heap'>Heap</a></td>
+                           <td class='docblock-short'>
+                                <p>a continous memory region</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.HeapAlignment.html"
+                                  title='struct redirect::resource::HeapAlignment'>HeapAlignment</a></td>
+                           <td class='docblock-short'>
+                                <p>heap alignment</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.HeapDesc.html"
+                                  title='struct redirect::resource::HeapDesc'>HeapDesc</a></td>
+                           <td class='docblock-short'>
+                                <p>description of a heap</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.HeapFlags.html"
+                                  title='struct redirect::resource::HeapFlags'>HeapFlags</a></td>
+                           <td class='docblock-short'>
+                                <p>misc heap options. <a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn986730(v=vs.85).aspx">more info</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.HeapProperties.html"
+                                  title='struct redirect::resource::HeapProperties'>HeapProperties</a></td>
+                           <td class='docblock-short'>
+                                <p>describes heap properties</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.HeapType.html"
+                                  title='struct redirect::resource::HeapType'>HeapType</a></td>
+                           <td class='docblock-short'>
+                                <p><a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn770374(v=vs.85).aspx">heap type</a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.MemoryPoolPreference.html"
+                                  title='struct redirect::resource::MemoryPoolPreference'>MemoryPoolPreference</a></td>
+                           <td class='docblock-short'>
+                                <p>memory pool preference. <a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn770381(v=vs.85).aspx">more info</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PageProperty.html"
+                                  title='struct redirect::resource::PageProperty'>PageProperty</a></td>
+                           <td class='docblock-short'>
+                                <p>cpu page properties.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PlacedResource.html"
+                                  title='struct redirect::resource::PlacedResource'>PlacedResource</a></td>
+                           <td class='docblock-short'>
+                                <p>a placed resource, backed up by an explicit heap</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PlacedSubresourceFootprint.html"
+                                  title='struct redirect::resource::PlacedSubresourceFootprint'>PlacedSubresourceFootprint</a></td>
+                           <td class='docblock-short'>
+                                <p><a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn986749(v=vs.85).aspx">more info</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.RawResource.html"
+                                  title='struct redirect::resource::RawResource'>RawResource</a></td>
+                           <td class='docblock-short'>
+                                <p>a raw resource</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ResourceAliasingBarrier.html"
+                                  title='struct redirect::resource::ResourceAliasingBarrier'>ResourceAliasingBarrier</a></td>
+                           <td class='docblock-short'>
+                                <p>describes the transition between usage of two different
+resources having mappings into the same heap.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ResourceAllocInfo.html"
+                                  title='struct redirect::resource::ResourceAllocInfo'>ResourceAllocInfo</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ResourceBarrier.html"
+                                  title='struct redirect::resource::ResourceBarrier'>ResourceBarrier</a></td>
+                           <td class='docblock-short'>
+                                <p>resource barriers</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ResourceBarrierFlags.html"
+                                  title='struct redirect::resource::ResourceBarrierFlags'>ResourceBarrierFlags</a></td>
+                           <td class='docblock-short'>
+                                <p>misc resource barrier flags. <a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn986741(v=vs.85).aspx">more</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ResourceBarriersBuilder.html"
+                                  title='struct redirect::resource::ResourceBarriersBuilder'>ResourceBarriersBuilder</a></td>
+                           <td class='docblock-short'>
+                                <p>resource barrier builder</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ResourceChunkDesc.html"
+                                  title='struct redirect::resource::ResourceChunkDesc'>ResourceChunkDesc</a></td>
+                           <td class='docblock-short'>
+                                <p>describes a chunk of resource</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ResourceDesc.html"
+                                  title='struct redirect::resource::ResourceDesc'>ResourceDesc</a></td>
+                           <td class='docblock-short'>
+                                <p>resource description</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ResourceDimension.html"
+                                  title='struct redirect::resource::ResourceDimension'>ResourceDimension</a></td>
+                           <td class='docblock-short'>
+                                <p>dimension i.e. type of the resource</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ResourceFlags.html"
+                                  title='struct redirect::resource::ResourceFlags'>ResourceFlags</a></td>
+                           <td class='docblock-short'>
+                                <p>misc flags for resources. <a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn986742(v=vs.85).aspx">more info</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ResourceStates.html"
+                                  title='struct redirect::resource::ResourceStates'>ResourceStates</a></td>
+                           <td class='docblock-short'>
+                                <p>the state of a resource regarding how it is being used. <a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn986744%28v=vs.85%29.aspx?f=255&amp;MSPPError=-2147217396">more</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ResourceTransitionBarrier.html"
+                                  title='struct redirect::resource::ResourceTransitionBarrier'>ResourceTransitionBarrier</a></td>
+                           <td class='docblock-short'>
+                                <p>represents a transition of subresource between different usages</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.ResourceUavBarrier.html"
+                                  title='struct redirect::resource::ResourceUavBarrier'>ResourceUavBarrier</a></td>
+                           <td class='docblock-short'>
+                                <p>describes a barrier in which all uav access to a resource must complete
+before subsequent uav accesses can begin</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TextureCopyLocation.html"
+                                  title='struct redirect::resource::TextureCopyLocation'>TextureCopyLocation</a></td>
+                           <td class='docblock-short'>
+                                <p>describes a resource used for GPU texture copying</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.TextureLayout.html"
+                                  title='struct redirect::resource::TextureLayout'>TextureLayout</a></td>
+                           <td class='docblock-short'>
+                                <p>texture layout</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Usage.html"
+                                  title='struct redirect::resource::Usage'>Usage</a></td>
+                           <td class='docblock-short'>
+                                <p>resource usage flags</p>
+                           </td>
+                       </tr></table><h2 id='enums' class='section-header'><a href="#enums">Enums</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.ResourceBarrierType.html"
+                                  title='enum redirect::resource::ResourceBarrierType'>ResourceBarrierType</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="enum" href="enum.TextureCopyType.html"
+                                  title='enum redirect::resource::TextureCopyType'>TextureCopyType</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='constants' class='section-header'><a href="#constants">Constants</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.CPU_PAGE_PROPERTY_NOT_AVAILABLE.html"
+                                  title='constant redirect::resource::CPU_PAGE_PROPERTY_NOT_AVAILABLE'>CPU_PAGE_PROPERTY_NOT_AVAILABLE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.CPU_PAGE_PROPERTY_UNKNOWN.html"
+                                  title='constant redirect::resource::CPU_PAGE_PROPERTY_UNKNOWN'>CPU_PAGE_PROPERTY_UNKNOWN</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.CPU_PAGE_PROPERTY_WRITE_BACK.html"
+                                  title='constant redirect::resource::CPU_PAGE_PROPERTY_WRITE_BACK'>CPU_PAGE_PROPERTY_WRITE_BACK</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.CPU_PAGE_PROPERTY_WRITE_COMBINE.html"
+                                  title='constant redirect::resource::CPU_PAGE_PROPERTY_WRITE_COMBINE'>CPU_PAGE_PROPERTY_WRITE_COMBINE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_ALIGNMENT_DEFAULT.html"
+                                  title='constant redirect::resource::HEAP_ALIGNMENT_DEFAULT'>HEAP_ALIGNMENT_DEFAULT</a></td>
+                           <td class='docblock-short'>
+                                <p>alias for 64kb</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_ALIGNMENT_DEFAULT_MSAA_RESOURCE_PLACEMENT.html"
+                                  title='constant redirect::resource::HEAP_ALIGNMENT_DEFAULT_MSAA_RESOURCE_PLACEMENT'>HEAP_ALIGNMENT_DEFAULT_MSAA_RESOURCE_PLACEMENT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_ALIGNMENT_DEFAULT_RESOURCE_PLACEMENT.html"
+                                  title='constant redirect::resource::HEAP_ALIGNMENT_DEFAULT_RESOURCE_PLACEMENT'>HEAP_ALIGNMENT_DEFAULT_RESOURCE_PLACEMENT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_ALLOW_ALL_BUFFERS_AND_TEXTURES.html"
+                                  title='constant redirect::resource::HEAP_FLAG_ALLOW_ALL_BUFFERS_AND_TEXTURES'>HEAP_FLAG_ALLOW_ALL_BUFFERS_AND_TEXTURES</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_ALLOW_DISPLAY.html"
+                                  title='constant redirect::resource::HEAP_FLAG_ALLOW_DISPLAY'>HEAP_FLAG_ALLOW_DISPLAY</a></td>
+                           <td class='docblock-short'>
+                                <p>the heap can contain swapchain surfaces</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_ALLOW_ONLY_BUFFERS.html"
+                                  title='constant redirect::resource::HEAP_FLAG_ALLOW_ONLY_BUFFERS'>HEAP_FLAG_ALLOW_ONLY_BUFFERS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_ALLOW_ONLY_NON_RT_DS_TEXTURES.html"
+                                  title='constant redirect::resource::HEAP_FLAG_ALLOW_ONLY_NON_RT_DS_TEXTURES'>HEAP_FLAG_ALLOW_ONLY_NON_RT_DS_TEXTURES</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_ALLOW_ONLY_RT_DS_TEXTURES.html"
+                                  title='constant redirect::resource::HEAP_FLAG_ALLOW_ONLY_RT_DS_TEXTURES'>HEAP_FLAG_ALLOW_ONLY_RT_DS_TEXTURES</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_ALLOW_WRITE_WATCH.html"
+                                  title='constant redirect::resource::HEAP_FLAG_ALLOW_WRITE_WATCH'>HEAP_FLAG_ALLOW_WRITE_WATCH</a></td>
+                           <td class='docblock-short'>
+                                <p>allow tools to support <code>MEM_WRITE_WATCH</code></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_DENY_BUFFERS.html"
+                                  title='constant redirect::resource::HEAP_FLAG_DENY_BUFFERS'>HEAP_FLAG_DENY_BUFFERS</a></td>
+                           <td class='docblock-short'>
+                                <p>the heap isn&#39;t allowed to contain buffers</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_DENY_NON_RT_DS_TEXTURES.html"
+                                  title='constant redirect::resource::HEAP_FLAG_DENY_NON_RT_DS_TEXTURES'>HEAP_FLAG_DENY_NON_RT_DS_TEXTURES</a></td>
+                           <td class='docblock-short'>
+                                <p>the heap can&#39;t contain textures without <code>ALLOW_RENDER_TARGET</code> or <code>ALLOW_DEPTH_STENCIL</code> flags</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_DENY_RT_DS_TEXTURES.html"
+                                  title='constant redirect::resource::HEAP_FLAG_DENY_RT_DS_TEXTURES'>HEAP_FLAG_DENY_RT_DS_TEXTURES</a></td>
+                           <td class='docblock-short'>
+                                <p>the heap can&#39;t store render target or depth stencil textures</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_HARDWARE_PROTECTED.html"
+                                  title='constant redirect::resource::HEAP_FLAG_HARDWARE_PROTECTED'>HEAP_FLAG_HARDWARE_PROTECTED</a></td>
+                           <td class='docblock-short'>
+                                <p>unsupported</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_NONE.html"
+                                  title='constant redirect::resource::HEAP_FLAG_NONE'>HEAP_FLAG_NONE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_SHARED.html"
+                                  title='constant redirect::resource::HEAP_FLAG_SHARED'>HEAP_FLAG_SHARED</a></td>
+                           <td class='docblock-short'>
+                                <p>a <a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/mt186623(v=vs.85).aspx">shared heap</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_SHARED_CROSS_ADAPTER.html"
+                                  title='constant redirect::resource::HEAP_FLAG_SHARED_CROSS_ADAPTER'>HEAP_FLAG_SHARED_CROSS_ADAPTER</a></td>
+                           <td class='docblock-short'>
+                                <p>the heap can be shored across adapters</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_TYPE_CUSTOM.html"
+                                  title='constant redirect::resource::HEAP_TYPE_CUSTOM'>HEAP_TYPE_CUSTOM</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_TYPE_DEFAULT.html"
+                                  title='constant redirect::resource::HEAP_TYPE_DEFAULT'>HEAP_TYPE_DEFAULT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_TYPE_READBACK.html"
+                                  title='constant redirect::resource::HEAP_TYPE_READBACK'>HEAP_TYPE_READBACK</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_TYPE_UPLOAD.html"
+                                  title='constant redirect::resource::HEAP_TYPE_UPLOAD'>HEAP_TYPE_UPLOAD</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.MEMORY_POOL_L0.html"
+                                  title='constant redirect::resource::MEMORY_POOL_L0'>MEMORY_POOL_L0</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.MEMORY_POOL_L1.html"
+                                  title='constant redirect::resource::MEMORY_POOL_L1'>MEMORY_POOL_L1</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.MEMORY_POOL_UNKNOWN.html"
+                                  title='constant redirect::resource::MEMORY_POOL_UNKNOWN'>MEMORY_POOL_UNKNOWN</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_BARRIER_FLAG_BEGIN_ONLY.html"
+                                  title='constant redirect::resource::RESOURCE_BARRIER_FLAG_BEGIN_ONLY'>RESOURCE_BARRIER_FLAG_BEGIN_ONLY</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_BARRIER_FLAG_END_ONLY.html"
+                                  title='constant redirect::resource::RESOURCE_BARRIER_FLAG_END_ONLY'>RESOURCE_BARRIER_FLAG_END_ONLY</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_BARRIER_FLAG_NONE.html"
+                                  title='constant redirect::resource::RESOURCE_BARRIER_FLAG_NONE'>RESOURCE_BARRIER_FLAG_NONE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_DIMENSION_BUFFER.html"
+                                  title='constant redirect::resource::RESOURCE_DIMENSION_BUFFER'>RESOURCE_DIMENSION_BUFFER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_DIMENSION_TEXTURE1D.html"
+                                  title='constant redirect::resource::RESOURCE_DIMENSION_TEXTURE1D'>RESOURCE_DIMENSION_TEXTURE1D</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_DIMENSION_TEXTURE2D.html"
+                                  title='constant redirect::resource::RESOURCE_DIMENSION_TEXTURE2D'>RESOURCE_DIMENSION_TEXTURE2D</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_DIMENSION_TEXTURE3D.html"
+                                  title='constant redirect::resource::RESOURCE_DIMENSION_TEXTURE3D'>RESOURCE_DIMENSION_TEXTURE3D</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_DIMENSION_UNKNOWN.html"
+                                  title='constant redirect::resource::RESOURCE_DIMENSION_UNKNOWN'>RESOURCE_DIMENSION_UNKNOWN</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_FLAG_ALLOW_CROSS_ADAPTER.html"
+                                  title='constant redirect::resource::RESOURCE_FLAG_ALLOW_CROSS_ADAPTER'>RESOURCE_FLAG_ALLOW_CROSS_ADAPTER</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_FLAG_ALLOW_DEPTH_STENCIL.html"
+                                  title='constant redirect::resource::RESOURCE_FLAG_ALLOW_DEPTH_STENCIL'>RESOURCE_FLAG_ALLOW_DEPTH_STENCIL</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_FLAG_ALLOW_RENDER_TARGET.html"
+                                  title='constant redirect::resource::RESOURCE_FLAG_ALLOW_RENDER_TARGET'>RESOURCE_FLAG_ALLOW_RENDER_TARGET</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_FLAG_ALLOW_SIMULTANEOUS_ACCESS.html"
+                                  title='constant redirect::resource::RESOURCE_FLAG_ALLOW_SIMULTANEOUS_ACCESS'>RESOURCE_FLAG_ALLOW_SIMULTANEOUS_ACCESS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_FLAG_ALLOW_UNORDERED_ACCESS.html"
+                                  title='constant redirect::resource::RESOURCE_FLAG_ALLOW_UNORDERED_ACCESS'>RESOURCE_FLAG_ALLOW_UNORDERED_ACCESS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_FLAG_DENY_SHADER_RESOURCE.html"
+                                  title='constant redirect::resource::RESOURCE_FLAG_DENY_SHADER_RESOURCE'>RESOURCE_FLAG_DENY_SHADER_RESOURCE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_FLAG_NONE.html"
+                                  title='constant redirect::resource::RESOURCE_FLAG_NONE'>RESOURCE_FLAG_NONE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_STATE_COMMON.html"
+                                  title='constant redirect::resource::RESOURCE_STATE_COMMON'>RESOURCE_STATE_COMMON</a></td>
+                           <td class='docblock-short'>
+                                <p>resource should be in this state when</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_STATE_COPY_DEST.html"
+                                  title='constant redirect::resource::RESOURCE_STATE_COPY_DEST'>RESOURCE_STATE_COPY_DEST</a></td>
+                           <td class='docblock-short'>
+                                <p>used as the destination in a copy operation</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_STATE_COPY_SOURCE.html"
+                                  title='constant redirect::resource::RESOURCE_STATE_COPY_SOURCE'>RESOURCE_STATE_COPY_SOURCE</a></td>
+                           <td class='docblock-short'>
+                                <p>used as the src in a copy operation</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_STATE_DEPTH_READ.html"
+                                  title='constant redirect::resource::RESOURCE_STATE_DEPTH_READ'>RESOURCE_STATE_DEPTH_READ</a></td>
+                           <td class='docblock-short'>
+                                <p>a subresource should be in this state when used for depth read.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_STATE_DEPTH_WRITE.html"
+                                  title='constant redirect::resource::RESOURCE_STATE_DEPTH_WRITE'>RESOURCE_STATE_DEPTH_WRITE</a></td>
+                           <td class='docblock-short'>
+                                <p>a subresource should be in this state when used for depth write. mutual exclusive</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_STATE_GENERIC_READ.html"
+                                  title='constant redirect::resource::RESOURCE_STATE_GENERIC_READ'>RESOURCE_STATE_GENERIC_READ</a></td>
+                           <td class='docblock-short'>
+                                <p>required starting state for upload heaps</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_STATE_INDEX_BUFFER.html"
+                                  title='constant redirect::resource::RESOURCE_STATE_INDEX_BUFFER'>RESOURCE_STATE_INDEX_BUFFER</a></td>
+                           <td class='docblock-short'>
+                                <p>a subresource should be in this state when accessed as a index buffer</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_STATE_INDIRECT_ARGUMENT.html"
+                                  title='constant redirect::resource::RESOURCE_STATE_INDIRECT_ARGUMENT'>RESOURCE_STATE_INDIRECT_ARGUMENT</a></td>
+                           <td class='docblock-short'>
+                                <p>the resource is used as indirect argument</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_STATE_NON_PIXEL_SHADER_RESOURCE.html"
+                                  title='constant redirect::resource::RESOURCE_STATE_NON_PIXEL_SHADER_RESOURCE'>RESOURCE_STATE_NON_PIXEL_SHADER_RESOURCE</a></td>
+                           <td class='docblock-short'>
+                                <p>a subresource should be in this state when accessed as a SRV from any stage other than PS</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_STATE_PIXEL_SHADER_RESOURCE.html"
+                                  title='constant redirect::resource::RESOURCE_STATE_PIXEL_SHADER_RESOURCE'>RESOURCE_STATE_PIXEL_SHADER_RESOURCE</a></td>
+                           <td class='docblock-short'>
+                                <p>a subresource should be in this state when accessed as a SRV from PS</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_STATE_PREDICATION.html"
+                                  title='constant redirect::resource::RESOURCE_STATE_PREDICATION'>RESOURCE_STATE_PREDICATION</a></td>
+                           <td class='docblock-short'>
+                                <p>used for <a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn903927(v=vs.85).aspx">predication</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_STATE_PRESENT.html"
+                                  title='constant redirect::resource::RESOURCE_STATE_PRESENT'>RESOURCE_STATE_PRESENT</a></td>
+                           <td class='docblock-short'>
+                                <p>alias for <code>COMMON</code></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_STATE_RENDER_TARGET.html"
+                                  title='constant redirect::resource::RESOURCE_STATE_RENDER_TARGET'>RESOURCE_STATE_RENDER_TARGET</a></td>
+                           <td class='docblock-short'>
+                                <p>a subresource should be in this state when used as a render target</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_STATE_RESOLVE_DEST.html"
+                                  title='constant redirect::resource::RESOURCE_STATE_RESOLVE_DEST'>RESOURCE_STATE_RESOLVE_DEST</a></td>
+                           <td class='docblock-short'>
+                                <p>used as the destination in a resolve operation</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_STATE_RESOLVE_SOURCE.html"
+                                  title='constant redirect::resource::RESOURCE_STATE_RESOLVE_SOURCE'>RESOURCE_STATE_RESOLVE_SOURCE</a></td>
+                           <td class='docblock-short'>
+                                <p>used as the src in a resolve operation</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_STATE_STREAM_OUT.html"
+                                  title='constant redirect::resource::RESOURCE_STATE_STREAM_OUT'>RESOURCE_STATE_STREAM_OUT</a></td>
+                           <td class='docblock-short'>
+                                <p>a subresource is used with stream output</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_STATE_UNORDERED_ACCESS.html"
+                                  title='constant redirect::resource::RESOURCE_STATE_UNORDERED_ACCESS'>RESOURCE_STATE_UNORDERED_ACCESS</a></td>
+                           <td class='docblock-short'>
+                                <p>a subresource should be in this state when accessed via an UAV</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.RESOURCE_STATE_VERTEX_AND_CONSTANT_BUFFER.html"
+                                  title='constant redirect::resource::RESOURCE_STATE_VERTEX_AND_CONSTANT_BUFFER'>RESOURCE_STATE_VERTEX_AND_CONSTANT_BUFFER</a></td>
+                           <td class='docblock-short'>
+                                <p>a subresource should be in this state when accessed as a vertex buffer or constant buffer</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.TEXTURE_LAYOUT_64KB_STANDARD_SWIZZLE.html"
+                                  title='constant redirect::resource::TEXTURE_LAYOUT_64KB_STANDARD_SWIZZLE'>TEXTURE_LAYOUT_64KB_STANDARD_SWIZZLE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.TEXTURE_LAYOUT_64KB_UNDEFINED_SWIZZLE.html"
+                                  title='constant redirect::resource::TEXTURE_LAYOUT_64KB_UNDEFINED_SWIZZLE'>TEXTURE_LAYOUT_64KB_UNDEFINED_SWIZZLE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.TEXTURE_LAYOUT_ROW_MAJOR.html"
+                                  title='constant redirect::resource::TEXTURE_LAYOUT_ROW_MAJOR'>TEXTURE_LAYOUT_ROW_MAJOR</a></td>
+                           <td class='docblock-short'>
+                                <p>data for the texture is stored in row-major order.
+only the following texture properties are supported:</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.TEXTURE_LAYOUT_UNKNOWN.html"
+                                  title='constant redirect::resource::TEXTURE_LAYOUT_UNKNOWN'>TEXTURE_LAYOUT_UNKNOWN</a></td>
+                           <td class='docblock-short'>
+                                <p>adapter-dependent layout. driver choose optimal layout
+during resource creation</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.USAGE_BACK_BUFFER.html"
+                                  title='constant redirect::resource::USAGE_BACK_BUFFER'>USAGE_BACK_BUFFER</a></td>
+                           <td class='docblock-short'>
+                                <p>resource is used as a back buffer. This flag don&#39;t need to be passed when creating a swapchain.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.USAGE_CPU_DYNAMIC.html"
+                                  title='constant redirect::resource::USAGE_CPU_DYNAMIC'>USAGE_CPU_DYNAMIC</a></td>
+                           <td class='docblock-short'>
+                                <p>cpu have write only access to this resource </p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.USAGE_CPU_NONE.html"
+                                  title='constant redirect::resource::USAGE_CPU_NONE'>USAGE_CPU_NONE</a></td>
+                           <td class='docblock-short'>
+                                <p>cpu don&#39;t have access to this resource</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.USAGE_CPU_READ_WRITE.html"
+                                  title='constant redirect::resource::USAGE_CPU_READ_WRITE'>USAGE_CPU_READ_WRITE</a></td>
+                           <td class='docblock-short'>
+                                <p>cpu can read or write this resource</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.USAGE_CPU_SCRATCH.html"
+                                  title='constant redirect::resource::USAGE_CPU_SCRATCH'>USAGE_CPU_SCRATCH</a></td>
+                           <td class='docblock-short'>
+                                <p>FIXME: wth?</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.USAGE_DISCARD_ON_PRESENT.html"
+                                  title='constant redirect::resource::USAGE_DISCARD_ON_PRESENT'>USAGE_DISCARD_ON_PRESENT</a></td>
+                           <td class='docblock-short'>
+                                <p>FIXME: resource content might be discarded after present?</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.USAGE_READ_ONLY.html"
+                                  title='constant redirect::resource::USAGE_READ_ONLY'>USAGE_READ_ONLY</a></td>
+                           <td class='docblock-short'>
+                                <p>resource is read only for the gpu</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.USAGE_RENDER_TARGET_OUTPUT.html"
+                                  title='constant redirect::resource::USAGE_RENDER_TARGET_OUTPUT'>USAGE_RENDER_TARGET_OUTPUT</a></td>
+                           <td class='docblock-short'>
+                                <p>resource can be used as render target output</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.USAGE_SHADER_INPUT.html"
+                                  title='constant redirect::resource::USAGE_SHADER_INPUT'>USAGE_SHADER_INPUT</a></td>
+                           <td class='docblock-short'>
+                                <p>resource can be used as shader input</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.USAGE_SHARED.html"
+                                  title='constant redirect::resource::USAGE_SHARED'>USAGE_SHARED</a></td>
+                           <td class='docblock-short'>
+                                <p>FIXME: resource can be shared across different adapters?</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.USAGE_UNORDERED_ACCESS.html"
+                                  title='constant redirect::resource::USAGE_UNORDERED_ACCESS'>USAGE_UNORDERED_ACCESS</a></td>
+                           <td class='docblock-short'>
+                                <p>resource can be unordered accessed</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "redirect";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

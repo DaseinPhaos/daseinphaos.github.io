@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `command` mod in crate `redirect`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, command">
+
+    <title>redirect::command - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module command</p><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#constants">Constants</a></li><li><a href="#traits">Traits</a></li></ul></div><p class='location'><a href='../index.html'>redirect</a></p><script>window.sidebarCurrent = {name: 'command', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../index.html'>redirect</a>::<wbr><a class="mod" href=''>command</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../src/redirect/command/mod.rs.html#9-15' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>GPU command encapsulation.</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.Bundle.html"
+                                  title='struct redirect::command::Bundle'>Bundle</a></td>
+                           <td class='docblock-short'>
+                                <p>a command list bundle</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BundleCommandAllocator.html"
+                                  title='struct redirect::command::BundleCommandAllocator'>BundleCommandAllocator</a></td>
+                           <td class='docblock-short'>
+                                <p>An allocator for GPU commands</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BundleRecording.html"
+                                  title='struct redirect::command::BundleRecording'>BundleRecording</a></td>
+                           <td class='docblock-short'>
+                                <p>a command list bundle during recording state</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.BundleRecordingWithHeap.html"
+                                  title='struct redirect::command::BundleRecordingWithHeap'>BundleRecordingWithHeap</a></td>
+                           <td class='docblock-short'>
+                                <p>a command list bundle during recording state with descriptor heap already set</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.CommandListType.html"
+                                  title='struct redirect::command::CommandListType'>CommandListType</a></td>
+                           <td class='docblock-short'>
+                                <p>type of a <code>CommandList</code></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.CommandQueue.html"
+                                  title='struct redirect::command::CommandQueue'>CommandQueue</a></td>
+                           <td class='docblock-short'>
+                                <p>A GPU command queue, providing methods for command submission,
+execution synchronization, etc.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.CommandQueueDesc.html"
+                                  title='struct redirect::command::CommandQueueDesc'>CommandQueueDesc</a></td>
+                           <td class='docblock-short'>
+                                <p>describes a command queue.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.CommandQueueFlags.html"
+                                  title='struct redirect::command::CommandQueueFlags'>CommandQueueFlags</a></td>
+                           <td class='docblock-short'>
+                                <p>misc flags for a command queue</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.CommandQueuePriority.html"
+                                  title='struct redirect::command::CommandQueuePriority'>CommandQueuePriority</a></td>
+                           <td class='docblock-short'>
+                                <p>priority levels for a command queue</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DepthStencilClearFlags.html"
+                                  title='struct redirect::command::DepthStencilClearFlags'>DepthStencilClearFlags</a></td>
+                           <td class='docblock-short'>
+                                <p>depth stencil clear flags</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DirectCommandAllocator.html"
+                                  title='struct redirect::command::DirectCommandAllocator'>DirectCommandAllocator</a></td>
+                           <td class='docblock-short'>
+                                <p>An allocator for GPU commands</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DirectCommandList.html"
+                                  title='struct redirect::command::DirectCommandList'>DirectCommandList</a></td>
+                           <td class='docblock-short'>
+                                <p>a direct command list</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.DirectCommandListRecording.html"
+                                  title='struct redirect::command::DirectCommandListRecording'>DirectCommandListRecording</a></td>
+                           <td class='docblock-short'>
+                                <p>a direct command list on recording state</p>
+                           </td>
+                       </tr></table><h2 id='constants' class='section-header'><a href="#constants">Constants</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.COMMAND_LIST_TYPE_BUNDLE.html"
+                                  title='constant redirect::command::COMMAND_LIST_TYPE_BUNDLE'>COMMAND_LIST_TYPE_BUNDLE</a></td>
+                           <td class='docblock-short'>
+                                <p>bundle inherits all GPU state (except PSO and primitive topology)
+from the direct list, where it must be opearated on</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.COMMAND_LIST_TYPE_COMPUTE.html"
+                                  title='constant redirect::command::COMMAND_LIST_TYPE_COMPUTE'>COMMAND_LIST_TYPE_COMPUTE</a></td>
+                           <td class='docblock-short'>
+                                <p>computing command list</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.COMMAND_LIST_TYPE_COPY.html"
+                                  title='constant redirect::command::COMMAND_LIST_TYPE_COPY'>COMMAND_LIST_TYPE_COPY</a></td>
+                           <td class='docblock-short'>
+                                <p>copying(drawing) command list</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.COMMAND_LIST_TYPE_DIRECT.html"
+                                  title='constant redirect::command::COMMAND_LIST_TYPE_DIRECT'>COMMAND_LIST_TYPE_DIRECT</a></td>
+                           <td class='docblock-short'>
+                                <p>direct list doesn&#39;t inherit any GPU state.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.COMMAND_QUEUE_FLAG_DISABLE_GPU_TIMEOUT.html"
+                                  title='constant redirect::command::COMMAND_QUEUE_FLAG_DISABLE_GPU_TIMEOUT'>COMMAND_QUEUE_FLAG_DISABLE_GPU_TIMEOUT</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.COMMAND_QUEUE_FLAG_NONE.html"
+                                  title='constant redirect::command::COMMAND_QUEUE_FLAG_NONE'>COMMAND_QUEUE_FLAG_NONE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.COMMAND_QUEUE_PRIOIRITY_GLOBAL_REALTIME.html"
+                                  title='constant redirect::command::COMMAND_QUEUE_PRIOIRITY_GLOBAL_REALTIME'>COMMAND_QUEUE_PRIOIRITY_GLOBAL_REALTIME</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.COMMAND_QUEUE_PRIOIRITY_NORMAL.html"
+                                  title='constant redirect::command::COMMAND_QUEUE_PRIOIRITY_NORMAL'>COMMAND_QUEUE_PRIOIRITY_NORMAL</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.COMMAND_QUEUE_PRIORITY_HIGH.html"
+                                  title='constant redirect::command::COMMAND_QUEUE_PRIORITY_HIGH'>COMMAND_QUEUE_PRIORITY_HIGH</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.DS_CLEAR_FLAG_DEPTH.html"
+                                  title='constant redirect::command::DS_CLEAR_FLAG_DEPTH'>DS_CLEAR_FLAG_DEPTH</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.DS_CLEAR_FLAG_STENCIL.html"
+                                  title='constant redirect::command::DS_CLEAR_FLAG_STENCIL'>DS_CLEAR_FLAG_STENCIL</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table><h2 id='traits' class='section-header'><a href="#traits">Traits</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.CommandList.html"
+                                  title='trait redirect::command::CommandList'>CommandList</a></td>
+                           <td class='docblock-short'>
+                                <p>common methods for a command list</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="trait" href="trait.CommandListWithHeap.html"
+                                  title='trait redirect::command::CommandListWithHeap'>CommandListWithHeap</a></td>
+                           <td class='docblock-short'>
+                                <p>common methods for a command list with bounded descriptor heaps</p>
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../";
+        window.currentCrate = "redirect";
+    </script>
+    <script src="../../main.js"></script>
+    <script defer src="../../search-index.js"></script>
+</body>
+</html>

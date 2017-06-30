@@ -48,7 +48,7 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../../src/redirect/command/list/common.rs.html#366-378' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../../src/redirect/command/list/common.rs.html#337-349' title='goto source code'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait CommandListWithHeap {
     fn <a href='#tymethod.set_graphics_root_dt' class='fnname'>set_graphics_root_dt</a>&lt;H:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="struct" href="../../winapi/d3d12/struct.D3D12_GPU_DESCRIPTOR_HANDLE.html" title="struct winapi::d3d12::D3D12_GPU_DESCRIPTOR_HANDLE">D3D12_GPU_DESCRIPTOR_HANDLE</a>&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;param_index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;base_descriptor: H<br>&nbsp;&nbsp;&nbsp;&nbsp;);
     fn <a href='#tymethod.set_compute_root_dt' class='fnname'>set_compute_root_dt</a>&lt;H:&nbsp;<a class="trait" href="https://doc.rust-lang.org/nightly/core/convert/trait.Into.html" title="trait core::convert::Into">Into</a>&lt;<a class="struct" href="../../winapi/d3d12/struct.D3D12_GPU_DESCRIPTOR_HANDLE.html" title="struct winapi::d3d12::D3D12_GPU_DESCRIPTOR_HANDLE">D3D12_GPU_DESCRIPTOR_HANDLE</a>&gt;&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;param_index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;base_descriptor: H<br>&nbsp;&nbsp;&nbsp;&nbsp;);
@@ -61,7 +61,7 @@
 </div></div>
         <h2 id='implementors'>Implementors</h2>
         <ul class='item-list' id='implementors-list'>
-    <li><code>impl&lt;'a&gt; CommandListWithHeap for <a class="struct" href="../../redirect/command/struct.DirectCommandListRecording.html" title="struct redirect::command::DirectCommandListRecording">DirectCommandListRecording</a>&lt;'a&gt;</code></li>
+    <li><code>impl&lt;'a, T&gt; CommandListWithHeap for <a class="struct" href="../../redirect/command/struct.DirectCommandListRecording.html" title="struct redirect::command::DirectCommandListRecording">DirectCommandListRecording</a>&lt;'a, T&gt;</code></li>
 <li><code>impl&lt;'a&gt; CommandListWithHeap for <a class="struct" href="../../redirect/command/struct.BundleRecordingWithHeap.html" title="struct redirect::command::BundleRecordingWithHeap">BundleRecordingWithHeap</a>&lt;'a&gt;</code></li>
 </ul><script type="text/javascript" async
                          src="../../implementors/redirect/command/trait.CommandListWithHeap.js">

@@ -468,6 +468,120 @@
 <span id="423">423</span>
 <span id="424">424</span>
 <span id="425">425</span>
+<span id="426">426</span>
+<span id="427">427</span>
+<span id="428">428</span>
+<span id="429">429</span>
+<span id="430">430</span>
+<span id="431">431</span>
+<span id="432">432</span>
+<span id="433">433</span>
+<span id="434">434</span>
+<span id="435">435</span>
+<span id="436">436</span>
+<span id="437">437</span>
+<span id="438">438</span>
+<span id="439">439</span>
+<span id="440">440</span>
+<span id="441">441</span>
+<span id="442">442</span>
+<span id="443">443</span>
+<span id="444">444</span>
+<span id="445">445</span>
+<span id="446">446</span>
+<span id="447">447</span>
+<span id="448">448</span>
+<span id="449">449</span>
+<span id="450">450</span>
+<span id="451">451</span>
+<span id="452">452</span>
+<span id="453">453</span>
+<span id="454">454</span>
+<span id="455">455</span>
+<span id="456">456</span>
+<span id="457">457</span>
+<span id="458">458</span>
+<span id="459">459</span>
+<span id="460">460</span>
+<span id="461">461</span>
+<span id="462">462</span>
+<span id="463">463</span>
+<span id="464">464</span>
+<span id="465">465</span>
+<span id="466">466</span>
+<span id="467">467</span>
+<span id="468">468</span>
+<span id="469">469</span>
+<span id="470">470</span>
+<span id="471">471</span>
+<span id="472">472</span>
+<span id="473">473</span>
+<span id="474">474</span>
+<span id="475">475</span>
+<span id="476">476</span>
+<span id="477">477</span>
+<span id="478">478</span>
+<span id="479">479</span>
+<span id="480">480</span>
+<span id="481">481</span>
+<span id="482">482</span>
+<span id="483">483</span>
+<span id="484">484</span>
+<span id="485">485</span>
+<span id="486">486</span>
+<span id="487">487</span>
+<span id="488">488</span>
+<span id="489">489</span>
+<span id="490">490</span>
+<span id="491">491</span>
+<span id="492">492</span>
+<span id="493">493</span>
+<span id="494">494</span>
+<span id="495">495</span>
+<span id="496">496</span>
+<span id="497">497</span>
+<span id="498">498</span>
+<span id="499">499</span>
+<span id="500">500</span>
+<span id="501">501</span>
+<span id="502">502</span>
+<span id="503">503</span>
+<span id="504">504</span>
+<span id="505">505</span>
+<span id="506">506</span>
+<span id="507">507</span>
+<span id="508">508</span>
+<span id="509">509</span>
+<span id="510">510</span>
+<span id="511">511</span>
+<span id="512">512</span>
+<span id="513">513</span>
+<span id="514">514</span>
+<span id="515">515</span>
+<span id="516">516</span>
+<span id="517">517</span>
+<span id="518">518</span>
+<span id="519">519</span>
+<span id="520">520</span>
+<span id="521">521</span>
+<span id="522">522</span>
+<span id="523">523</span>
+<span id="524">524</span>
+<span id="525">525</span>
+<span id="526">526</span>
+<span id="527">527</span>
+<span id="528">528</span>
+<span id="529">529</span>
+<span id="530">530</span>
+<span id="531">531</span>
+<span id="532">532</span>
+<span id="533">533</span>
+<span id="534">534</span>
+<span id="535">535</span>
+<span id="536">536</span>
+<span id="537">537</span>
+<span id="538">538</span>
+<span id="539">539</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright 2017 Dasein Phaos aka. Luxko</span>
 <span class="comment">//</span>
@@ -490,7 +604,6 @@
 <span class="doccomment">/// descriptor heap builder struct</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>, <span class="ident">Debug</span>)]</span>
 <span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">DescriptorHeapBuilder</span> {
-    <span class="kw">pub</span> <span class="ident">shader_visible</span>: <span class="ident">bool</span>,
     <span class="kw">pub</span> <span class="ident">num_descriptors</span>: <span class="ident">u32</span>,
     <span class="kw">pub</span> <span class="ident">node_mask</span>: <span class="ident">u32</span>,
 }
@@ -499,22 +612,17 @@
     <span class="attribute">#[<span class="ident">inline</span>]</span>
     <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">new</span>(<span class="ident">num_descriptors</span>: <span class="ident">u32</span>) <span class="op">-&gt;</span> <span class="self">Self</span> {
         <span class="ident">DescriptorHeapBuilder</span>{
-            <span class="ident">shader_visible</span>: <span class="bool-val">true</span>,
             <span class="ident">num_descriptors</span>,
             <span class="ident">node_mask</span>: <span class="number">0</span>,
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">build_cbv_srv_uav_heap</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">device</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">Device</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">CbvSrvUavHeap</span>, <span class="ident">WinError</span><span class="op">&gt;</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">build_csu_heap_shader_visible</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">device</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">Device</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">CsuHeapSv</span>, <span class="ident">WinError</span><span class="op">&gt;</span> {
         <span class="kw">let</span> <span class="ident">desc</span> <span class="op">=</span> ::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_DESC</span>{
             <span class="ident">Type</span>: ::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV</span>,
             <span class="ident">NumDescriptors</span>: <span class="self">self</span>.<span class="ident">num_descriptors</span>,
-            <span class="ident">Flags</span>: <span class="kw">if</span> <span class="self">self</span>.<span class="ident">shader_visible</span> {
-                ::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE</span>
-            } <span class="kw">else</span> {
-                ::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_FLAG_NONE</span>
-            },
-            <span class="ident">NodeMask</span>: <span class="self">self</span>.<span class="ident">node_mask</span>
+            <span class="ident">Flags</span>: ::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE</span>,
+            <span class="ident">NodeMask</span>: <span class="self">self</span>.<span class="ident">node_mask</span>,
         };
         <span class="kw">unsafe</span> {
             <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">ret</span> <span class="op">=</span> ::<span class="ident">std</span>::<span class="ident">mem</span>::<span class="ident">uninitialized</span>();
@@ -522,7 +630,28 @@
                 <span class="kw-2">&amp;</span><span class="ident">desc</span>, <span class="op">&amp;</span> ::<span class="ident">dxguid</span>::<span class="ident">IID_ID3D12DescriptorHeap</span>,
                 <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">ret</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _ <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _
             );
-            <span class="ident">WinError</span>::<span class="ident">from_hresult_or_ok</span>(<span class="ident">hr</span>, <span class="op">||</span> <span class="ident">CbvSrvUavHeap</span>{
+            <span class="ident">WinError</span>::<span class="ident">from_hresult_or_ok</span>(<span class="ident">hr</span>, <span class="op">||</span> <span class="ident">CsuHeapSv</span>{
+                <span class="ident">ptr</span>: <span class="ident">ComPtr</span>::<span class="ident">new</span>(<span class="ident">ret</span>),
+                <span class="ident">num_descriptors</span>: <span class="self">self</span>.<span class="ident">num_descriptors</span>,
+                <span class="ident">handle_increment_size</span>: <span class="ident">device</span>.<span class="ident">ptr</span>.<span class="ident">GetDescriptorHandleIncrementSize</span>(::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV</span>)
+            })
+        }
+    }
+
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">build_csu_heap</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">device</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">Device</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">CsuHeapNsv</span>, <span class="ident">WinError</span><span class="op">&gt;</span> {
+        <span class="kw">let</span> <span class="ident">desc</span> <span class="op">=</span> ::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_DESC</span>{
+            <span class="ident">Type</span>: ::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV</span>,
+            <span class="ident">NumDescriptors</span>: <span class="self">self</span>.<span class="ident">num_descriptors</span>,
+            <span class="ident">Flags</span>: ::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_FLAG_NONE</span>,
+            <span class="ident">NodeMask</span>: <span class="self">self</span>.<span class="ident">node_mask</span>,
+        };
+        <span class="kw">unsafe</span> {
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">ret</span> <span class="op">=</span> ::<span class="ident">std</span>::<span class="ident">mem</span>::<span class="ident">uninitialized</span>();
+            <span class="kw">let</span> <span class="ident">hr</span> <span class="op">=</span> <span class="ident">device</span>.<span class="ident">ptr</span>.<span class="ident">CreateDescriptorHeap</span>(
+                <span class="kw-2">&amp;</span><span class="ident">desc</span>, <span class="op">&amp;</span> ::<span class="ident">dxguid</span>::<span class="ident">IID_ID3D12DescriptorHeap</span>,
+                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">ret</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _ <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _
+            );
+            <span class="ident">WinError</span>::<span class="ident">from_hresult_or_ok</span>(<span class="ident">hr</span>, <span class="op">||</span> <span class="ident">CsuHeapNsv</span>{
                 <span class="ident">ptr</span>: <span class="ident">ComPtr</span>::<span class="ident">new</span>(<span class="ident">ret</span>),
                 <span class="ident">num_descriptors</span>: <span class="self">self</span>.<span class="ident">num_descriptors</span>,
                 <span class="ident">handle_increment_size</span>: <span class="ident">device</span>.<span class="ident">ptr</span>.<span class="ident">GetDescriptorHandleIncrementSize</span>(::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV</span>)
@@ -572,15 +701,11 @@
         }
     }
 
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">build_sampler_heap</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">device</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">Device</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">SamplerHeap</span>, <span class="ident">WinError</span><span class="op">&gt;</span> {
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">build_sampler_heap_shader_visible</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">device</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">Device</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">SamplerHeapSv</span>, <span class="ident">WinError</span><span class="op">&gt;</span> {
         <span class="kw">let</span> <span class="ident">desc</span> <span class="op">=</span> ::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_DESC</span>{
             <span class="ident">Type</span>: ::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_TYPE_SAMPLER</span>,
             <span class="ident">NumDescriptors</span>: <span class="self">self</span>.<span class="ident">num_descriptors</span>,
-            <span class="ident">Flags</span>: <span class="kw">if</span> <span class="self">self</span>.<span class="ident">shader_visible</span> {
-                ::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE</span>
-            } <span class="kw">else</span> {
-                ::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_FLAG_NONE</span>
-            },
+            <span class="ident">Flags</span>: ::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE</span>,
             <span class="ident">NodeMask</span>: <span class="self">self</span>.<span class="ident">node_mask</span>
         };
         <span class="kw">unsafe</span> {
@@ -589,7 +714,28 @@
                 <span class="kw-2">&amp;</span><span class="ident">desc</span>, <span class="op">&amp;</span> ::<span class="ident">dxguid</span>::<span class="ident">IID_ID3D12DescriptorHeap</span>,
                 <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">ret</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _ <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _
             );
-            <span class="ident">WinError</span>::<span class="ident">from_hresult_or_ok</span>(<span class="ident">hr</span>, <span class="op">||</span> <span class="ident">SamplerHeap</span>{
+            <span class="ident">WinError</span>::<span class="ident">from_hresult_or_ok</span>(<span class="ident">hr</span>, <span class="op">||</span> <span class="ident">SamplerHeapSv</span>{
+                <span class="ident">ptr</span>: <span class="ident">ComPtr</span>::<span class="ident">new</span>(<span class="ident">ret</span>),
+                <span class="ident">num_descriptors</span>: <span class="self">self</span>.<span class="ident">num_descriptors</span>,
+                <span class="ident">handle_increment_size</span>: <span class="ident">device</span>.<span class="ident">ptr</span>.<span class="ident">GetDescriptorHandleIncrementSize</span>(::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_TYPE_SAMPLER</span>)
+            })
+        }
+    }
+
+    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">build_sampler_heap</span>(<span class="kw-2">&amp;</span><span class="self">self</span>, <span class="ident">device</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">Device</span>) <span class="op">-&gt;</span> <span class="prelude-ty">Result</span><span class="op">&lt;</span><span class="ident">SamplerHeapNsv</span>, <span class="ident">WinError</span><span class="op">&gt;</span> {
+        <span class="kw">let</span> <span class="ident">desc</span> <span class="op">=</span> ::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_DESC</span>{
+            <span class="ident">Type</span>: ::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_TYPE_SAMPLER</span>,
+            <span class="ident">NumDescriptors</span>: <span class="self">self</span>.<span class="ident">num_descriptors</span>,
+            <span class="ident">Flags</span>: ::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_FLAG_NONE</span>,
+            <span class="ident">NodeMask</span>: <span class="self">self</span>.<span class="ident">node_mask</span>
+        };
+        <span class="kw">unsafe</span> {
+            <span class="kw">let</span> <span class="kw-2">mut</span> <span class="ident">ret</span> <span class="op">=</span> ::<span class="ident">std</span>::<span class="ident">mem</span>::<span class="ident">uninitialized</span>();
+            <span class="kw">let</span> <span class="ident">hr</span> <span class="op">=</span> <span class="ident">device</span>.<span class="ident">ptr</span>.<span class="ident">CreateDescriptorHeap</span>(
+                <span class="kw-2">&amp;</span><span class="ident">desc</span>, <span class="op">&amp;</span> ::<span class="ident">dxguid</span>::<span class="ident">IID_ID3D12DescriptorHeap</span>,
+                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">ret</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _ <span class="kw">as</span> <span class="kw-2">*</span><span class="kw-2">mut</span> <span class="kw-2">*</span><span class="kw-2">mut</span> _
+            );
+            <span class="ident">WinError</span>::<span class="ident">from_hresult_or_ok</span>(<span class="ident">hr</span>, <span class="op">||</span> <span class="ident">SamplerHeapNsv</span>{
                 <span class="ident">ptr</span>: <span class="ident">ComPtr</span>::<span class="ident">new</span>(<span class="ident">ret</span>),
                 <span class="ident">num_descriptors</span>: <span class="self">self</span>.<span class="ident">num_descriptors</span>,
                 <span class="ident">handle_increment_size</span>: <span class="ident">device</span>.<span class="ident">ptr</span>.<span class="ident">GetDescriptorHandleIncrementSize</span>(::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_TYPE_SAMPLER</span>)
@@ -598,19 +744,39 @@
     }
 }
 
-<span class="doccomment">/// a heap that can hold cbv, srv and uavs.</span>
-<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Debug</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">CbvSrvUavHeap</span> {
-    <span class="kw">pub</span> <span class="ident">ptr</span>: <span class="ident">ComPtr</span><span class="op">&lt;</span><span class="ident">ID3D12DescriptorHeap</span><span class="op">&gt;</span>,
-    <span class="ident">num_descriptors</span>: <span class="ident">u32</span>,
-    <span class="ident">handle_increment_size</span>: <span class="ident">u32</span>,
-}
-
-<span class="kw">impl</span> <span class="ident">CbvSrvUavHeap</span>{
+<span class="kw">pub</span> <span class="kw">trait</span> <span class="ident">CsuHeap</span>: <span class="ident">DescriptorHeap</span> {
     <span class="doccomment">/// create a srv on this heap at `index`.</span>
     <span class="doccomment">/// `None` resource creates a null-binding providing 0 reads and discared writes.</span>
     <span class="doccomment">/// `None` desc creates a default view if possible, inheriting resource format and descriptions</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">create_srv</span>(
+    <span class="kw">fn</span> <span class="ident">create_srv</span>(
+        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">device</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">Device</span>,
+        <span class="ident">resource</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">RawResource</span><span class="op">&gt;</span>,  <span class="comment">// TODO: typed resources?</span>
+        <span class="ident">desc</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">SrvDesc</span><span class="op">&gt;</span>,
+        <span class="ident">index</span>: <span class="ident">u32</span>
+    );
+
+    <span class="doccomment">/// create a uav on this heap at `index`.</span>
+    <span class="doccomment">/// `None` resource creates a null-binding providing 0 reads and discared writes.</span>
+    <span class="doccomment">/// `None` desc creates a default view if possible, inheriting resource format and descriptions. [more info](https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn788674(v=vs.85).aspx)</span>
+    <span class="kw">fn</span> <span class="ident">create_uav</span>(
+        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">device</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">Device</span>,
+        <span class="ident">resource</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">RawResource</span><span class="op">&gt;</span>,  <span class="comment">// TODO: typed resources?</span>
+        <span class="ident">counter</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">RawResource</span><span class="op">&gt;</span>,
+        <span class="ident">desc</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">SrvDesc</span><span class="op">&gt;</span>,
+        <span class="ident">index</span>: <span class="ident">u32</span>
+    );
+
+    <span class="doccomment">/// create a cbv on this heap at `index`.</span>
+    <span class="doccomment">/// TODO: double check optional desc</span>
+    <span class="kw">fn</span> <span class="ident">create_cbv</span>(
+        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">device</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">Device</span>, <span class="ident">desc</span>: <span class="kw-2">&amp;</span><span class="ident">CbvDesc</span>, <span class="ident">index</span>: <span class="ident">u32</span>
+    );
+}
+
+<span class="macro">macro_rules</span><span class="macro">!</span> <span class="ident">impl_csu_heap</span> {
+    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">Heap</span>: <span class="ident">ty</span>) <span class="op">=&gt;</span> {
+<span class="kw">impl</span> <span class="ident">CsuHeap</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">Heap</span>{
+    <span class="kw">fn</span> <span class="ident">create_srv</span>(
         <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">device</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">Device</span>,
         <span class="ident">resource</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">RawResource</span><span class="op">&gt;</span>,  <span class="comment">// TODO: typed resources?</span>
         <span class="ident">desc</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">SrvDesc</span><span class="op">&gt;</span>,
@@ -634,11 +800,8 @@
             )
         }
     }
-
-    <span class="doccomment">/// create a uav on this heap at `index`.</span>
-    <span class="doccomment">/// `None` resource creates a null-binding providing 0 reads and discared writes.</span>
-    <span class="doccomment">/// `None` desc creates a default view if possible, inheriting resource format and descriptions. [more info](https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn788674(v=vs.85).aspx)</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">create_uav</span>(
+    
+    <span class="kw">fn</span> <span class="ident">create_uav</span>(
         <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">device</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">Device</span>,
         <span class="ident">resource</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">RawResource</span><span class="op">&gt;</span>,  <span class="comment">// TODO: typed resources?</span>
         <span class="ident">counter</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">RawResource</span><span class="op">&gt;</span>,
@@ -669,9 +832,7 @@
         }
     }
 
-    <span class="doccomment">/// create a cbv on this heap at `index`.</span>
-    <span class="doccomment">/// TODO: double check optional desc</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">create_cbv</span>(
+    <span class="kw">fn</span> <span class="ident">create_cbv</span>(
         <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">device</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">Device</span>, <span class="ident">desc</span>: <span class="kw-2">&amp;</span><span class="ident">CbvDesc</span>, <span class="ident">index</span>: <span class="ident">u32</span>
     ) {
         <span class="kw">unsafe</span> {
@@ -682,6 +843,27 @@
         }
     }
 }
+    }
+}
+
+<span class="doccomment">/// a heap that can hold cbv, srv and uavs, that is not shader visible.</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">CsuHeapNsv</span> {
+    <span class="kw">pub</span> <span class="ident">ptr</span>: <span class="ident">ComPtr</span><span class="op">&lt;</span><span class="ident">ID3D12DescriptorHeap</span><span class="op">&gt;</span>,
+    <span class="ident">num_descriptors</span>: <span class="ident">u32</span>,
+    <span class="ident">handle_increment_size</span>: <span class="ident">u32</span>,
+}
+
+<span class="doccomment">/// a heap that can hold cbv, srv and uavs, that is shader visible.</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">CsuHeapSv</span> {
+    <span class="kw">pub</span> <span class="ident">ptr</span>: <span class="ident">ComPtr</span><span class="op">&lt;</span><span class="ident">ID3D12DescriptorHeap</span><span class="op">&gt;</span>,
+    <span class="ident">num_descriptors</span>: <span class="ident">u32</span>,
+    <span class="ident">handle_increment_size</span>: <span class="ident">u32</span>,
+}
+
+<span class="macro">impl_csu_heap</span><span class="macro">!</span>(<span class="ident">CsuHeapNsv</span>);
+<span class="macro">impl_csu_heap</span><span class="macro">!</span>(<span class="ident">CsuHeapSv</span>);
 
 <span class="doccomment">/// a heap that can hold render target views</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Debug</span>)]</span>
@@ -755,17 +937,33 @@
     }
 }
 
-<span class="doccomment">/// a heap that can hold samplers</span>
+<span class="doccomment">/// a heap that can hold samplers, that is not shader visible</span>
 <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Debug</span>)]</span>
-<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">SamplerHeap</span> {
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">SamplerHeapNsv</span> {
     <span class="kw">pub</span> <span class="ident">ptr</span>: <span class="ident">ComPtr</span><span class="op">&lt;</span><span class="ident">ID3D12DescriptorHeap</span><span class="op">&gt;</span>,
     <span class="ident">num_descriptors</span>: <span class="ident">u32</span>,
     <span class="ident">handle_increment_size</span>: <span class="ident">u32</span>,
 }
 
-<span class="kw">impl</span> <span class="ident">SamplerHeap</span> {
+<span class="doccomment">/// a heap that can hold samplers, that is shader visible</span>
+<span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Clone</span>, <span class="ident">Debug</span>)]</span>
+<span class="kw">pub</span> <span class="kw">struct</span> <span class="ident">SamplerHeapSv</span> {
+    <span class="kw">pub</span> <span class="ident">ptr</span>: <span class="ident">ComPtr</span><span class="op">&lt;</span><span class="ident">ID3D12DescriptorHeap</span><span class="op">&gt;</span>,
+    <span class="ident">num_descriptors</span>: <span class="ident">u32</span>,
+    <span class="ident">handle_increment_size</span>: <span class="ident">u32</span>,
+}
+
+<span class="kw">pub</span> <span class="kw">trait</span> <span class="ident">SamplerHeap</span>: <span class="ident">DescriptorHeap</span> {
     <span class="doccomment">/// create a sampler object on the heap</span>
-    <span class="kw">pub</span> <span class="kw">fn</span> <span class="ident">create_sampler</span>(
+    <span class="kw">fn</span> <span class="ident">create_sampler</span>(
+        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">device</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">Device</span>, <span class="ident">desc</span>: <span class="kw-2">&amp;</span><span class="ident">SamplerDesc</span>, <span class="ident">index</span>: <span class="ident">u32</span>
+    );
+}
+
+<span class="macro">macro_rules</span><span class="macro">!</span> <span class="ident">impl_sampler_heap</span> {
+    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">Heap</span>: <span class="ident">ty</span>) <span class="op">=&gt;</span> {
+<span class="kw">impl</span> <span class="ident">SamplerHeap</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">Heap</span> {
+    <span class="kw">fn</span> <span class="ident">create_sampler</span>(
         <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">device</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">Device</span>, <span class="ident">desc</span>: <span class="kw-2">&amp;</span><span class="ident">SamplerDesc</span>, <span class="ident">index</span>: <span class="ident">u32</span>
     ) {
         <span class="kw">unsafe</span> {
@@ -776,11 +974,18 @@
         }
     }
 }
+    }
+}
+
+<span class="macro">impl_sampler_heap</span><span class="macro">!</span>(<span class="ident">SamplerHeapNsv</span>);
+<span class="macro">impl_sampler_heap</span><span class="macro">!</span>(<span class="ident">SamplerHeapSv</span>);
 
 <span class="doccomment">/// represents a descriptor heap</span>
 <span class="kw">pub</span> <span class="kw">trait</span> <span class="ident">DescriptorHeap</span> {
-    <span class="kw">type</span> <span class="ident">CpuHandle</span>;
-    <span class="kw">type</span> <span class="ident">GpuHandle</span>;
+    <span class="kw">type</span> <span class="ident">CpuHandle</span>: <span class="ident">Into</span><span class="op">&lt;</span>::<span class="ident">winapi</span>::<span class="ident">D3D12_CPU_DESCRIPTOR_HANDLE</span><span class="op">&gt;</span>;
+    <span class="kw">type</span> <span class="ident">GpuHandle</span>: <span class="ident">Into</span><span class="op">&lt;</span>::<span class="ident">winapi</span>::<span class="ident">D3D12_GPU_DESCRIPTOR_HANDLE</span><span class="op">&gt;</span>;
+    <span class="doccomment">/// get the raw pointer</span>
+    <span class="kw">fn</span> <span class="ident">as_raw_ptr</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">ComPtr</span><span class="op">&lt;</span><span class="ident">ID3D12DescriptorHeap</span><span class="op">&gt;</span>;
 
     <span class="doccomment">/// get type of the heap</span>
     <span class="kw">fn</span> <span class="ident">get_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> ::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_TYPE</span>;
@@ -791,12 +996,6 @@
     <span class="doccomment">/// get Gpu handle of a descriptor at `offset` on the heap</span>
     <span class="kw">fn</span> <span class="ident">get_gpu_handle</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">offset</span>: <span class="ident">u32</span>) <span class="op">-&gt;</span> <span class="self">Self</span>::<span class="ident">GpuHandle</span>;
 
-    <span class="doccomment">/// perform immediate copy of a slice of descriptors on CPU side through the given device</span>
-    <span class="kw">fn</span> <span class="ident">copy_descriptors_to</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">dst</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">Self</span>, <span class="ident">device</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">Device</span>,
-        <span class="ident">src_offset</span>: <span class="ident">u32</span>, <span class="ident">dst_offset</span>: <span class="ident">u32</span>, <span class="ident">num_descriptors</span>: <span class="ident">u32</span>
-    );
-
     <span class="doccomment">/// get the number of descriptors this heap can hold</span>
     <span class="kw">fn</span> <span class="ident">len</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">u32</span>;
 
@@ -804,8 +1003,8 @@
     <span class="kw">fn</span> <span class="ident">get_handle_increment_size</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">u32</span>;
 }
 
-<span class="macro">macro_rules</span><span class="macro">!</span> <span class="ident">impl_dh</span> {
-    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">Heap</span>: <span class="ident">ty</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ptr</span>: <span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">msize</span>: <span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">item_size</span>: <span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">Type</span>: <span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">CpuHandle</span>: <span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">GpuHandle</span>: <span class="ident">ident</span>) <span class="op">=&gt;</span> {
+<span class="macro">macro_rules</span><span class="macro">!</span> <span class="ident">impl_handles</span> {
+    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">CpuHandle</span>: <span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">GpuHandle</span>: <span class="ident">ident</span>) <span class="op">=&gt;</span> {
         <span class="attribute">#[<span class="ident">derive</span>(<span class="ident">Copy</span>, <span class="ident">Clone</span>, <span class="ident">Debug</span>)]</span>
         <span class="attribute">#[<span class="ident">repr</span>(<span class="ident">C</span>)]</span>
         <span class="kw">pub</span> <span class="kw">struct</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">CpuHandle</span> {
@@ -831,13 +1030,27 @@
                 <span class="kw">unsafe</span> { ::<span class="ident">std</span>::<span class="ident">mem</span>::<span class="ident">transmute</span>(<span class="ident">h</span>) }
             }
         }
+    }
+}
 
+<span class="macro">impl_handles</span><span class="macro">!</span>(<span class="ident">CpuCsuHandle</span>, <span class="ident">GpuCsuHandle</span>);
+<span class="macro">impl_handles</span><span class="macro">!</span>(<span class="ident">CpuRtvHandle</span>, <span class="ident">GpuRtvHandle</span>);
+<span class="macro">impl_handles</span><span class="macro">!</span>(<span class="ident">CpuDsvHandle</span>, <span class="ident">GpuDsvHandle</span>);
+<span class="macro">impl_handles</span><span class="macro">!</span>(<span class="ident">CpuSamplerHandle</span>, <span class="ident">GpuSamplerHandle</span>);
+
+<span class="macro">macro_rules</span><span class="macro">!</span> <span class="ident">impl_dh</span> {
+    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">Heap</span>: <span class="ident">ty</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">ptr</span>: <span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">msize</span>: <span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">item_size</span>: <span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">Type</span>: <span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">CpuHandle</span>: <span class="ident">ident</span>, <span class="macro-nonterminal">$</span><span class="macro-nonterminal">GpuHandle</span>: <span class="ident">ident</span>) <span class="op">=&gt;</span> {
         <span class="kw">impl</span> <span class="ident">DescriptorHeap</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">Heap</span> {
             <span class="kw">type</span> <span class="ident">GpuHandle</span> <span class="op">=</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">GpuHandle</span>;
             <span class="kw">type</span> <span class="ident">CpuHandle</span> <span class="op">=</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">CpuHandle</span>;
             <span class="attribute">#[<span class="ident">inline</span>]</span>
             <span class="kw">fn</span> <span class="ident">get_type</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> ::<span class="ident">winapi</span>::<span class="ident">D3D12_DESCRIPTOR_HEAP_TYPE</span> {
                 <span class="macro-nonterminal">$</span><span class="macro-nonterminal">Type</span>
+            }
+
+            <span class="attribute">#[<span class="ident">inline</span>]</span>
+            <span class="kw">fn</span> <span class="ident">as_raw_ptr</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">ComPtr</span><span class="op">&lt;</span><span class="ident">ID3D12DescriptorHeap</span><span class="op">&gt;</span> {
+                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>.<span class="macro-nonterminal">$</span><span class="macro-nonterminal">ptr</span>
             }
 
             <span class="kw">fn</span> <span class="ident">get_cpu_handle</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">offset</span>: <span class="ident">u32</span>) <span class="op">-&gt;</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">CpuHandle</span> {
@@ -864,23 +1077,6 @@
                 <span class="ident">ret</span>
             }
 
-            <span class="kw">fn</span> <span class="ident">copy_descriptors_to</span>(
-                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">dst</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">Self</span>, <span class="ident">device</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">Device</span>,
-                <span class="ident">src_offset</span>: <span class="ident">u32</span>, <span class="ident">dst_offset</span>: <span class="ident">u32</span>, <span class="ident">num_descriptors</span>: <span class="ident">u32</span>
-            ) {
-                <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">src_offset</span><span class="op">+</span><span class="ident">num_descriptors</span><span class="op">&lt;=</span><span class="self">self</span>.<span class="macro-nonterminal">$</span><span class="macro-nonterminal">msize</span>);
-                <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">dst_offset</span><span class="op">+</span><span class="ident">num_descriptors</span><span class="op">&lt;=</span><span class="ident">dst</span>.<span class="macro-nonterminal">$</span><span class="macro-nonterminal">msize</span>);
-                <span class="kw">let</span> <span class="ident">heap_type</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">get_type</span>();
-                <span class="kw">unsafe</span> {
-                    <span class="ident">device</span>.<span class="ident">ptr</span>.<span class="ident">CopyDescriptorsSimple</span>(
-                        <span class="ident">num_descriptors</span>,
-                        <span class="ident">dst</span>.<span class="ident">get_cpu_handle</span>(<span class="ident">dst_offset</span>).<span class="ident">into</span>(),
-                        <span class="self">self</span>.<span class="ident">get_cpu_handle</span>(<span class="ident">src_offset</span>).<span class="ident">into</span>(),
-                        <span class="ident">heap_type</span>
-                    )
-                }
-            }
-
             <span class="attribute">#[<span class="ident">inline</span>]</span>
             <span class="kw">fn</span> <span class="ident">len</span>(<span class="kw-2">&amp;</span><span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">u32</span> { <span class="self">self</span>.<span class="macro-nonterminal">$</span><span class="macro-nonterminal">msize</span> }
 
@@ -890,10 +1086,42 @@
     }
 }
 
-<span class="macro">impl_dh</span><span class="macro">!</span>(<span class="ident">CbvSrvUavHeap</span>, <span class="ident">ptr</span>, <span class="ident">num_descriptors</span>, <span class="ident">handle_increment_size</span>, <span class="ident">D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV</span>, <span class="ident">CpuCsuHandle</span>, <span class="ident">GpuCsuHandle</span>);
+<span class="macro">impl_dh</span><span class="macro">!</span>(<span class="ident">CsuHeapSv</span>, <span class="ident">ptr</span>, <span class="ident">num_descriptors</span>, <span class="ident">handle_increment_size</span>, <span class="ident">D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV</span>, <span class="ident">CpuCsuHandle</span>, <span class="ident">GpuCsuHandle</span>);
+<span class="macro">impl_dh</span><span class="macro">!</span>(<span class="ident">CsuHeapNsv</span>, <span class="ident">ptr</span>, <span class="ident">num_descriptors</span>, <span class="ident">handle_increment_size</span>, <span class="ident">D3D12_DESCRIPTOR_HEAP_TYPE_CBV_SRV_UAV</span>, <span class="ident">CpuCsuHandle</span>, <span class="ident">GpuCsuHandle</span>);
 <span class="macro">impl_dh</span><span class="macro">!</span>(<span class="ident">DsvHeap</span>, <span class="ident">ptr</span>, <span class="ident">num_descriptors</span>, <span class="ident">handle_increment_size</span>,  <span class="ident">D3D12_DESCRIPTOR_HEAP_TYPE_DSV</span>, <span class="ident">CpuDsvHandle</span>, <span class="ident">GpuDsvHandle</span>);
 <span class="macro">impl_dh</span><span class="macro">!</span>(<span class="ident">RtvHeap</span>, <span class="ident">ptr</span>, <span class="ident">num_descriptors</span>, <span class="ident">handle_increment_size</span>, <span class="ident">D3D12_DESCRIPTOR_HEAP_TYPE_RTV</span>, <span class="ident">CpuRtvHandle</span>, <span class="ident">GpuRtvHandle</span>);
-<span class="macro">impl_dh</span><span class="macro">!</span>(<span class="ident">SamplerHeap</span>, <span class="ident">ptr</span>, <span class="ident">num_descriptors</span>, <span class="ident">handle_increment_size</span>, <span class="ident">D3D12_DESCRIPTOR_HEAP_TYPE_SAMPLER</span>, <span class="ident">CpuSamplerHandle</span>, <span class="ident">GpuSamplerHandle</span>);
+<span class="macro">impl_dh</span><span class="macro">!</span>(<span class="ident">SamplerHeapSv</span>, <span class="ident">ptr</span>, <span class="ident">num_descriptors</span>, <span class="ident">handle_increment_size</span>, <span class="ident">D3D12_DESCRIPTOR_HEAP_TYPE_SAMPLER</span>, <span class="ident">CpuSamplerHandle</span>, <span class="ident">GpuSamplerHandle</span>);
+<span class="macro">impl_dh</span><span class="macro">!</span>(<span class="ident">SamplerHeapNsv</span>, <span class="ident">ptr</span>, <span class="ident">num_descriptors</span>, <span class="ident">handle_increment_size</span>, <span class="ident">D3D12_DESCRIPTOR_HEAP_TYPE_SAMPLER</span>, <span class="ident">CpuSamplerHandle</span>, <span class="ident">GpuSamplerHandle</span>);
+
+<span class="doccomment">/// represents a descriptor heap that can be used as a copy source</span>
+<span class="kw">pub</span> <span class="kw">trait</span> <span class="ident">DescriptorHeapCopy</span><span class="op">&lt;</span><span class="ident">T</span>: <span class="ident">DescriptorHeap</span><span class="op">&gt;</span>: <span class="ident">DescriptorHeap</span> {
+    <span class="doccomment">/// perform immediate copy of a slice of descriptors on CPU timeslice</span>
+    <span class="doccomment">/// through the given device. `self` must not be shader visible.</span>
+    <span class="comment">// TODO: type check for shader visibility?</span>
+    <span class="kw">fn</span> <span class="ident">copy_descriptors_to</span>(
+        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">dst</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">T</span>, <span class="ident">device</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">Device</span>,
+        <span class="ident">src_offset</span>: <span class="ident">u32</span>, <span class="ident">dst_offset</span>: <span class="ident">u32</span>, <span class="ident">num_descriptors</span>: <span class="ident">u32</span>
+    ) {
+        <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">src_offset</span><span class="op">+</span><span class="ident">num_descriptors</span><span class="op">&lt;=</span><span class="self">self</span>.<span class="ident">len</span>());
+        <span class="macro">assert</span><span class="macro">!</span>(<span class="ident">dst_offset</span><span class="op">+</span><span class="ident">num_descriptors</span><span class="op">&lt;=</span><span class="ident">dst</span>.<span class="ident">len</span>());
+        <span class="kw">let</span> <span class="ident">heap_type</span> <span class="op">=</span> <span class="self">self</span>.<span class="ident">get_type</span>();
+        <span class="kw">unsafe</span> {
+            <span class="ident">device</span>.<span class="ident">ptr</span>.<span class="ident">CopyDescriptorsSimple</span>(
+                <span class="ident">num_descriptors</span>,
+                <span class="ident">dst</span>.<span class="ident">get_cpu_handle</span>(<span class="ident">dst_offset</span>).<span class="ident">into</span>(),
+                <span class="self">self</span>.<span class="ident">get_cpu_handle</span>(<span class="ident">src_offset</span>).<span class="ident">into</span>(),
+                <span class="ident">heap_type</span>
+            )
+        }
+    }
+}
+
+<span class="kw">impl</span> <span class="ident">DescriptorHeapCopy</span><span class="op">&lt;</span><span class="ident">CsuHeapSv</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">CsuHeapNsv</span> {}
+<span class="kw">impl</span> <span class="ident">DescriptorHeapCopy</span><span class="op">&lt;</span><span class="ident">CsuHeapNsv</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">CsuHeapNsv</span> {}
+<span class="kw">impl</span> <span class="ident">DescriptorHeapCopy</span><span class="op">&lt;</span><span class="ident">SamplerHeapSv</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">SamplerHeapNsv</span> {}
+<span class="kw">impl</span> <span class="ident">DescriptorHeapCopy</span><span class="op">&lt;</span><span class="ident">SamplerHeapNsv</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">SamplerHeapNsv</span> {}
+<span class="kw">impl</span> <span class="ident">DescriptorHeapCopy</span><span class="op">&lt;</span><span class="ident">RtvHeap</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">RtvHeap</span> {}
+<span class="kw">impl</span> <span class="ident">DescriptorHeapCopy</span><span class="op">&lt;</span><span class="ident">DsvHeap</span><span class="op">&gt;</span> <span class="kw">for</span> <span class="ident">DsvHeap</span> {}
 </pre>
 </section>
     <section id='search' class="content hidden"></section>

@@ -404,6 +404,10 @@
 <span id="359">359</span>
 <span id="360">360</span>
 <span id="361">361</span>
+<span id="362">362</span>
+<span id="363">363</span>
+<span id="364">364</span>
+<span id="365">365</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright 2017 Dasein Phaos aka. Luxko</span>
 <span class="comment">//</span>
@@ -611,7 +615,9 @@
         <span class="kw">const</span> <span class="ident">RESOURCE_STATE_INDEX_BUFFER</span>                <span class="op">=</span> <span class="number">0x2</span>;
         <span class="doccomment">/// a subresource should be in this state when used as a render target</span>
         <span class="kw">const</span> <span class="ident">RESOURCE_STATE_RENDER_TARGET</span>               <span class="op">=</span> <span class="number">0x4</span>;
-        <span class="doccomment">/// a subresource should be in this state when accessed via an UAV</span>
+        <span class="doccomment">/// a subresource should be in this state when accessed via an UAV.</span>
+        <span class="doccomment">/// when in this state, a resource can be accessed for RW from multiple</span>
+        <span class="doccomment">/// command queues simultaneously.</span>
         <span class="kw">const</span> <span class="ident">RESOURCE_STATE_UNORDERED_ACCESS</span>            <span class="op">=</span> <span class="number">0x8</span>;
         <span class="doccomment">/// a subresource should be in this state when used for depth write. mutual exclusive</span>
         <span class="kw">const</span> <span class="ident">RESOURCE_STATE_DEPTH_WRITE</span>                 <span class="op">=</span> <span class="number">0x10</span>;
@@ -633,7 +639,9 @@
         <span class="kw">const</span> <span class="ident">RESOURCE_STATE_RESOLVE_DEST</span>                <span class="op">=</span> <span class="number">0x1000</span>;
         <span class="doccomment">/// used as the src in a resolve operation</span>
         <span class="kw">const</span> <span class="ident">RESOURCE_STATE_RESOLVE_SOURCE</span>              <span class="op">=</span> <span class="number">0x2000</span>;
-        <span class="doccomment">/// required starting state for upload heaps</span>
+        <span class="doccomment">/// required starting state for upload heaps.</span>
+        <span class="doccomment">/// when in this state, a resource can be accessed for reading from</span>
+        <span class="doccomment">/// multiple command queues simultaneously.</span>
         <span class="kw">const</span> <span class="ident">RESOURCE_STATE_GENERIC_READ</span> <span class="op">=</span> ((((<span class="number">0x1</span><span class="op">|</span><span class="number">0x2</span>)<span class="op">|</span><span class="number">0x40</span>)<span class="op">|</span><span class="number">0x80</span>)<span class="op">|</span><span class="number">0x200</span>)<span class="op">|</span><span class="number">0x800</span>;
         <span class="doccomment">/// alias for `COMMON`</span>
         <span class="kw">const</span> <span class="ident">RESOURCE_STATE_PRESENT</span>                     <span class="op">=</span> <span class="number">0</span>;

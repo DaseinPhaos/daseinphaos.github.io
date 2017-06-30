@@ -48,7 +48,7 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../../src/redirect/resource/mod.rs.html#9-359' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../../src/redirect/resource/mod.rs.html#9-363' title='goto source code'>[src]</a></span></h1>
 <div class='docblock'><p>resource</p>
 </div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
 <table>
@@ -599,7 +599,9 @@ before subsequent uav accesses can begin</p>
                            <td><a class="constant" href="constant.RESOURCE_STATE_GENERIC_READ.html"
                                   title='constant redirect::resource::RESOURCE_STATE_GENERIC_READ'>RESOURCE_STATE_GENERIC_READ</a></td>
                            <td class='docblock-short'>
-                                <p>required starting state for upload heaps</p>
+                                <p>required starting state for upload heaps.
+when in this state, a resource can be accessed for reading from
+multiple command queues simultaneously.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>
@@ -676,7 +678,9 @@ before subsequent uav accesses can begin</p>
                            <td><a class="constant" href="constant.RESOURCE_STATE_UNORDERED_ACCESS.html"
                                   title='constant redirect::resource::RESOURCE_STATE_UNORDERED_ACCESS'>RESOURCE_STATE_UNORDERED_ACCESS</a></td>
                            <td class='docblock-short'>
-                                <p>a subresource should be in this state when accessed via an UAV</p>
+                                <p>a subresource should be in this state when accessed via an UAV.
+when in this state, a resource can be accessed for RW from multiple
+command queues simultaneously.</p>
                            </td>
                        </tr>
                        <tr class=' module-item'>

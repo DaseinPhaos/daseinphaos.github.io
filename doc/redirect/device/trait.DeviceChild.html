@@ -48,7 +48,7 @@
                    <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
                        [<span class='inner'>&#x2212;</span>]
                    </a>
-               </span><a class='srclink' href='../../src/redirect/device.rs.html#341-344' title='goto source code'>[src]</a></span></h1>
+               </span><a class='srclink' href='../../src/redirect/device.rs.html#313-316' title='goto source code'>[src]</a></span></h1>
 <pre class='rust trait'>pub trait DeviceChild {
     fn <a href='#tymethod.get_device' class='fnname'>get_device</a>(&amp;mut self) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../redirect/device/struct.Device.html" title="struct redirect::device::Device">Device</a>, <a class="struct" href="../../redirect/error/struct.WinError.html" title="struct redirect::error::WinError">WinError</a>&gt;;
 }</pre><div class='docblock'><p>a COM object created by some <code>Device</code></p>
@@ -65,13 +65,16 @@
 <li><code>impl DeviceChild for <a class="struct" href="../../redirect/resource/struct.Heap.html" title="struct redirect::resource::Heap">Heap</a></code></li>
 <li><code>impl DeviceChild for <a class="struct" href="../../redirect/resource/struct.RawResource.html" title="struct redirect::resource::RawResource">RawResource</a></code></li>
 <li><code>impl DeviceChild for <a class="struct" href="../../redirect/fence/struct.Fence.html" title="struct redirect::fence::Fence">Fence</a></code></li>
-<li><code>impl DeviceChild for <a class="struct" href="../../redirect/descriptor/heap/struct.CbvSrvUavHeap.html" title="struct redirect::descriptor::heap::CbvSrvUavHeap">CbvSrvUavHeap</a></code></li>
+<li><code>impl DeviceChild for <a class="struct" href="../../redirect/descriptor/heap/struct.CsuHeapSv.html" title="struct redirect::descriptor::heap::CsuHeapSv">CsuHeapSv</a></code></li>
+<li><code>impl DeviceChild for <a class="struct" href="../../redirect/descriptor/heap/struct.CsuHeapNsv.html" title="struct redirect::descriptor::heap::CsuHeapNsv">CsuHeapNsv</a></code></li>
 <li><code>impl DeviceChild for <a class="struct" href="../../redirect/descriptor/heap/struct.DsvHeap.html" title="struct redirect::descriptor::heap::DsvHeap">DsvHeap</a></code></li>
 <li><code>impl DeviceChild for <a class="struct" href="../../redirect/descriptor/heap/struct.RtvHeap.html" title="struct redirect::descriptor::heap::RtvHeap">RtvHeap</a></code></li>
-<li><code>impl DeviceChild for <a class="struct" href="../../redirect/descriptor/heap/struct.SamplerHeap.html" title="struct redirect::descriptor::heap::SamplerHeap">SamplerHeap</a></code></li>
+<li><code>impl DeviceChild for <a class="struct" href="../../redirect/descriptor/heap/struct.SamplerHeapSv.html" title="struct redirect::descriptor::heap::SamplerHeapSv">SamplerHeapSv</a></code></li>
+<li><code>impl DeviceChild for <a class="struct" href="../../redirect/descriptor/heap/struct.SamplerHeapNsv.html" title="struct redirect::descriptor::heap::SamplerHeapNsv">SamplerHeapNsv</a></code></li>
 <li><code>impl DeviceChild for <a class="struct" href="../../redirect/command/struct.DirectCommandList.html" title="struct redirect::command::DirectCommandList">DirectCommandList</a></code></li>
 <li><code>impl DeviceChild for <a class="struct" href="../../redirect/command/struct.Bundle.html" title="struct redirect::command::Bundle">Bundle</a></code></li>
-<li><code>impl DeviceChild for <a class="struct" href="../../redirect/pipeline/struct.PipelineState.html" title="struct redirect::pipeline::PipelineState">PipelineState</a></code></li>
+<li><code>impl DeviceChild for <a class="struct" href="../../redirect/pipeline/struct.GraphicsPipelineState.html" title="struct redirect::pipeline::GraphicsPipelineState">GraphicsPipelineState</a></code></li>
+<li><code>impl DeviceChild for <a class="struct" href="../../redirect/pipeline/struct.ComputePipelineState.html" title="struct redirect::pipeline::ComputePipelineState">ComputePipelineState</a></code></li>
 <li><code>impl DeviceChild for <a class="struct" href="../../redirect/pipeline/rootsig/struct.RootSig.html" title="struct redirect::pipeline::rootsig::RootSig">RootSig</a></code></li>
 <li><code>impl DeviceChild for <a class="struct" href="../../redirect/resource/struct.CommittedResource.html" title="struct redirect::resource::CommittedResource">CommittedResource</a></code></li>
 <li><code>impl DeviceChild for <a class="struct" href="../../redirect/resource/struct.PlacedResource.html" title="struct redirect::resource::PlacedResource">PlacedResource</a></code></li>

@@ -1,0 +1,1 @@
+initSidebarItems({"constant":[["ALL_ACCESS",""],["INITIAL_SET",""],["MANUAL_RESET",""],["MODIFY_STATE",""],["NONE",""],["SYNCHRONIZE",""]],"struct":[["AccessRight","see https://msdn.microsoft.com/en-us/library/windows/desktop/ms686670(v=vs.85).aspx"],["Event","RAII Win32 event"],["Flag",""]]});

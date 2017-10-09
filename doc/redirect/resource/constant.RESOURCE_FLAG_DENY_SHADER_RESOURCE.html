@@ -49,7 +49,10 @@
                        [<span class='inner'>&#x2212;</span>]
                    </a>
                </span></span></h1>
-<pre class='rust const'>pub const RESOURCE_FLAG_DENY_SHADER_RESOURCE: <a class="struct" href="../../redirect/resource/struct.ResourceFlags.html" title="struct redirect::resource::ResourceFlags">ResourceFlags</a><code> = </code><code>ResourceFlags{bits: 8,}</code></pre></section>
+<pre class='rust const'>pub const RESOURCE_FLAG_DENY_SHADER_RESOURCE: <a class="struct" href="../../redirect/resource/struct.ResourceFlags.html" title="struct redirect::resource::ResourceFlags">ResourceFlags</a><code> = </code><code>ResourceFlags{bits: 8,}</code></pre><div class='docblock'><p>Disallows a srv to be created for the resource,
+as well as disables the resource to transition into the state of SharedResources.
+Must be used with AllowDepthStencil</p>
+</div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

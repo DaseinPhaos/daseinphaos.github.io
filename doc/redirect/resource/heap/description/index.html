@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `description` mod in crate `redirect`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, description">
+
+    <title>redirect::resource::heap::description - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc mod">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Module description</p><div class="block items"><ul><li><a href="#structs">Structs</a></li><li><a href="#constants">Constants</a></li></ul></div><p class='location'><a href='../../../index.html'>redirect</a>::<wbr><a href='../../index.html'>resource</a>::<wbr><a href='../index.html'>heap</a></p><script>window.sidebarCurrent = {name: 'description', ty: 'mod', relpath: '../'};</script><script defer src="../sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Module <a href='../../../index.html'>redirect</a>::<wbr><a href='../../index.html'>resource</a>::<wbr><a href='../index.html'>heap</a>::<wbr><a class="mod" href=''>description</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../../src/redirect/resource/heap/description.rs.html#9-189' title='goto source code'>[src]</a></span></h1>
+<div class='docblock'><p>Types to describe a heap</p>
+</div><h2 id='structs' class='section-header'><a href="#structs">Structs</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.HeapAlignment.html"
+                                  title='struct redirect::resource::heap::description::HeapAlignment'>HeapAlignment</a></td>
+                           <td class='docblock-short'>
+                                <p>heap alignment</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.HeapDesc.html"
+                                  title='struct redirect::resource::heap::description::HeapDesc'>HeapDesc</a></td>
+                           <td class='docblock-short'>
+                                <p>description of a heap</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.HeapFlags.html"
+                                  title='struct redirect::resource::heap::description::HeapFlags'>HeapFlags</a></td>
+                           <td class='docblock-short'>
+                                <p>misc heap options. <a href="https://msdn.microsoft.com/library/windows/desktop/dn986730(v=vs.85).aspx">more info</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.HeapProperties.html"
+                                  title='struct redirect::resource::heap::description::HeapProperties'>HeapProperties</a></td>
+                           <td class='docblock-short'>
+                                <p>describes heap properties</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.HeapType.html"
+                                  title='struct redirect::resource::heap::description::HeapType'>HeapType</a></td>
+                           <td class='docblock-short'>
+                                <p><a href="https://msdn.microsoft.com/library/windows/desktop/dn770374(v=vs.85).aspx">heap type</a>.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.MemoryPoolPreference.html"
+                                  title='struct redirect::resource::heap::description::MemoryPoolPreference'>MemoryPoolPreference</a></td>
+                           <td class='docblock-short'>
+                                <p>memory pool preference. <a href="https://msdn.microsoft.com/library/windows/desktop/dn770381(v=vs.85).aspx">more info</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="struct" href="struct.PageProperty.html"
+                                  title='struct redirect::resource::heap::description::PageProperty'>PageProperty</a></td>
+                           <td class='docblock-short'>
+                                <p>cpu page properties.</p>
+                           </td>
+                       </tr></table><h2 id='constants' class='section-header'><a href="#constants">Constants</a></h2>
+<table>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_ALIGNMENT_DEFAULT.html"
+                                  title='constant redirect::resource::heap::description::HEAP_ALIGNMENT_DEFAULT'>HEAP_ALIGNMENT_DEFAULT</a></td>
+                           <td class='docblock-short'>
+                                <p>alias for 64kb, the default.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_ALIGNMENT_DEFAULT_MSAA_RESOURCE_PLACEMENT.html"
+                                  title='constant redirect::resource::heap::description::HEAP_ALIGNMENT_DEFAULT_MSAA_RESOURCE_PLACEMENT'>HEAP_ALIGNMENT_DEFAULT_MSAA_RESOURCE_PLACEMENT</a></td>
+                           <td class='docblock-short'>
+                                <p>4mb aligned. MSAA resource heap must use this alignment.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_ALIGNMENT_DEFAULT_RESOURCE_PLACEMENT.html"
+                                  title='constant redirect::resource::heap::description::HEAP_ALIGNMENT_DEFAULT_RESOURCE_PLACEMENT'>HEAP_ALIGNMENT_DEFAULT_RESOURCE_PLACEMENT</a></td>
+                           <td class='docblock-short'>
+                                <p>64kb aligned.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_ALLOW_ALL_BUFFERS_AND_TEXTURES.html"
+                                  title='constant redirect::resource::heap::description::HEAP_FLAG_ALLOW_ALL_BUFFERS_AND_TEXTURES'>HEAP_FLAG_ALLOW_ALL_BUFFERS_AND_TEXTURES</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_ALLOW_DISPLAY.html"
+                                  title='constant redirect::resource::heap::description::HEAP_FLAG_ALLOW_DISPLAY'>HEAP_FLAG_ALLOW_DISPLAY</a></td>
+                           <td class='docblock-short'>
+                                <p>the heap can contain swapchain surfaces</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_ALLOW_ONLY_BUFFERS.html"
+                                  title='constant redirect::resource::heap::description::HEAP_FLAG_ALLOW_ONLY_BUFFERS'>HEAP_FLAG_ALLOW_ONLY_BUFFERS</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_ALLOW_ONLY_NON_RT_DS_TEXTURES.html"
+                                  title='constant redirect::resource::heap::description::HEAP_FLAG_ALLOW_ONLY_NON_RT_DS_TEXTURES'>HEAP_FLAG_ALLOW_ONLY_NON_RT_DS_TEXTURES</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_ALLOW_ONLY_RT_DS_TEXTURES.html"
+                                  title='constant redirect::resource::heap::description::HEAP_FLAG_ALLOW_ONLY_RT_DS_TEXTURES'>HEAP_FLAG_ALLOW_ONLY_RT_DS_TEXTURES</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_ALLOW_WRITE_WATCH.html"
+                                  title='constant redirect::resource::heap::description::HEAP_FLAG_ALLOW_WRITE_WATCH'>HEAP_FLAG_ALLOW_WRITE_WATCH</a></td>
+                           <td class='docblock-short'>
+                                <p>allow tools to support <code>MEM_WRITE_WATCH</code></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_DENY_BUFFERS.html"
+                                  title='constant redirect::resource::heap::description::HEAP_FLAG_DENY_BUFFERS'>HEAP_FLAG_DENY_BUFFERS</a></td>
+                           <td class='docblock-short'>
+                                <p>the heap isn&#39;t allowed to contain buffers</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_DENY_NON_RT_DS_TEXTURES.html"
+                                  title='constant redirect::resource::heap::description::HEAP_FLAG_DENY_NON_RT_DS_TEXTURES'>HEAP_FLAG_DENY_NON_RT_DS_TEXTURES</a></td>
+                           <td class='docblock-short'>
+                                <p>the heap can&#39;t contain textures without <code>ALLOW_RENDER_TARGET</code> or <code>ALLOW_DEPTH_STENCIL</code> flags</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_DENY_RT_DS_TEXTURES.html"
+                                  title='constant redirect::resource::heap::description::HEAP_FLAG_DENY_RT_DS_TEXTURES'>HEAP_FLAG_DENY_RT_DS_TEXTURES</a></td>
+                           <td class='docblock-short'>
+                                <p>the heap can&#39;t store render target or depth stencil textures</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_HARDWARE_PROTECTED.html"
+                                  title='constant redirect::resource::heap::description::HEAP_FLAG_HARDWARE_PROTECTED'>HEAP_FLAG_HARDWARE_PROTECTED</a></td>
+                           <td class='docblock-short'>
+                                <p>unsupported</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_NONE.html"
+                                  title='constant redirect::resource::heap::description::HEAP_FLAG_NONE'>HEAP_FLAG_NONE</a></td>
+                           <td class='docblock-short'>
+                                <p>The default, no options specified.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_SHARED.html"
+                                  title='constant redirect::resource::heap::description::HEAP_FLAG_SHARED'>HEAP_FLAG_SHARED</a></td>
+                           <td class='docblock-short'>
+                                <p>a <a href="https://msdn.microsoft.com/library/windows/desktop/mt186623(v=vs.85).aspx">shared heap</a></p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_FLAG_SHARED_CROSS_ADAPTER.html"
+                                  title='constant redirect::resource::heap::description::HEAP_FLAG_SHARED_CROSS_ADAPTER'>HEAP_FLAG_SHARED_CROSS_ADAPTER</a></td>
+                           <td class='docblock-short'>
+                                <p>the heap can be shored across adapters</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_TYPE_CUSTOM.html"
+                                  title='constant redirect::resource::heap::description::HEAP_TYPE_CUSTOM'>HEAP_TYPE_CUSTOM</a></td>
+                           <td class='docblock-short'>
+                                <p>Custom heap for advanced usage.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_TYPE_DEFAULT.html"
+                                  title='constant redirect::resource::heap::description::HEAP_TYPE_DEFAULT'>HEAP_TYPE_DEFAULT</a></td>
+                           <td class='docblock-short'>
+                                <p>GPU RW, no CPU access. This is the default heap type.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_TYPE_READBACK.html"
+                                  title='constant redirect::resource::heap::description::HEAP_TYPE_READBACK'>HEAP_TYPE_READBACK</a></td>
+                           <td class='docblock-short'>
+                                <p>Optimal for CPU write.
+Best for GPU write-once, CPU readable data.
+Resources in this heap must be created with <code>COPY_DEST</code> state, and
+cannot be changed away from this.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.HEAP_TYPE_UPLOAD.html"
+                                  title='constant redirect::resource::heap::description::HEAP_TYPE_UPLOAD'>HEAP_TYPE_UPLOAD</a></td>
+                           <td class='docblock-short'>
+                                <p>Optimal for CPU write.
+Best for CPU write-once, GPU read-once data.
+Resources in this heap must be created with <code>GENERATE_READ</code> state, and
+cannot be changed away.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.MEMORY_POOL_L0.html"
+                                  title='constant redirect::resource::heap::description::MEMORY_POOL_L0'>MEMORY_POOL_L0</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.MEMORY_POOL_L1.html"
+                                  title='constant redirect::resource::heap::description::MEMORY_POOL_L1'>MEMORY_POOL_L1</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.MEMORY_POOL_UNKNOWN.html"
+                                  title='constant redirect::resource::heap::description::MEMORY_POOL_UNKNOWN'>MEMORY_POOL_UNKNOWN</a></td>
+                           <td class='docblock-short'>
+                                <p>The default pool preference.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAGE_PROPERTY_NOT_AVAILABLE.html"
+                                  title='constant redirect::resource::heap::description::PAGE_PROPERTY_NOT_AVAILABLE'>PAGE_PROPERTY_NOT_AVAILABLE</a></td>
+                           <td class='docblock-short'>
+                                <p>The CPU cannot access the heap, thus no property available.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAGE_PROPERTY_UNKNOWN.html"
+                                  title='constant redirect::resource::heap::description::PAGE_PROPERTY_UNKNOWN'>PAGE_PROPERTY_UNKNOWN</a></td>
+                           <td class='docblock-short'>
+                                <p>The default cpu page property.</p>
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAGE_PROPERTY_WRITE_BACK.html"
+                                  title='constant redirect::resource::heap::description::PAGE_PROPERTY_WRITE_BACK'>PAGE_PROPERTY_WRITE_BACK</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr>
+                       <tr class=' module-item'>
+                           <td><a class="constant" href="constant.PAGE_PROPERTY_WRITE_COMBINE.html"
+                                  title='constant redirect::resource::heap::description::PAGE_PROPERTY_WRITE_COMBINE'>PAGE_PROPERTY_WRITE_COMBINE</a></td>
+                           <td class='docblock-short'>
+                                
+                           </td>
+                       </tr></table></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../../";
+        window.currentCrate = "redirect";
+    </script>
+    <script src="../../../../main.js"></script>
+    <script defer src="../../../../search-index.js"></script>
+</body>
+</html>

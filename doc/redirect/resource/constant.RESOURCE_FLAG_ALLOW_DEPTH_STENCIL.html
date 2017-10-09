@@ -49,7 +49,19 @@
                        [<span class='inner'>&#x2212;</span>]
                    </a>
                </span></span></h1>
-<pre class='rust const'>pub const RESOURCE_FLAG_ALLOW_DEPTH_STENCIL: <a class="struct" href="../../redirect/resource/struct.ResourceFlags.html" title="struct redirect::resource::ResourceFlags">ResourceFlags</a><code> = </code><code>ResourceFlags{bits: 2,}</code></pre></section>
+<pre class='rust const'>pub const RESOURCE_FLAG_ALLOW_DEPTH_STENCIL: <a class="struct" href="../../redirect/resource/struct.ResourceFlags.html" title="struct redirect::resource::ResourceFlags">ResourceFlags</a><code> = </code><code>ResourceFlags{bits: 2,}</code></pre><div class='docblock'><p>Allow dsv on the resource, allow resource state transition to DepthWrite/DepthRead.
+- Texture format must support depth stencil capability at the current feature level.
+- Cannot be used with:
+  - Buffer,
+  - 4kb resource alignment,
+  - AllowRenderTarget,
+  - AllowUnorderedAccess,
+  - AllowSimultaneousAccess,
+  - 64KbStandardSwizzle,
+  - RowMajor,
+  - DenyRtDsTextures,
+  - AllowDisplay</p>
+</div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

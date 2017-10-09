@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["GpuVAddress","GPU virtual device"],["RawResource","a raw resource"],["ResourceChunkDesc","describes a chunk of resource"]]});

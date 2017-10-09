@@ -57,28 +57,33 @@
     pub cache: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../redirect/pipeline/struct.ComputePipelineStateCache.html" title="struct redirect::pipeline::ComputePipelineStateCache">ComputePipelineStateCache</a>&gt;,
     pub flags: <a class="struct" href="../../redirect/pipeline/struct.PipelineStateFlags.html" title="struct redirect::pipeline::PipelineStateFlags">PipelineStateFlags</a>,
 }</pre><h2 id='fields' class='fields small-section-header'>
-                       Fields<a href='#fields' class='anchor'></a></h2><span id='structfield.rootsig' class="structfield">
-                           <span id='rootsig.v' class='invisible'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.rootsig" class="structfield small-section-header">
+                           <a href="#structfield.rootsig" class="anchor field"></a>
+                           <span id="rootsig.v" class='invisible'>
                            <code>rootsig: &amp;'a <a class="struct" href="../../redirect/pipeline/rootsig/struct.RootSig.html" title="struct redirect::pipeline::rootsig::RootSig">RootSig</a></code>
-                           </span></span><span id='structfield.cs' class="structfield">
-                           <span id='cs.v' class='invisible'>
+                           </span></span><span id="structfield.cs" class="structfield small-section-header">
+                           <a href="#structfield.cs" class="anchor field"></a>
+                           <span id="cs.v" class='invisible'>
                            <code>cs: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../redirect/shader/struct.CsShaderBytecode.html" title="struct redirect::shader::CsShaderBytecode">CsShaderBytecode</a>&gt;</code>
-                           </span></span><span id='structfield.node_mask' class="structfield">
-                           <span id='node_mask.v' class='invisible'>
+                           </span></span><span id="structfield.node_mask" class="structfield small-section-header">
+                           <a href="#structfield.node_mask" class="anchor field"></a>
+                           <span id="node_mask.v" class='invisible'>
                            <code>node_mask: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
-                           </span></span><span id='structfield.cache' class="structfield">
-                           <span id='cache.v' class='invisible'>
+                           </span></span><span id="structfield.cache" class="structfield small-section-header">
+                           <a href="#structfield.cache" class="anchor field"></a>
+                           <span id="cache.v" class='invisible'>
                            <code>cache: <a class="enum" href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html" title="enum core::option::Option">Option</a>&lt;<a class="struct" href="../../redirect/pipeline/struct.ComputePipelineStateCache.html" title="struct redirect::pipeline::ComputePipelineStateCache">ComputePipelineStateCache</a>&gt;</code>
-                           </span></span><span id='structfield.flags' class="structfield">
-                           <span id='flags.v' class='invisible'>
+                           </span></span><span id="structfield.flags" class="structfield small-section-header">
+                           <a href="#structfield.flags" class="anchor field"></a>
+                           <span id="flags.v" class='invisible'>
                            <code>flags: <a class="struct" href="../../redirect/pipeline/struct.PipelineStateFlags.html" title="struct redirect::pipeline::PipelineStateFlags">PipelineStateFlags</a></code>
                            </span></span>
                     <h2 id='methods' class='small-section-header'>
                       Methods<a href='#methods' class='anchor'></a>
                     </h2>
                 <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="struct" href="../../redirect/pipeline/struct.ComputePipelineStateBuilder.html" title="struct redirect::pipeline::ComputePipelineStateBuilder">ComputePipelineStateBuilder</a>&lt;'a&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/redirect/pipeline/mod.rs.html#204-235' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>fn <a href='#method.new' class='fnname'>new</a>(root_signature: &amp;'a <a class="struct" href="../../redirect/pipeline/rootsig/struct.RootSig.html" title="struct redirect::pipeline::rootsig::RootSig">RootSig</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/redirect/pipeline/mod.rs.html#206-214' title='goto source code'>[src]</a></span></h4>
-<h4 id='method.build' class="method"><span id='build.v' class='invisible'><code>fn <a href='#method.build' class='fnname'>build</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: &amp;mut <a class="struct" href="../../redirect/device/struct.Device.html" title="struct redirect::device::Device">Device</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../redirect/pipeline/struct.ComputePipelineState.html" title="struct redirect::pipeline::ComputePipelineState">ComputePipelineState</a>, <a class="struct" href="../../redirect/error/struct.WinError.html" title="struct redirect::error::WinError">WinError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/redirect/pipeline/mod.rs.html#216-234' title='goto source code'>[src]</a></span></h4>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(root_signature: &amp;'a <a class="struct" href="../../redirect/pipeline/rootsig/struct.RootSig.html" title="struct redirect::pipeline::rootsig::RootSig">RootSig</a>) -&gt; Self</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/redirect/pipeline/mod.rs.html#206-214' title='goto source code'>[src]</a></span></h4>
+<h4 id='method.build' class="method"><span id='build.v' class='invisible'><code>pub fn <a href='#method.build' class='fnname'>build</a>(<br>&nbsp;&nbsp;&nbsp;&nbsp;&amp;mut self, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: &amp;mut <a class="struct" href="../../redirect/device/struct.Device.html" title="struct redirect::device::Device">Device</a><br>) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="../../redirect/pipeline/struct.ComputePipelineState.html" title="struct redirect::pipeline::ComputePipelineState">ComputePipelineState</a>, <a class="struct" href="../../redirect/error/struct.WinError.html" title="struct redirect::error::WinError">WinError</a>&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../src/redirect/pipeline/mod.rs.html#216-234' title='goto source code'>[src]</a></span></h4>
 </div>
             <h2 id='implementations' class='small-section-header'>
               Trait Implementations<a href='#implementations' class='anchor'></a>

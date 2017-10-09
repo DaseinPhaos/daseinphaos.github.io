@@ -49,7 +49,10 @@
                        [<span class='inner'>&#x2212;</span>]
                    </a>
                </span></span></h1>
-<pre class='rust const'>pub const RESOURCE_FLAG_ALLOW_SIMULTANEOUS_ACCESS: <a class="struct" href="../../redirect/resource/struct.ResourceFlags.html" title="struct redirect::resource::ResourceFlags">ResourceFlags</a><code> = </code><code>ResourceFlags{bits: 32,}</code></pre></section>
+<pre class='rust const'>pub const RESOURCE_FLAG_ALLOW_SIMULTANEOUS_ACCESS: <a class="struct" href="../../redirect/resource/struct.ResourceFlags.html" title="struct redirect::resource::ResourceFlags">ResourceFlags</a><code> = </code><code>ResourceFlags{bits: 32,}</code></pre><div class='docblock'><p>Allows a resource to be simultaneously accessed by multiple different queues, devices or processes
+- Cannot be used with Buffer, coz bbuffer always have this property..&gt;.&lt;
+- Cannot be used with MSAA</p>
+</div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

@@ -55,15 +55,18 @@
     pub rasterized_stream: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>,
 }</pre><div class='docblock'><p>stream output description</p>
 </div><h2 id='fields' class='fields small-section-header'>
-                       Fields<a href='#fields' class='anchor'></a></h2><span id='structfield.entries' class="structfield">
-                           <span id='entries.v' class='invisible'>
+                       Fields<a href='#fields' class='anchor'></a></h2><span id="structfield.entries" class="structfield small-section-header">
+                           <a href="#structfield.entries" class="anchor field"></a>
+                           <span id="entries.v" class='invisible'>
                            <code>entries: <a class="struct" href="../../../smallvec/struct.SmallVec.html" title="struct smallvec::SmallVec">SmallVec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="struct" href="../../../redirect/pipeline/so/struct.DeclarationEntry.html" title="struct redirect::pipeline::so::DeclarationEntry">DeclarationEntry</a>&lt;'a&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 8]</a>&gt;</code>
-                           </span></span><span id='structfield.strides' class="structfield">
-                           <span id='strides.v' class='invisible'>
+                           </span></span><span id="structfield.strides" class="structfield small-section-header">
+                           <a href="#structfield.strides" class="anchor field"></a>
+                           <span id="strides.v" class='invisible'>
                            <code>strides: <a class="struct" href="../../../smallvec/struct.SmallVec.html" title="struct smallvec::SmallVec">SmallVec</a>&lt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">[</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.array.html">; 8]</a>&gt;</code>
                            </span></span><div class='docblock'><p>buffer strides</p>
-</div><span id='structfield.rasterized_stream' class="structfield">
-                           <span id='rasterized_stream.v' class='invisible'>
+</div><span id="structfield.rasterized_stream" class="structfield small-section-header">
+                           <a href="#structfield.rasterized_stream" class="anchor field"></a>
+                           <span id="rasterized_stream.v" class='invisible'>
                            <code>rasterized_stream: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a></code>
                            </span></span><div class='docblock'><p>index of the stream to be sent to the rasterizer stage</p>
 </div>
@@ -71,9 +74,9 @@
                       Methods<a href='#methods' class='anchor'></a>
                     </h2>
                 <h3 id='impl' class='impl'><span class='in-band'><code>impl&lt;'a&gt; <a class="struct" href="../../../redirect/pipeline/so/struct.DescBuilder.html" title="struct redirect::pipeline::so::DescBuilder">DescBuilder</a>&lt;'a&gt;</code><a href='#impl' class='anchor'></a></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/redirect/pipeline/so.rs.html#51-74' title='goto source code'>[src]</a></span></h3>
-<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>fn <a href='#method.new' class='fnname'>new</a>(rasterized_stream: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="struct" href="../../../redirect/pipeline/so/struct.DescBuilder.html" title="struct redirect::pipeline::so::DescBuilder">DescBuilder</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/redirect/pipeline/so.rs.html#54-60' title='goto source code'>[src]</a></span></h4>
+<div class='impl-items'><h4 id='method.new' class="method"><span id='new.v' class='invisible'><code>pub fn <a href='#method.new' class='fnname'>new</a>(rasterized_stream: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a class="struct" href="../../../redirect/pipeline/so/struct.DescBuilder.html" title="struct redirect::pipeline::so::DescBuilder">DescBuilder</a>&lt;'a&gt;</code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/redirect/pipeline/so.rs.html#54-60' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>construction</p>
-</div><h4 id='method.build' class="method"><span id='build.v' class='invisible'><code>fn <a href='#method.build' class='fnname'>build</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="struct" href="../../../winapi/d3d12/struct.D3D12_STREAM_OUTPUT_DESC.html" title="struct winapi::d3d12::D3D12_STREAM_OUTPUT_DESC">D3D12_STREAM_OUTPUT_DESC</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/core/marker/struct.PhantomData.html" title="struct core::marker::PhantomData">PhantomData</a>&lt;&amp;<a class="struct" href="../../../redirect/pipeline/so/struct.DescBuilder.html" title="struct redirect::pipeline::so::DescBuilder">DescBuilder</a>&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/redirect/pipeline/so.rs.html#64-73' title='goto source code'>[src]</a></span></h4>
+</div><h4 id='method.build' class="method"><span id='build.v' class='invisible'><code>pub fn <a href='#method.build' class='fnname'>build</a>(&amp;self) -&gt; <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">(</a><a class="struct" href="../../../winapi/d3d12/struct.D3D12_STREAM_OUTPUT_DESC.html" title="struct winapi::d3d12::D3D12_STREAM_OUTPUT_DESC">D3D12_STREAM_OUTPUT_DESC</a>, <a class="struct" href="https://doc.rust-lang.org/nightly/core/marker/struct.PhantomData.html" title="struct core::marker::PhantomData">PhantomData</a>&lt;&amp;<a class="struct" href="../../../redirect/pipeline/so/struct.DescBuilder.html" title="struct redirect::pipeline::so::DescBuilder">DescBuilder</a>&gt;<a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.tuple.html">)</a></code></span><span class='out-of-band'><div class='ghost'></div><a class='srclink' href='../../../src/redirect/pipeline/so.rs.html#64-73' title='goto source code'>[src]</a></span></h4>
 <div class='docblock'><p>finalization</p>
 </div></div>
             <h2 id='implementations' class='small-section-header'>

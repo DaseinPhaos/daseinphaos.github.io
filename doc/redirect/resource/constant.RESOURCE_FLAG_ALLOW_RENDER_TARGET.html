@@ -49,7 +49,12 @@
                        [<span class='inner'>&#x2212;</span>]
                    </a>
                </span></span></h1>
-<pre class='rust const'>pub const RESOURCE_FLAG_ALLOW_RENDER_TARGET: <a class="struct" href="../../redirect/resource/struct.ResourceFlags.html" title="struct redirect::resource::ResourceFlags">ResourceFlags</a><code> = </code><code>ResourceFlags{bits: 1,}</code></pre></section>
+<pre class='rust const'>pub const RESOURCE_FLAG_ALLOW_RENDER_TARGET: <a class="struct" href="../../redirect/resource/struct.ResourceFlags.html" title="struct redirect::resource::ResourceFlags">ResourceFlags</a><code> = </code><code>ResourceFlags{bits: 1,}</code></pre><div class='docblock'><p>Allow the resource to be used as render target.
+- Should be used with format supporting render target capabilities
+  At current feature level.
+- Can&#39;t be used in conjunction with RowMajorLayout when ... (see doc for more)
+- Can&#39;t be useed with 4kb resource alignment, or AllowDepthStencil, pr DenyRtDsTextures</p>
+</div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

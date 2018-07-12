@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["BufferSlice","a structured slice into some buffer"],["DefaultBuffer","a committed buffer with GPU-only access"],["PlacedBuffer","A buffer placed on a heap of type `H`"],["ReadbackBuffer","a committed buffer with cpu-read access"],["UploadBuffer","a committed buffer with cpu-write access"]]});

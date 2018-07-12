@@ -438,20 +438,6 @@
 <span id="393">393</span>
 <span id="394">394</span>
 <span id="395">395</span>
-<span id="396">396</span>
-<span id="397">397</span>
-<span id="398">398</span>
-<span id="399">399</span>
-<span id="400">400</span>
-<span id="401">401</span>
-<span id="402">402</span>
-<span id="403">403</span>
-<span id="404">404</span>
-<span id="405">405</span>
-<span id="406">406</span>
-<span id="407">407</span>
-<span id="408">408</span>
-<span id="409">409</span>
 </pre><pre class="rust ">
 <span class="comment">// Copyright 2017 Dasein Phaos aka. Luxko</span>
 <span class="comment">//</span>
@@ -465,251 +451,94 @@
 
 <span class="kw">use</span> <span class="kw">super</span>::<span class="kw-2">*</span>;
 
-<span class="doccomment">/// common methods for a command list</span>
 <span class="kw">pub</span> <span class="kw">trait</span> <span class="ident">CommandList</span> {
+    <span class="comment">//  get raw ID3D12CommandList pointer</span>
+    <span class="kw">fn</span> <span class="ident">as_raw_ptr</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">ComPtr</span><span class="op">&lt;</span><span class="ident">ID3D12GraphicsCommandList</span><span class="op">&gt;</span>;
+
     <span class="doccomment">/// get type of this command list</span>
-    <span class="kw">fn</span> <span class="ident">get_type</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">CommandListType</span>;
-
-    <span class="doccomment">/// set the graphics root signature.</span>
-    <span class="kw">fn</span> <span class="ident">set_graphics_rootsig</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">rootsig</span>: <span class="kw-2">&amp;</span>::<span class="ident">pipeline</span>::<span class="ident">rootsig</span>::<span class="ident">RootSig</span>);
-
-    <span class="doccomment">/// set a constant in the graphics root signature</span>
-    <span class="kw">fn</span> <span class="ident">set_graphics_root_constant</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">value</span>: <span class="ident">u32</span>, <span class="ident">param_offset</span>: <span class="ident">u32</span>
-    );
-
-    <span class="doccomment">/// set a group of constants in the graphics root signature</span>
-    <span class="kw">fn</span> <span class="ident">set_graphics_root_constants</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">values</span>: <span class="kw-2">&amp;</span>[<span class="ident">u32</span>], <span class="ident">param_offset</span>: <span class="ident">u32</span>
-    ); 
-
-    <span class="doccomment">/// set a cbv in the graphics root signature</span>
-    <span class="kw">fn</span> <span class="ident">set_graphics_root_cbv</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">resource</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>
-    );
-
-    <span class="doccomment">/// set a srv in the graphics root signature</span>
-    <span class="kw">fn</span> <span class="ident">set_graphics_root_srv</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">resource</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>
-    );
-
-    <span class="doccomment">/// set a uav in the graphics root signature</span>
-    <span class="kw">fn</span> <span class="ident">set_graphics_root_uav</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">resource</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>
-    );
-
-    <span class="doccomment">/// set the compute root signature. TODO: distince root signatures</span>
-    <span class="kw">fn</span> <span class="ident">set_compute_rootsig</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">rootsig</span>: <span class="kw-2">&amp;</span>::<span class="ident">pipeline</span>::<span class="ident">rootsig</span>::<span class="ident">RootSig</span>);
-
-
-    <span class="doccomment">/// set a constant in the compute root signature</span>
-    <span class="kw">fn</span> <span class="ident">set_compute_root_constant</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">value</span>: <span class="ident">u32</span>, <span class="ident">param_offset</span>: <span class="ident">u32</span>
-    );
-
-    <span class="doccomment">/// set a group of constants in the compute root signature</span>
-    <span class="kw">fn</span> <span class="ident">set_compute_root_constants</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">values</span>: <span class="kw-2">&amp;</span>[<span class="ident">u32</span>], <span class="ident">param_offset</span>: <span class="ident">u32</span>
-    );
-
-    <span class="doccomment">/// set a cbv in the compute root signature</span>
-    <span class="kw">fn</span> <span class="ident">set_compute_root_cbv</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">resource</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>
-    );
-
-    <span class="doccomment">/// set a srv in the compute root signature</span>
-    <span class="kw">fn</span> <span class="ident">set_compute_root_srv</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">resource</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>
-    );
-
-    <span class="doccomment">/// set a uav in the compute root signature</span>
-    <span class="kw">fn</span> <span class="ident">set_compute_root_uav</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">resource</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>
-    );
-
-    <span class="doccomment">/// execute a command list from a thread group. [more info](https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn903871(v=vs.85).aspx)</span>
-    <span class="kw">fn</span> <span class="ident">dispatch</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">x</span>: <span class="ident">u32</span>, <span class="ident">y</span>: <span class="ident">u32</span>, <span class="ident">z</span>: <span class="ident">u32</span>);
-
-    <span class="doccomment">/// set primitive topology</span>
-    <span class="kw">fn</span> <span class="ident">ia_set_primitive_topology</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">topology</span>: ::<span class="ident">pipeline</span>::<span class="ident">ia</span>::<span class="ident">PrimitiveTopology</span>);
-
-    <span class="doccomment">/// set the index buffer</span>
-    <span class="kw">fn</span> <span class="ident">ia_set_ibv</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">ibv</span>: <span class="kw-2">&amp;</span>::<span class="ident">pipeline</span>::<span class="ident">ia</span>::<span class="ident">IndexBufferView</span>);
-
-    <span class="doccomment">/// set the vertex buffer</span>
-    <span class="kw">fn</span> <span class="ident">ia_set_vbvs</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">start_slot</span>: <span class="ident">u32</span>, <span class="ident">vbvs</span>: <span class="kw-2">&amp;</span>[::<span class="ident">pipeline</span>::<span class="ident">ia</span>::<span class="ident">VertexBufferView</span>]
-    );
-
-    <span class="doccomment">/// set the blend factor</span>
-    <span class="kw">fn</span> <span class="ident">om_set_blend_factor</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">factors</span>: [<span class="ident">f32</span>; <span class="number">4</span>]);
-
-    <span class="doccomment">/// set the stencil reference</span>
-    <span class="kw">fn</span> <span class="ident">om_set_stencil_ref</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">stencil_ref</span>: <span class="ident">u32</span>);
-
-    <span class="doccomment">/// set rtv and dsvs</span>
-    <span class="kw">fn</span> <span class="ident">om_set_rtv_dsv_continuous</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">rtv_heap</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RtvHeap</span>, <span class="ident">rtv_offset</span>: <span class="ident">u32</span>, 
-        <span class="ident">num_rtvs</span>: <span class="ident">u32</span>, <span class="ident">dsv</span>: <span class="ident">CpuDsvHandle</span>
-    );
-
-    <span class="doccomment">/// set rtv and dsvs</span>
-    <span class="kw">fn</span> <span class="ident">om_set_rtv_dsv_discontinuous</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">rtvs</span>: <span class="kw-2">&amp;</span>[<span class="ident">CpuRtvHandle</span>], <span class="ident">dsv</span>: <span class="ident">CpuDsvHandle</span>
-    );
-
-    <span class="doccomment">/// set the pipeline state</span>
-    <span class="kw">fn</span> <span class="ident">set_pipeline_state</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">state</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">PipelineState</span><span class="op">&gt;</span>
-    );
-
-    <span class="doccomment">/// draw non-indexed, instanced primitives</span>
-    <span class="kw">fn</span> <span class="ident">draw</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">vertex_per_instance</span>: <span class="ident">u32</span>, <span class="ident">instance_count</span>: <span class="ident">u32</span>, 
-        <span class="ident">first_vertex_index</span>: <span class="ident">u32</span>, <span class="ident">first_instance_index</span>: <span class="ident">u32</span>
-    );
-
-    <span class="doccomment">/// draw indexed, instanced primitives</span>
-    <span class="kw">fn</span> <span class="ident">draw_indexed</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">index_per_instance</span>: <span class="ident">u32</span>, <span class="ident">instance_count</span>: <span class="ident">u32</span>,
-        <span class="ident">first_index_index</span>: <span class="ident">u32</span>, <span class="ident">vertex_index_offset</span>: <span class="ident">i32</span>,
-        <span class="ident">first_instance_index</span>: <span class="ident">u32</span>
-    );
+    <span class="kw">fn</span> <span class="ident">get_type</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">CommandListType</span> {
+        <span class="kw">unsafe</span> { ::<span class="ident">std</span>::<span class="ident">mem</span>::<span class="ident">transmute</span>(<span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">GetType</span>()) }
+    }
 }
 
 <span class="macro">macro_rules</span><span class="macro">!</span> <span class="ident">impl_common_commands</span> {
-    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">Type</span>: <span class="ident">ident</span>) <span class="op">=&gt;</span> {
-    <span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">CommandList</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">Type</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> {
-    <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">fn</span> <span class="ident">get_type</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>) <span class="op">-&gt;</span> <span class="ident">CommandListType</span> {
-        <span class="kw">unsafe</span> { ::<span class="ident">std</span>::<span class="ident">mem</span>::<span class="ident">transmute</span>(<span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">GetType</span>()) }
+    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">Type</span>: <span class="ident">ident</span>, $(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">T</span>: <span class="ident">tt</span>),<span class="op">+</span>) <span class="op">=&gt;</span> {
+        <span class="kw">impl</span><span class="op">&lt;</span>$(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">T</span>),<span class="op">+</span><span class="op">&gt;</span> <span class="ident">CommandList</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">Type</span><span class="op">&lt;</span>$(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">T</span>),<span class="op">+</span><span class="op">&gt;</span> {
+            <span class="comment">//  get raw ID3D12CommandList pointer</span>
+            <span class="attribute">#[<span class="ident">inline</span>]</span>
+            <span class="kw">fn</span> <span class="ident">as_raw_ptr</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>) <span class="op">-&gt;</span> <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">ComPtr</span><span class="op">&lt;</span><span class="ident">ID3D12GraphicsCommandList</span><span class="op">&gt;</span> {
+                <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>.<span class="ident">ptr</span>
+            }
+        }
     }
+}
 
+<span class="doccomment">/// common methods for a graphics command list</span>
+<span class="kw">pub</span> <span class="kw">trait</span> <span class="ident">GraphicsCommandList</span>: <span class="ident">CommandList</span> {
     <span class="doccomment">/// set the graphics root signature. TODO: distince root signatures</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">fn</span> <span class="ident">set_graphics_rootsig</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">rootsig</span>: <span class="kw-2">&amp;</span>::<span class="ident">pipeline</span>::<span class="ident">rootsig</span>::<span class="ident">RootSig</span>) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">SetGraphicsRootSignature</span>(<span class="ident">rootsig</span>.<span class="ident">ptr</span>.<span class="ident">as_mut_ptr</span>())}
+    <span class="kw">fn</span> <span class="ident">set_rootsig</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">rootsig</span>: <span class="kw-2">&amp;</span>::<span class="ident">pipeline</span>::<span class="ident">rootsig</span>::<span class="ident">RootSig</span>) {
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">SetGraphicsRootSignature</span>(<span class="ident">rootsig</span>.<span class="ident">ptr</span>.<span class="ident">as_mut_ptr</span>())}
     }
 
     <span class="doccomment">/// set a constant in the graphics root signature</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">fn</span> <span class="ident">set_graphics_root_constant</span>(
+    <span class="kw">fn</span> <span class="ident">set_root_constant</span>(
         <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">value</span>: <span class="ident">u32</span>, <span class="ident">param_offset</span>: <span class="ident">u32</span>
     ) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">SetGraphicsRoot32BitConstant</span>(<span class="ident">param_index</span>, <span class="ident">value</span>, <span class="ident">param_offset</span>)}
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">SetGraphicsRoot32BitConstant</span>(<span class="ident">param_index</span>, <span class="ident">value</span>, <span class="ident">param_offset</span>)}
     }
 
     <span class="doccomment">/// set a group of constants in the graphics root signature</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">fn</span> <span class="ident">set_graphics_root_constants</span>(
+    <span class="kw">fn</span> <span class="ident">set_root_constants</span>(
         <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">values</span>: <span class="kw-2">&amp;</span>[<span class="ident">u32</span>], <span class="ident">param_offset</span>: <span class="ident">u32</span>
     ) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">SetGraphicsRoot32BitConstants</span>(
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">SetGraphicsRoot32BitConstants</span>(
             <span class="ident">param_index</span>, <span class="ident">values</span>.<span class="ident">len</span>() <span class="kw">as</span> <span class="ident">u32</span>, <span class="ident">values</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _, <span class="ident">param_offset</span>
         )}
     }
 
     <span class="doccomment">/// set a cbv in the graphics root signature</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">fn</span> <span class="ident">set_graphics_root_cbv</span>(
+    <span class="kw">fn</span> <span class="ident">set_root_cbv</span>(
         <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">resource</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>
     ) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">SetGraphicsRootConstantBufferView</span>(
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">SetGraphicsRootConstantBufferView</span>(
             <span class="ident">param_index</span>, <span class="ident">resource</span>.<span class="ident">get_gpu_vaddress</span>().<span class="ident">into</span>()
         )}
     }
 
     <span class="doccomment">/// set a srv in the graphics root signature</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">fn</span> <span class="ident">set_graphics_root_srv</span>(
+    <span class="kw">fn</span> <span class="ident">set_root_srv</span>(
         <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">resource</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>
     ) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">SetGraphicsRootShaderResourceView</span>(
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">SetGraphicsRootShaderResourceView</span>(
             <span class="ident">param_index</span>, <span class="ident">resource</span>.<span class="ident">get_gpu_vaddress</span>().<span class="ident">into</span>()
         )}
     }
 
     <span class="doccomment">/// set a uav in the graphics root signature</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">fn</span> <span class="ident">set_graphics_root_uav</span>(
+    <span class="kw">fn</span> <span class="ident">set_root_uav</span>(
         <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">resource</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>
     ) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">SetGraphicsRootUnorderedAccessView</span>(
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">SetGraphicsRootUnorderedAccessView</span>(
             <span class="ident">param_index</span>, <span class="ident">resource</span>.<span class="ident">get_gpu_vaddress</span>().<span class="ident">into</span>()
         )}
-    }
-
-    <span class="doccomment">/// set the compute root signature. TODO: distince root signatures</span>
-    <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">fn</span> <span class="ident">set_compute_rootsig</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">rootsig</span>: <span class="kw-2">&amp;</span>::<span class="ident">pipeline</span>::<span class="ident">rootsig</span>::<span class="ident">RootSig</span>) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">SetComputeRootSignature</span>(<span class="ident">rootsig</span>.<span class="ident">ptr</span>.<span class="ident">as_mut_ptr</span>())}
-    }
-
-
-    <span class="doccomment">/// set a constant in the compute root signature</span>
-    <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">fn</span> <span class="ident">set_compute_root_constant</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">value</span>: <span class="ident">u32</span>, <span class="ident">param_offset</span>: <span class="ident">u32</span>
-    ) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">SetComputeRoot32BitConstant</span>(<span class="ident">param_index</span>, <span class="ident">value</span>, <span class="ident">param_offset</span>)}
-    }
-
-    <span class="doccomment">/// set a group of constants in the compute root signature</span>
-    <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">fn</span> <span class="ident">set_compute_root_constants</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">values</span>: <span class="kw-2">&amp;</span>[<span class="ident">u32</span>], <span class="ident">param_offset</span>: <span class="ident">u32</span>
-    ) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">SetComputeRoot32BitConstants</span>(
-            <span class="ident">param_index</span>, <span class="ident">values</span>.<span class="ident">len</span>() <span class="kw">as</span> <span class="ident">u32</span>, <span class="ident">values</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _, <span class="ident">param_offset</span>
-        )}
-    }
-
-    <span class="doccomment">/// set a cbv in the compute root signature</span>
-    <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">fn</span> <span class="ident">set_compute_root_cbv</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">resource</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>
-    ) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">SetComputeRootConstantBufferView</span>(
-            <span class="ident">param_index</span>, <span class="ident">resource</span>.<span class="ident">get_gpu_vaddress</span>().<span class="ident">into</span>()
-        )}
-    }
-
-    <span class="doccomment">/// set a srv in the compute root signature</span>
-    <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">fn</span> <span class="ident">set_compute_root_srv</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">resource</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>
-    ) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">SetComputeRootShaderResourceView</span>(
-            <span class="ident">param_index</span>, <span class="ident">resource</span>.<span class="ident">get_gpu_vaddress</span>().<span class="ident">into</span>()
-        )}
-    }
-
-    <span class="doccomment">/// set a uav in the compute root signature</span>
-    <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">fn</span> <span class="ident">set_compute_root_uav</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">resource</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>
-    ) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">SetComputeRootUnorderedAccessView</span>(
-            <span class="ident">param_index</span>, <span class="ident">resource</span>.<span class="ident">get_gpu_vaddress</span>().<span class="ident">into</span>()
-        )}
-    }
-    
-    <span class="doccomment">/// execute a command list from a thread group. [more info](https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn903871(v=vs.85).aspx)</span>
-    <span class="attribute">#[<span class="ident">inline</span>]</span>
-    <span class="kw">fn</span> <span class="ident">dispatch</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">x</span>: <span class="ident">u32</span>, <span class="ident">y</span>: <span class="ident">u32</span>, <span class="ident">z</span>: <span class="ident">u32</span>) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">Dispatch</span>(<span class="ident">x</span>, <span class="ident">y</span>, <span class="ident">z</span>) }
     }
 
     <span class="doccomment">/// set primitive topology</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
     <span class="kw">fn</span> <span class="ident">ia_set_primitive_topology</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">topology</span>: ::<span class="ident">pipeline</span>::<span class="ident">ia</span>::<span class="ident">PrimitiveTopology</span>) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">IASetPrimitiveTopology</span>(::<span class="ident">std</span>::<span class="ident">mem</span>::<span class="ident">transmute</span>(<span class="ident">topology</span>))}
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">IASetPrimitiveTopology</span>(::<span class="ident">std</span>::<span class="ident">mem</span>::<span class="ident">transmute</span>(<span class="ident">topology</span>))}
     }
 
     <span class="doccomment">/// set the index buffer</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
     <span class="kw">fn</span> <span class="ident">ia_set_ibv</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">ibv</span>: <span class="kw-2">&amp;</span>::<span class="ident">pipeline</span>::<span class="ident">ia</span>::<span class="ident">IndexBufferView</span>) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">IASetIndexBuffer</span>(<span class="ident">ibv</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _ <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _)}
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">IASetIndexBuffer</span>(<span class="ident">ibv</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _ <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _)}
     }
 
     <span class="doccomment">/// set the vertex buffer</span>
@@ -718,7 +547,7 @@
         <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">start_slot</span>: <span class="ident">u32</span>, <span class="ident">vbvs</span>: <span class="kw-2">&amp;</span>[::<span class="ident">pipeline</span>::<span class="ident">ia</span>::<span class="ident">VertexBufferView</span>]
     ) {
         <span class="kw">unsafe</span> {
-            <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">IASetVertexBuffers</span>(
+            <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">IASetVertexBuffers</span>(
                 <span class="ident">start_slot</span>, <span class="ident">vbvs</span>.<span class="ident">len</span>() <span class="kw">as</span> <span class="ident">u32</span>, <span class="ident">vbvs</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _
             )
         }
@@ -727,13 +556,13 @@
     <span class="doccomment">/// set the blend factor</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
     <span class="kw">fn</span> <span class="ident">om_set_blend_factor</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">factors</span>: [<span class="ident">f32</span>; <span class="number">4</span>]) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">OMSetBlendFactor</span>(<span class="ident">factors</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _)}
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">OMSetBlendFactor</span>(<span class="ident">factors</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _)}
     }
 
     <span class="doccomment">/// set the stencil reference</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
     <span class="kw">fn</span> <span class="ident">om_set_stencil_ref</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">stencil_ref</span>: <span class="ident">u32</span>) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">OMSetStencilRef</span>(<span class="ident">stencil_ref</span>)}
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">OMSetStencilRef</span>(<span class="ident">stencil_ref</span>)}
     }
 
     <span class="doccomment">/// set rtv and dsvs</span>
@@ -745,7 +574,7 @@
         <span class="macro">debug_assert</span><span class="macro">!</span>(<span class="ident">rtv_offset</span> <span class="op">+</span> <span class="ident">num_rtvs</span> <span class="op">&lt;=</span> <span class="ident">rtv_heap</span>.<span class="ident">len</span>());
         <span class="kw">let</span> <span class="ident">rtv_handle</span> <span class="op">=</span> <span class="ident">rtv_heap</span>.<span class="ident">get_cpu_handle</span>(<span class="ident">rtv_offset</span>);
         <span class="kw">unsafe</span> {
-            <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">OMSetRenderTargets</span>(
+            <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">OMSetRenderTargets</span>(
                 <span class="ident">num_rtvs</span>, <span class="kw-2">&amp;</span><span class="ident">rtv_handle</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _ <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _,
                 ::<span class="ident">winapi</span>::<span class="ident">TRUE</span>, <span class="kw-2">&amp;</span><span class="ident">dsv</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _ <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _
             )
@@ -758,7 +587,7 @@
         <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">rtvs</span>: <span class="kw-2">&amp;</span>[<span class="ident">CpuRtvHandle</span>], <span class="ident">dsv</span>: <span class="ident">CpuDsvHandle</span>
     ) {
         <span class="kw">unsafe</span> {
-            <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">OMSetRenderTargets</span>(
+            <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">OMSetRenderTargets</span>(
                 <span class="ident">rtvs</span>.<span class="ident">len</span>() <span class="kw">as</span> <span class="ident">u32</span>, 
                 <span class="ident">rtvs</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _,
                 ::<span class="ident">winapi</span>::<span class="ident">TRUE</span>, <span class="kw-2">&amp;</span><span class="ident">dsv</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _ <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _
@@ -769,14 +598,14 @@
     <span class="doccomment">/// set the pipeline state</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
     <span class="kw">fn</span> <span class="ident">set_pipeline_state</span>(
-        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">state</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">PipelineState</span><span class="op">&gt;</span>
+        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">state</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">GraphicsPipelineState</span><span class="op">&gt;</span>
     ) {
         <span class="kw">let</span> <span class="ident">p_state</span> <span class="op">=</span> <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="ident">state</span>) <span class="op">=</span> <span class="ident">state</span> {
             <span class="ident">state</span>.<span class="ident">ptr</span>.<span class="ident">as_mut_ptr</span>()
         } <span class="kw">else</span> {
             ::<span class="ident">std</span>::<span class="ident">ptr</span>::<span class="ident">null_mut</span>()
         };
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">SetPipelineState</span>(<span class="ident">p_state</span>)}
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">SetPipelineState</span>(<span class="ident">p_state</span>)}
     }
 
     <span class="doccomment">/// draw non-indexed, instanced primitives</span>
@@ -785,7 +614,7 @@
         <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">vertex_per_instance</span>: <span class="ident">u32</span>, <span class="ident">instance_count</span>: <span class="ident">u32</span>, 
         <span class="ident">first_vertex_index</span>: <span class="ident">u32</span>, <span class="ident">first_instance_index</span>: <span class="ident">u32</span>
     ) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">DrawInstanced</span>(
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">DrawInstanced</span>(
             <span class="ident">vertex_per_instance</span>, <span class="ident">instance_count</span>, 
             <span class="ident">first_vertex_index</span>, <span class="ident">first_instance_index</span>
         )}
@@ -797,7 +626,7 @@
         <span class="ident">first_index_index</span>: <span class="ident">u32</span>, <span class="ident">vertex_index_offset</span>: <span class="ident">i32</span>,
         <span class="ident">first_instance_index</span>: <span class="ident">u32</span>
     ) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">DrawIndexedInstanced</span>(
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">DrawIndexedInstanced</span>(
             <span class="ident">index_per_instance</span>, <span class="ident">instance_count</span>,
             <span class="ident">first_index_index</span>, <span class="ident">vertex_index_offset</span>,
             <span class="ident">first_instance_index</span>
@@ -815,7 +644,135 @@
     <span class="comment">// TODO: add method to discard resource</span>
 
     <span class="comment">// TODO: should drawing methods be delegated or not?</span>
-}}}
+}
+
+<span class="doccomment">/// common methods for a compute command list</span>
+<span class="kw">pub</span> <span class="kw">trait</span> <span class="ident">ComputeCommandList</span>: <span class="ident">CommandList</span> {
+    <span class="doccomment">/// set the compute root signature. TODO: distince root signatures</span>
+    <span class="attribute">#[<span class="ident">inline</span>]</span>
+    <span class="kw">fn</span> <span class="ident">set_rootsig</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">rootsig</span>: <span class="kw-2">&amp;</span>::<span class="ident">pipeline</span>::<span class="ident">rootsig</span>::<span class="ident">RootSig</span>) {
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">SetComputeRootSignature</span>(<span class="ident">rootsig</span>.<span class="ident">ptr</span>.<span class="ident">as_mut_ptr</span>())}
+    }
+
+
+    <span class="doccomment">/// set a constant in the compute root signature</span>
+    <span class="attribute">#[<span class="ident">inline</span>]</span>
+    <span class="kw">fn</span> <span class="ident">set_root_constant</span>(
+        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">value</span>: <span class="ident">u32</span>, <span class="ident">param_offset</span>: <span class="ident">u32</span>
+    ) {
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">SetComputeRoot32BitConstant</span>(<span class="ident">param_index</span>, <span class="ident">value</span>, <span class="ident">param_offset</span>)}
+    }
+
+    <span class="doccomment">/// set a group of constants in the compute root signature</span>
+    <span class="attribute">#[<span class="ident">inline</span>]</span>
+    <span class="kw">fn</span> <span class="ident">set_root_constants</span>(
+        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">values</span>: <span class="kw-2">&amp;</span>[<span class="ident">u32</span>], <span class="ident">param_offset</span>: <span class="ident">u32</span>
+    ) {
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">SetComputeRoot32BitConstants</span>(
+            <span class="ident">param_index</span>, <span class="ident">values</span>.<span class="ident">len</span>() <span class="kw">as</span> <span class="ident">u32</span>, <span class="ident">values</span>.<span class="ident">as_ptr</span>() <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _, <span class="ident">param_offset</span>
+        )}
+    }
+
+    <span class="doccomment">/// set a cbv in the compute root signature</span>
+    <span class="attribute">#[<span class="ident">inline</span>]</span>
+    <span class="kw">fn</span> <span class="ident">set_root_cbv</span>(
+        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">resource</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>
+    ) {
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">SetComputeRootConstantBufferView</span>(
+            <span class="ident">param_index</span>, <span class="ident">resource</span>.<span class="ident">get_gpu_vaddress</span>().<span class="ident">into</span>()
+        )}
+    }
+
+    <span class="doccomment">/// set a srv in the compute root signature</span>
+    <span class="attribute">#[<span class="ident">inline</span>]</span>
+    <span class="kw">fn</span> <span class="ident">set_root_srv</span>(
+        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">resource</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>
+    ) {
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">SetComputeRootShaderResourceView</span>(
+            <span class="ident">param_index</span>, <span class="ident">resource</span>.<span class="ident">get_gpu_vaddress</span>().<span class="ident">into</span>()
+        )}
+    }
+
+    <span class="doccomment">/// set a uav in the compute root signature</span>
+    <span class="attribute">#[<span class="ident">inline</span>]</span>
+    <span class="kw">fn</span> <span class="ident">set_root_uav</span>(
+        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">resource</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>
+    ) {
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">SetComputeRootUnorderedAccessView</span>(
+            <span class="ident">param_index</span>, <span class="ident">resource</span>.<span class="ident">get_gpu_vaddress</span>().<span class="ident">into</span>()
+        )}
+    }
+    
+    <span class="doccomment">/// execute a command list from a thread group. [more info](https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn903871(v=vs.85).aspx)</span>
+    <span class="attribute">#[<span class="ident">inline</span>]</span>
+    <span class="kw">fn</span> <span class="ident">dispatch</span>(<span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">x</span>: <span class="ident">u32</span>, <span class="ident">y</span>: <span class="ident">u32</span>, <span class="ident">z</span>: <span class="ident">u32</span>) {
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">Dispatch</span>(<span class="ident">x</span>, <span class="ident">y</span>, <span class="ident">z</span>) }
+    }
+
+    <span class="doccomment">/// set the pipeline state</span>
+    <span class="attribute">#[<span class="ident">inline</span>]</span>
+    <span class="kw">fn</span> <span class="ident">set_pipeline_state</span>(
+        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">state</span>: <span class="prelude-ty">Option</span><span class="op">&lt;</span><span class="kw-2">&amp;</span><span class="ident">ComputePipelineState</span><span class="op">&gt;</span>
+    ) {
+        <span class="kw">let</span> <span class="ident">p_state</span> <span class="op">=</span> <span class="kw">if</span> <span class="kw">let</span> <span class="prelude-val">Some</span>(<span class="ident">state</span>) <span class="op">=</span> <span class="ident">state</span> {
+            <span class="ident">state</span>.<span class="ident">ptr</span>.<span class="ident">as_mut_ptr</span>()
+        } <span class="kw">else</span> {
+            ::<span class="ident">std</span>::<span class="ident">ptr</span>::<span class="ident">null_mut</span>()
+        };
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">SetPipelineState</span>(<span class="ident">p_state</span>)}
+    }
+}
+
+<span class="doccomment">/// common methods for a copy command list</span>
+<span class="kw">pub</span> <span class="kw">trait</span> <span class="ident">CopyCommandList</span>: <span class="ident">CommandList</span> {
+    <span class="doccomment">/// record a resource copy operation.</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// # restrictions</span>
+    <span class="doccomment">///</span>
+    <span class="doccomment">/// - must be different resources</span>
+    <span class="doccomment">/// - must be the same type</span>
+    <span class="doccomment">/// - must have identical dimensions</span>
+    <span class="doccomment">/// - must have compatible formats</span>
+    <span class="doccomment">/// - [more](https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn903859(v=vs.85).aspx)</span>
+    <span class="attribute">#[<span class="ident">inline</span>]</span>
+    <span class="kw">fn</span> <span class="ident">copy_resource</span>(
+        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">dst</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>, <span class="ident">src</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>
+    ) {
+        <span class="kw">unsafe</span> {
+            <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">CopyResource</span>(<span class="ident">dst</span>.<span class="ident">ptr</span>.<span class="ident">as_mut_ptr</span>(), <span class="ident">src</span>.<span class="ident">ptr</span>.<span class="ident">as_mut_ptr</span>())
+        }
+    }
+
+    <span class="doccomment">/// record a buffer copy operation</span>
+    <span class="attribute">#[<span class="ident">inline</span>]</span>
+    <span class="kw">fn</span> <span class="ident">copy_buffer_region</span>(
+        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">dst</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>, <span class="ident">dst_offset</span>: <span class="ident">u64</span>,
+        <span class="ident">src</span>: <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="ident">RawResource</span>, <span class="ident">src_offset</span>: <span class="ident">u64</span>, <span class="ident">size</span>: <span class="ident">u64</span>
+    ) {
+        <span class="kw">unsafe</span> {
+            <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">CopyBufferRegion</span>(
+                <span class="ident">dst</span>.<span class="ident">ptr</span>.<span class="ident">as_mut_ptr</span>(), <span class="ident">dst_offset</span>,
+                <span class="ident">src</span>.<span class="ident">ptr</span>.<span class="ident">as_mut_ptr</span>(), <span class="ident">src_offset</span>, <span class="ident">size</span>
+            )
+        }
+    }
+
+    <span class="doccomment">/// record a texture copy operation. [more info](https://msdn.microsoft.com/zh-cn/library/windows/desktop/dn903862(v=vs.85).aspx)</span>
+    <span class="attribute">#[<span class="ident">inline</span>]</span>
+    <span class="kw">fn</span> <span class="ident">copy_texture_region</span>(
+        <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">dst</span>: <span class="ident">TextureCopyLocation</span>, <span class="ident">dstx</span>: <span class="ident">u32</span>, <span class="ident">dsty</span>: <span class="ident">u32</span>, 
+        <span class="ident">dstz</span>: <span class="ident">u32</span>, <span class="ident">src</span>: <span class="ident">TextureCopyLocation</span>, <span class="ident">src_box</span>: <span class="kw-2">&amp;</span>::<span class="ident">format</span>::<span class="ident">Box3u</span>
+    ) {
+        <span class="kw">let</span> <span class="ident">dst</span> <span class="op">=</span> <span class="ident">dst</span>.<span class="ident">into</span>();
+        <span class="kw">let</span> <span class="ident">src</span> <span class="op">=</span> <span class="ident">src</span>.<span class="ident">into</span>();
+        <span class="kw">unsafe</span> {
+            <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">CopyTextureRegion</span>(
+                <span class="kw-2">&amp;</span><span class="ident">dst</span>, <span class="ident">dstx</span>, <span class="ident">dsty</span>, <span class="ident">dstz</span>, 
+                <span class="kw-2">&amp;</span><span class="ident">src</span>, <span class="ident">src_box</span> <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _ <span class="kw">as</span> <span class="kw-2">*</span><span class="kw">const</span> _
+            )
+        }
+    }
+}
 
 <span class="doccomment">/// common methods for a command list with bounded descriptor heaps</span>
 <span class="kw">pub</span> <span class="kw">trait</span> <span class="ident">CommandListWithHeap</span> {
@@ -833,15 +790,15 @@
 }
 
 <span class="macro">macro_rules</span><span class="macro">!</span> <span class="ident">impl_common_with_heap_commands</span>{
-    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">Type</span>: <span class="ident">ident</span>) <span class="op">=&gt;</span> {
-<span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">CommandListWithHeap</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">Type</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> {
+    (<span class="macro-nonterminal">$</span><span class="macro-nonterminal">Type</span>: <span class="ident">ident</span>, $(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">T</span>: <span class="ident">tt</span>),<span class="op">+</span>) <span class="op">=&gt;</span> {
+<span class="kw">impl</span><span class="op">&lt;</span>$(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">T</span>),<span class="op">+</span><span class="op">&gt;</span> <span class="ident">CommandListWithHeap</span> <span class="kw">for</span> <span class="macro-nonterminal">$</span><span class="macro-nonterminal">Type</span><span class="op">&lt;</span>$(<span class="macro-nonterminal">$</span><span class="macro-nonterminal">T</span>),<span class="op">+</span><span class="op">&gt;</span> {
     <span class="doccomment">/// set a decriptor table in the graphics root signature</span>
     <span class="attribute">#[<span class="ident">inline</span>]</span>
     <span class="kw">fn</span> <span class="ident">set_graphics_root_dt</span><span class="op">&lt;</span><span class="ident">H</span>: <span class="ident">Into</span><span class="op">&lt;</span>::<span class="ident">winapi</span>::<span class="ident">D3D12_GPU_DESCRIPTOR_HANDLE</span><span class="op">&gt;&gt;</span>
     (
         <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">base_descriptor</span>: <span class="ident">H</span>
     ) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">SetGraphicsRootDescriptorTable</span>(
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">SetGraphicsRootDescriptorTable</span>(
             <span class="ident">param_index</span>, <span class="ident">base_descriptor</span>.<span class="ident">into</span>()
         )}
     }
@@ -852,16 +809,31 @@
     (
         <span class="kw-2">&amp;</span><span class="kw-2">mut</span> <span class="self">self</span>, <span class="ident">param_index</span>: <span class="ident">u32</span>, <span class="ident">base_descriptor</span>: <span class="ident">H</span>
     ) {
-        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">ptr</span>.<span class="ident">SetComputeRootDescriptorTable</span>(
+        <span class="kw">unsafe</span> { <span class="self">self</span>.<span class="ident">as_raw_ptr</span>().<span class="ident">SetComputeRootDescriptorTable</span>(
             <span class="ident">param_index</span>, <span class="ident">base_descriptor</span>.<span class="ident">into</span>()
         )}
     }
 }}}
 
-<span class="macro">impl_common_commands</span><span class="macro">!</span>(<span class="ident">DirectCommandListRecording</span>);
-<span class="macro">impl_common_commands</span><span class="macro">!</span>(<span class="ident">BundleRecording</span>);
-<span class="macro">impl_common_with_heap_commands</span><span class="macro">!</span>(<span class="ident">DirectCommandListRecording</span>);
-<span class="macro">impl_common_with_heap_commands</span><span class="macro">!</span>(<span class="ident">BundleRecordingWithHeap</span>);
+<span class="macro">impl_common_commands</span><span class="macro">!</span>(<span class="ident">DirectCommandListRecording</span>, <span class="lifetime">&#39;a</span>, <span class="ident">T</span>);
+<span class="macro">impl_common_commands</span><span class="macro">!</span>(<span class="ident">BundleRecording</span>, <span class="lifetime">&#39;a</span>);
+<span class="macro">impl_common_commands</span><span class="macro">!</span>(<span class="ident">BundleRecordingWithHeap</span>, <span class="lifetime">&#39;a</span>);
+<span class="macro">impl_common_with_heap_commands</span><span class="macro">!</span>(<span class="ident">DirectCommandListRecording</span>, <span class="lifetime">&#39;a</span>, <span class="ident">T</span>);
+<span class="macro">impl_common_with_heap_commands</span><span class="macro">!</span>(<span class="ident">BundleRecordingWithHeap</span>, <span class="lifetime">&#39;a</span>);
+
+<span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">GraphicsCommandList</span> <span class="kw">for</span> <span class="ident">DirectCommandListRecording</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="ident">GraphicsPipelineState</span><span class="op">&gt;</span> {}
+
+<span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">ComputeCommandList</span> <span class="kw">for</span> <span class="ident">DirectCommandListRecording</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="ident">ComputePipelineState</span><span class="op">&gt;</span> {}
+
+<span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="ident">P</span>: <span class="ident">PipelineState</span><span class="op">+</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">CopyCommandList</span> <span class="kw">for</span> <span class="ident">DirectCommandListRecording</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span>, <span class="ident">P</span><span class="op">&gt;</span> {}
+
+<span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">GraphicsCommandList</span> <span class="kw">for</span> <span class="ident">BundleRecording</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> {}
+
+<span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">ComputeCommandList</span> <span class="kw">for</span> <span class="ident">BundleRecording</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> {}
+
+<span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">GraphicsCommandList</span> <span class="kw">for</span> <span class="ident">BundleRecordingWithHeap</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> {}
+
+<span class="kw">impl</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> <span class="ident">ComputeCommandList</span> <span class="kw">for</span> <span class="ident">BundleRecordingWithHeap</span><span class="op">&lt;</span><span class="lifetime">&#39;a</span><span class="op">&gt;</span> {}
 </pre>
 </section>
     <section id='search' class="content hidden"></section>

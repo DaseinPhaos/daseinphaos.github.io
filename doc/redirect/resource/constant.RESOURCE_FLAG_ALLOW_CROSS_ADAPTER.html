@@ -49,7 +49,9 @@
                        [<span class='inner'>&#x2212;</span>]
                    </a>
                </span></span></h1>
-<pre class='rust const'>pub const RESOURCE_FLAG_ALLOW_CROSS_ADAPTER: <a class="struct" href="../../redirect/resource/struct.ResourceFlags.html" title="struct redirect::resource::ResourceFlags">ResourceFlags</a><code> = </code><code>ResourceFlags{bits: 16,}</code></pre></section>
+<pre class='rust const'>pub const RESOURCE_FLAG_ALLOW_CROSS_ADAPTER: <a class="struct" href="../../redirect/resource/struct.ResourceFlags.html" title="struct redirect::resource::ResourceFlags">ResourceFlags</a><code> = </code><code>ResourceFlags{bits: 16,}</code></pre><div class='docblock'><p>Allows the resource to be used for cross-adapter data, as well as the same features enabled by AllowSimultaneousAccess.
+Must be used with heaps with <code>SharedCrossAdapter</code> and not <code>AllowDisplay</code>.</p>
+</div></section>
     <section id='search' class="content hidden"></section>
 
     <section class="footer"></section>

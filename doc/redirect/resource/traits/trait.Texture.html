@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `Texture` trait in crate `redirect`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, Texture">
+
+    <title>redirect::resource::traits::Texture - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../../../normalize.css">
+    <link rel="stylesheet" type="text/css" href="../../../rustdoc.css">
+    <link rel="stylesheet" type="text/css" href="../../../main.css">
+    
+
+    
+    
+</head>
+<body class="rustdoc trait">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <nav class="sidebar">
+        
+        <p class='location'>Trait Texture</p><div class="block items"><ul><li><a href="#provided-methods">Provided Methods</a></li><li><a href="#implementors">Implementors</a></li></ul></div><p class='location'><a href='../../index.html'>redirect</a>::<wbr><a href='../index.html'>resource</a>::<wbr><a href='index.html'>traits</a></p><script>window.sidebarCurrent = {name: 'Texture', ty: 'trait', relpath: ''};</script><script defer src="sidebar-items.js"></script>
+    </nav>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press ‘S’ to search, ‘?’ for more options…"
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content">
+<h1 class='fqn'><span class='in-band'>Trait <a href='../../index.html'>redirect</a>::<wbr><a href='../index.html'>resource</a>::<wbr><a href='index.html'>traits</a>::<wbr><a class="trait" href=''>Texture</a></span><span class='out-of-band'><span id='render-detail'>
+                   <a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">
+                       [<span class='inner'>&#x2212;</span>]
+                   </a>
+               </span><a class='srclink' href='../../../src/redirect/resource/traits.rs.html#265-308' title='goto source code'>[src]</a></span></h1>
+<pre class='rust trait'>pub unsafe trait Texture: <a class="trait" href="../../../redirect/resource/traits/trait.Resource.html" title="trait redirect::resource::traits::Resource">Resource</a> {
+    fn <a href='#method.get_format' class='fnname'>get_format</a>(&amp;mut self) -&gt; <a class="type" href="../../../redirect/format/type.DxgiFormat.html" title="type redirect::format::DxgiFormat">DxgiFormat</a> { ... }
+<div class='item-spacer'></div>    fn <a href='#method.create_srv' class='fnname'>create_srv</a>&lt;DH:&nbsp;<a class="trait" href="../../../redirect/descriptor/heap/trait.CsuHeap.html" title="trait redirect::descriptor::heap::CsuHeap">CsuHeap</a>, T:&nbsp;<a class="trait" href="../../../redirect/resource/traits/trait.AllowShaderResource.html" title="trait redirect::resource::traits::AllowShaderResource">AllowShaderResource</a> + <a class="trait" href="../../../redirect/resource/traits/trait.Texture.html" title="trait redirect::resource::traits::Texture">Texture</a>&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>T, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;device: &amp;mut <a class="struct" href="../../../redirect/device/struct.Device.html" title="struct redirect::device::Device">Device</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;csu_heap: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>DH, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>&nbsp;&nbsp;&nbsp;&nbsp;) { ... }
+<div class='item-spacer'></div>    fn <a href='#method.create_uav' class='fnname'>create_uav</a>&lt;DH:&nbsp;<a class="trait" href="../../../redirect/descriptor/heap/trait.CsuHeap.html" title="trait redirect::descriptor::heap::CsuHeap">CsuHeap</a>, T:&nbsp;<a class="trait" href="../../../redirect/resource/traits/trait.AllowUnorderedAccess.html" title="trait redirect::resource::traits::AllowUnorderedAccess">AllowUnorderedAccess</a> + <a class="trait" href="../../../redirect/resource/traits/trait.Texture.html" title="trait redirect::resource::traits::Texture">Texture</a>&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>T, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;device: &amp;mut <a class="struct" href="../../../redirect/device/struct.Device.html" title="struct redirect::device::Device">Device</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;csu_heap: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>DH, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>&nbsp;&nbsp;&nbsp;&nbsp;) { ... }
+<div class='item-spacer'></div>    fn <a href='#method.create_rtv' class='fnname'>create_rtv</a>&lt;T:&nbsp;<a class="trait" href="../../../redirect/resource/traits/trait.AllowRenderTarget.html" title="trait redirect::resource::traits::AllowRenderTarget">AllowRenderTarget</a> + <a class="trait" href="../../../redirect/resource/traits/trait.Texture.html" title="trait redirect::resource::traits::Texture">Texture</a>&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>T, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;device: &amp;mut <a class="struct" href="../../../redirect/device/struct.Device.html" title="struct redirect::device::Device">Device</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;heap: &amp;mut <a class="struct" href="../../../redirect/descriptor/heap/struct.RtvHeap.html" title="struct redirect::descriptor::heap::RtvHeap">RtvHeap</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>&nbsp;&nbsp;&nbsp;&nbsp;) { ... }
+<div class='item-spacer'></div>    fn <a href='#method.create_dsv' class='fnname'>create_dsv</a>&lt;T:&nbsp;<a class="trait" href="../../../redirect/resource/traits/trait.AllowDepthStencil.html" title="trait redirect::resource::traits::AllowDepthStencil">AllowDepthStencil</a> + <a class="trait" href="../../../redirect/resource/traits/trait.Texture.html" title="trait redirect::resource::traits::Texture">Texture</a>&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>T, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;device: &amp;mut <a class="struct" href="../../../redirect/device/struct.Device.html" title="struct redirect::device::Device">Device</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;heap: &amp;mut <a class="struct" href="../../../redirect/descriptor/heap/struct.DsvHeap.html" title="struct redirect::descriptor::heap::DsvHeap">DsvHeap</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>&nbsp;&nbsp;&nbsp;&nbsp;) { ... }
+}</pre><div class='docblock'><p>a texture</p>
+</div>
+            <h2 id='provided-methods' class='small-section-header'>
+              Provided Methods<a href='#provided-methods' class='anchor'></a>
+            </h2>
+            <div class='methods'>
+        <h3 id='method.get_format' class='method'><span id='get_format.v' class='invisible'><code>fn <a href='#method.get_format' class='fnname'>get_format</a>(&amp;mut self) -&gt; <a class="type" href="../../../redirect/format/type.DxgiFormat.html" title="type redirect::format::DxgiFormat">DxgiFormat</a></code></span></h3><div class='docblock'><p>get the format of the texel</p>
+</div><h3 id='method.create_srv' class='method'><span id='create_srv.v' class='invisible'><code>fn <a href='#method.create_srv' class='fnname'>create_srv</a>&lt;DH:&nbsp;<a class="trait" href="../../../redirect/descriptor/heap/trait.CsuHeap.html" title="trait redirect::descriptor::heap::CsuHeap">CsuHeap</a>, T:&nbsp;<a class="trait" href="../../../redirect/resource/traits/trait.AllowShaderResource.html" title="trait redirect::resource::traits::AllowShaderResource">AllowShaderResource</a> + <a class="trait" href="../../../redirect/resource/traits/trait.Texture.html" title="trait redirect::resource::traits::Texture">Texture</a>&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;tex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>T, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: &amp;mut <a class="struct" href="../../../redirect/device/struct.Device.html" title="struct redirect::device::Device">Device</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;csu_heap: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>DH, <br>&nbsp;&nbsp;&nbsp;&nbsp;index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>)</code></span></h3><div class='docblock'><p>Create a srv for this texture on <code>csu_heap</code> at <code>index</code>
+TODO: verify, SrvTex1DDesc support</p>
+</div><h3 id='method.create_uav' class='method'><span id='create_uav.v' class='invisible'><code>fn <a href='#method.create_uav' class='fnname'>create_uav</a>&lt;DH:&nbsp;<a class="trait" href="../../../redirect/descriptor/heap/trait.CsuHeap.html" title="trait redirect::descriptor::heap::CsuHeap">CsuHeap</a>, T:&nbsp;<a class="trait" href="../../../redirect/resource/traits/trait.AllowUnorderedAccess.html" title="trait redirect::resource::traits::AllowUnorderedAccess">AllowUnorderedAccess</a> + <a class="trait" href="../../../redirect/resource/traits/trait.Texture.html" title="trait redirect::resource::traits::Texture">Texture</a>&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;tex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>T, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: &amp;mut <a class="struct" href="../../../redirect/device/struct.Device.html" title="struct redirect::device::Device">Device</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;csu_heap: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>DH, <br>&nbsp;&nbsp;&nbsp;&nbsp;index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>)</code></span></h3><div class='docblock'><p>Create a srv for this texture on <code>csu_heap</code> at <code>index</code>
+TODO: verify, UavTex1DDesc support</p>
+</div><h3 id='method.create_rtv' class='method'><span id='create_rtv.v' class='invisible'><code>fn <a href='#method.create_rtv' class='fnname'>create_rtv</a>&lt;T:&nbsp;<a class="trait" href="../../../redirect/resource/traits/trait.AllowRenderTarget.html" title="trait redirect::resource::traits::AllowRenderTarget">AllowRenderTarget</a> + <a class="trait" href="../../../redirect/resource/traits/trait.Texture.html" title="trait redirect::resource::traits::Texture">Texture</a>&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;tex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>T, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: &amp;mut <a class="struct" href="../../../redirect/device/struct.Device.html" title="struct redirect::device::Device">Device</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;heap: &amp;mut <a class="struct" href="../../../redirect/descriptor/heap/struct.RtvHeap.html" title="struct redirect::descriptor::heap::RtvHeap">RtvHeap</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>)</code></span></h3><div class='docblock'><p>Create a rtv for this texture on <code>heap</code> at <code>index</code>
+TODO: RtvTex1DDesc support</p>
+</div><h3 id='method.create_dsv' class='method'><span id='create_dsv.v' class='invisible'><code>fn <a href='#method.create_dsv' class='fnname'>create_dsv</a>&lt;T:&nbsp;<a class="trait" href="../../../redirect/resource/traits/trait.AllowDepthStencil.html" title="trait redirect::resource::traits::AllowDepthStencil">AllowDepthStencil</a> + <a class="trait" href="../../../redirect/resource/traits/trait.Texture.html" title="trait redirect::resource::traits::Texture">Texture</a>&gt;(<br>&nbsp;&nbsp;&nbsp;&nbsp;tex: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.reference.html">&amp;mut </a>T, <br>&nbsp;&nbsp;&nbsp;&nbsp;device: &amp;mut <a class="struct" href="../../../redirect/device/struct.Device.html" title="struct redirect::device::Device">Device</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;heap: &amp;mut <a class="struct" href="../../../redirect/descriptor/heap/struct.DsvHeap.html" title="struct redirect::descriptor::heap::DsvHeap">DsvHeap</a>, <br>&nbsp;&nbsp;&nbsp;&nbsp;index: <a class="primitive" href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a><br>)</code></span></h3><div class='docblock'><p>Create a dsv for this texture on <code>heap</code> at <code>index</code>
+TODO: DsvTex1DDesc support</p>
+</div></div>
+        <h2 id='implementors' class='small-section-header'>
+          Implementors<a href='#implementors' class='anchor'></a>
+        </h2>
+        <ul class='item-list' id='implementors-list'>
+    <li><code>impl Texture for <a class="struct" href="../../../redirect/resource/texture/struct.DefaultTex2D.html" title="struct redirect::resource::texture::DefaultTex2D">DefaultTex2D</a></code></li>
+<li><code>impl Texture for <a class="struct" href="../../../redirect/resource/texture/struct.DsableTex2D.html" title="struct redirect::resource::texture::DsableTex2D">DsableTex2D</a></code></li>
+<li><code>impl Texture for <a class="struct" href="../../../redirect/resource/texture/struct.RenderableTex2D.html" title="struct redirect::resource::texture::RenderableTex2D">RenderableTex2D</a></code></li>
+</ul><script type="text/javascript" async
+                         src="../../../implementors/redirect/resource/traits/trait.Texture.js">
+                 </script></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <aside id="help" class="hidden">
+        <div>
+            <h1 class="hidden">Help</h1>
+
+            <div class="shortcuts">
+                <h2>Keyboard Shortcuts</h2>
+
+                <dl>
+                    <dt>?</dt>
+                    <dd>Show this help dialog</dd>
+                    <dt>S</dt>
+                    <dd>Focus the search field</dd>
+                    <dt>&larrb;</dt>
+                    <dd>Move up in search results</dd>
+                    <dt>&rarrb;</dt>
+                    <dd>Move down in search results</dd>
+                    <dt>&#9166;</dt>
+                    <dd>Go to active search result</dd>
+                    <dt>+</dt>
+                    <dd>Collapse/expand all sections</dd>
+                </dl>
+            </div>
+
+            <div class="infos">
+                <h2>Search Tricks</h2>
+
+                <p>
+                    Prefix searches with a type followed by a colon (e.g.
+                    <code>fn:</code>) to restrict the search to a given type.
+                </p>
+
+                <p>
+                    Accepted types are: <code>fn</code>, <code>mod</code>,
+                    <code>struct</code>, <code>enum</code>,
+                    <code>trait</code>, <code>type</code>, <code>macro</code>,
+                    and <code>const</code>.
+                </p>
+
+                <p>
+                    Search functions by type signature (e.g.
+                    <code>vec -> usize</code> or <code>* -> vec</code>)
+                </p>
+            </div>
+        </div>
+    </aside>
+
+    
+
+    <script>
+        window.rootPath = "../../../";
+        window.currentCrate = "redirect";
+    </script>
+    <script src="../../../main.js"></script>
+    <script defer src="../../../search-index.js"></script>
+</body>
+</html>

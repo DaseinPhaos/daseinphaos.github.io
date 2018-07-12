@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://daseinphaos.github.io/post/beck/</loc>
+    <lastmod>2018-07-12T21:37:27+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://daseinphaos.github.io/post/meidoragunn/</loc>
     <lastmod>2017-04-08T19:34:18+00:00</lastmod>
   </url>
@@ -18,13 +23,19 @@
   
   <url>
     <loc>https://daseinphaos.github.io/tags/anime/</loc>
-    <lastmod>2017-04-08T19:34:18+00:00</lastmod>
+    <lastmod>2018-07-12T21:37:27+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://daseinphaos.github.io/tags/beck/</loc>
+    <lastmod>2018-07-12T21:37:27+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://daseinphaos.github.io/</loc>
-    <lastmod>2017-04-08T19:34:18+00:00</lastmod>
+    <lastmod>2018-07-12T21:37:27+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -48,7 +59,7 @@
   
   <url>
     <loc>https://daseinphaos.github.io/post/</loc>
-    <lastmod>2017-04-08T19:34:18+00:00</lastmod>
+    <lastmod>2018-07-12T21:37:27+08:00</lastmod>
     <priority>0</priority>
   </url>
   

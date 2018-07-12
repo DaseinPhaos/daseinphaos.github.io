@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["DefaultTex2D",""],["DsableTex2D",""],["RenderableTex2D",""]]});

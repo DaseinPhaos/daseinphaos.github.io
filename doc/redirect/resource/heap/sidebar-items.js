@@ -1,1 +1,0 @@
-initSidebarItems({"mod":[["description","Types to describe a heap"],["raw","Defines a raw heap"],["traits","Heap traits"]],"struct":[["DefaultHeap","a safe heap with all properties set to default"],["ReadbackHeap","an readback heap with all properties set to default"],["UploadHeap","an upload heap with all properties set to default"]]});

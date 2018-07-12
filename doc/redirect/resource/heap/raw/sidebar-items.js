@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["RawHeap","a continous memory region"]]});

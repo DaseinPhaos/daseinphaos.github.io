@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["DeclarationEntry","describes an entry in a stream output slot"],["DescBuilder","stream output description"],["StreamOutputBufferView","stream output buffer view"]]});

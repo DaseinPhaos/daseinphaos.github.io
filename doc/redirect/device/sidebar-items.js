@@ -1,1 +1,0 @@
-initSidebarItems({"constant":[["FEATURE_LEVEL_11_0",""],["FEATURE_LEVEL_11_1",""],["FEATURE_LEVEL_12_0",""],["FEATURE_LEVEL_12_1",""]],"struct":[["Device","a 3D display adapter"],["FeatureLevel","set of features targeted by a device"]],"trait":[["DeviceChild","a COM object created by some `Device`"]]});

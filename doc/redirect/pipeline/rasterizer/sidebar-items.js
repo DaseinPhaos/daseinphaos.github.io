@@ -1,1 +1,0 @@
-initSidebarItems({"constant":[["CONSERVATIVE_MODE_OFF",""],["CONSERVATIVE_MODE_ON",""],["CULL_MODE_BACK",""],["CULL_MODE_FRONT",""],["CULL_MODE_NONE",""],["FILL_MODE_SOLID",""],["FILL_MODE_WIREFRAME",""]],"struct":[["ConservativeMode",""],["CullMode",""],["FillMode",""],["RasterizerDesc","describes the rasterizer state. more info"]]});

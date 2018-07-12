@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["D3D12CreateDevice",""],["D3D12CreateRootSignatureDeserializer",""],["D3D12GetDebugInterface",""],["D3D12SerializeRootSignature",""]]});

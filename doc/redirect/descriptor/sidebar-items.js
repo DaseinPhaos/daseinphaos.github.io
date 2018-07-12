@@ -1,1 +1,0 @@
-initSidebarItems({"mod":[["desc","descriptor description boilerplates"],["heap","a descriptor heap is where the descriptors resides on"]]});

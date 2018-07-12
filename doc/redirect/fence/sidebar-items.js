@@ -1,1 +1,0 @@
-initSidebarItems({"constant":[["FENCE_FLAG_NONE",""],["FENCE_FLAG_SHARED",""],["FENCE_FLAG_SHARED_CROSS_ADAPTER",""]],"struct":[["Fence","a fence"],["FenceFlags","misc fence options"]]});

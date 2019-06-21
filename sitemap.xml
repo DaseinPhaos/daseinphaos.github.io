@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://daseinphaos.github.io/post/content-creator-resonsibility/</loc>
+    <lastmod>2019-06-22T02:55:54+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://daseinphaos.github.io/post/approachable-difficulty/</loc>
     <lastmod>2019-03-31T18:44:49+08:00</lastmod>
   </url>
@@ -65,7 +70,7 @@
   
   <url>
     <loc>https://daseinphaos.github.io/</loc>
-    <lastmod>2019-03-31T18:44:49+08:00</lastmod>
+    <lastmod>2019-06-22T02:55:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -83,7 +88,7 @@
   
   <url>
     <loc>https://daseinphaos.github.io/tags/game-design/</loc>
-    <lastmod>2019-03-31T18:44:49+08:00</lastmod>
+    <lastmod>2019-06-22T02:55:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -107,7 +112,7 @@
   
   <url>
     <loc>https://daseinphaos.github.io/post/</loc>
-    <lastmod>2019-03-31T18:44:49+08:00</lastmod>
+    <lastmod>2019-06-22T02:55:54+08:00</lastmod>
     <priority>0</priority>
   </url>
   

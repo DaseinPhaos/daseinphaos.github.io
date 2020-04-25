@@ -1,12 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hrt on Burning Ashes</title>
-    <link>https://daseinphaos.github.io/tags/hrt/index.xml</link>
-    <description>Recent content in Hrt on Burning Ashes</description>
+    <title>HRT on Burning Ashes</title>
+    <link>https://daseinphaos.github.io/tags/hrt/</link>
+    <description>Recent content in HRT on Burning Ashes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://daseinphaos.github.io/tags/hrt/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Mar 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://daseinphaos.github.io/tags/hrt/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Closure, Lifetime, and HRT</title>
@@ -14,169 +17,11 @@
       <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>https://daseinphaos.github.io/post/closure-lifetime-hrt/</guid>
-      <description>
-
-&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
-
-&lt;p&gt;So here is the thing. Can we write something like&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;let mut vector = vec![1, 2, 3];
-let mut closure = |x| vector.get_mut(x);
-println!(&amp;quot;{:?}&amp;quot;, closure(2));
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;in Rust?&lt;/p&gt;
-
-&lt;p&gt;The answer is, unfortunately, no.&lt;/p&gt;
-
-&lt;p&gt;Compiling it as of &lt;code&gt;rust 1.15.1&lt;/code&gt; would yield some error message like:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;error[E0495]: cannot infer an appropriate lifetime for lifetime parameter in function call due to conflicting requirements
-   --&amp;gt; src\main.rs:100:23
-    |
-100 |     let closure = |x| vector.get_mut(x);
-    |                       ^^^^^^
-    |
-note: first, the lifetime cannot outlive the lifetime  as defined on the body at 100:22...
-   --&amp;gt; src\main.rs:100:23
-    |
-100 |     let closure = |x| vector.get_mut(x);
-    |                       ^^^^^^^^^^^^^^^^^
-note: ...so that closure can access `vector`
-   --&amp;gt; src\main.rs:100:23
-    |
-100 |     let closure = |x| vector.get_mut(x);
-    |                       ^^^^^^
-note: but, the lifetime must be valid for the scope of call-site for function at 100:22...
-   --&amp;gt; src\main.rs:100:23
-    |
-100 |     let closure = |x| vector.get_mut(x);
-    |                       ^^^^^^^^^^^^^^^^^
-note: ...so that return value is valid for the call
-   --&amp;gt; src\main.rs:100:19
-    |
-100 |     let closure = |x| vector.get_mut(x);
-    |                   ^^^^^^^^^^^^^^^^^^^^^
-
-error: aborting due to previous error
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;One got to admit that such an error message is nowhere near helpful. So let&amp;rsquo;s try to figure out what&amp;rsquo;s &lt;em&gt;really&lt;/em&gt; going on here on our own.&lt;/p&gt;
-
-&lt;p&gt;Back to the original closure. The intention was quiet simple: we wanted the closure to capture the &lt;code&gt;vector&lt;/code&gt; in its environment. Upon subsequent invocations to the closure, a mutable reference to an element of the captured &lt;code&gt;vector&lt;/code&gt; would be returned. Nothing fancy, just a tiny bit of a wrapper of the &lt;code&gt;get_mut&lt;/code&gt; method.&lt;/p&gt;
-
-&lt;p&gt;However, to our surprise, such a tiny code snippet failed the borrow checker, leaving us some mysterious error message.&lt;/p&gt;
-
-&lt;p&gt;To solve the mystery, let&amp;rsquo;s try to implement such a closure struct by hand - closure by itself is already mysterious enough, maybe we can figure this out if we get that mess cleared out of the picture.&lt;/p&gt;
-
-&lt;p&gt;So, a trip into manually implementing closures&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;First thing first, let&amp;rsquo;s try to define how our &lt;code&gt;Closure&lt;/code&gt; would layout.&lt;/p&gt;
-
-&lt;p&gt;As a simple glimpse, we&amp;rsquo;d like the closure to be able to return a mutable reference into its captured &lt;code&gt;vector&lt;/code&gt;. As such, at the minimum, the &lt;code&gt;Closure&lt;/code&gt; struct should also take such a mutable reference:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;struct Closure&amp;lt;&#39;a&amp;gt; {
-    inner: &amp;amp;&#39;a mut Vec&amp;lt;i32&amp;gt;, // Assuming `i32` for simplicity
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Next, let&amp;rsquo;s try adding function-like behavior for our struct. To achieve this we would have to implement &lt;code&gt;FnMut&lt;/code&gt;: we wanted the closure to be reusable (once the last returned borrow gets out of scope), thus it can&amp;rsquo;t simply be an one-off shot. However, due to the current definition of the &lt;code&gt;Fn&lt;/code&gt;-series of traits, implementing &lt;code&gt;FnMut&lt;/code&gt; would also require the &lt;code&gt;FnOnce&lt;/code&gt; trait to be implemented. Also, we have to pack the input parameters into a tuple ( even if under our cases there is only one input parameter). Anyway, let&amp;rsquo;s just get the &lt;code&gt;FnOnce&lt;/code&gt; done first.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;// Requeried as custom-implementing `Fn`s is unstable for now
-#![feature(unboxed_closures)]
-#![feature(fn_traits)]
-
-// struct definition here...
-
-impl&amp;lt;&#39;a&amp;gt; FnOnce&amp;lt;(usize,)&amp;gt; for Closure&amp;lt;&#39;a&amp;gt; {
-    // directy returning reference rather than `Option` for simplicity
-    type Output = &amp;amp;&#39;a mut i32;
-
-    extern &amp;quot;rust-call&amp;quot; 
-    fn call_once(self, (i,): (usize, )) -&amp;gt; &amp;amp;&#39;a mut i32 {
-        self.inner.get_mut(i).unwrap()
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So far, so good. Now let&amp;rsquo;s try to implement &lt;code&gt;FnMut&lt;/code&gt; as well:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;// ...
-
-impl&amp;lt;&#39;a&amp;gt; FnMut&amp;lt;(usize,)&amp;gt; for Closure&amp;lt;&#39;a&amp;gt; {
-    extern &amp;quot;rust-call&amp;quot;
-    fn call_mut(&amp;amp;mut self, (i,): (usize, )) -&amp;gt; &amp;amp;&#39;a mut i32 {
-        self.inner.get_mut(i).unwrap()
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Boom! Now here is that error once again:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;error[E0495]: cannot infer an appropriate lifetime for lifetime parameter in function call due to conflicting requirements
-   --&amp;gt; src\main.rs:120:9
-    |
-120 |         self.inner.get_mut(i).unwrap()
-    |         ^^^^^^^^^^
-    |
-note: first, the lifetime cannot outlive the anonymous lifetime #1 defined on the body at 119:59...
-   --&amp;gt; src\main.rs:119:60
-    |
-119 |       fn call_mut(&amp;amp;mut self, (i,): (usize, )) -&amp;gt; &amp;amp;&#39;a mut i32 {
-    |  ____________________________________________________________^ starting here...
-120 | |         self.inner.get_mut(i).unwrap()
-121 | |     }
-    | |_____^ ...ending here
-note: ...so that reference does not outlive borrowed content
-   --&amp;gt; src\main.rs:120:9
-    |
-120 |         self.inner.get_mut(i).unwrap()
-    |         ^^^^^^^^^^
-note: but, the lifetime must be valid for the lifetime &#39;a as defined on the body at 119:59...
-   --&amp;gt; src\main.rs:119:60
-    |
-119 |       fn call_mut(&amp;amp;mut self, (i,): (usize, )) -&amp;gt; &amp;amp;&#39;a mut i32 {
-    |  ____________________________________________________________^ starting here...
-120 | |         self.inner.get_mut(i).unwrap()
-121 | |     }
-    | |_____^ ...ending here
-note: ...so that reference does not outlive borrowed content
-   --&amp;gt; src\main.rs:120:9
-    |
-120 |         self.inner.get_mut(i).unwrap()
-    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-error: aborting due to previous error
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Although this time, one might reasonably argue that the error message is indeed helpful.&lt;/p&gt;
-
-&lt;p&gt;It turns out that, returning &lt;code&gt;&amp;amp;&#39;a mut i32&lt;/code&gt; is not feasible for the shorter-live invocation of &lt;code&gt;call_mut&lt;/code&gt;. What we&amp;rsquo;ve really wanted for the return type of &lt;code&gt;call_mut&lt;/code&gt;, was something like:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;// ...
-
-impl&amp;lt;&#39;a&amp;gt; FnMut&amp;lt;(usize,)&amp;gt; for Closure&amp;lt;&#39;a&amp;gt; {
-    extern &amp;quot;rust-call&amp;quot;
-    fn&amp;lt;&#39;b&amp;gt; call_mut(&amp;amp;&#39;b mut self, (i,): (usize, )) -&amp;gt; &amp;amp;&#39;b mut i32 {
-        self.inner.get_mut(i).unwrap()
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;That is, we want the returned reference to live only as long as the invocation scope of &lt;code&gt;call_mut&lt;/code&gt; ( i.e. &lt;code&gt;&#39;b&lt;/code&gt;), nothing more. Certainly not the entire scope of the &lt;code&gt;Closure&lt;/code&gt; ( i.e. &lt;code&gt;&#39;a&lt;/code&gt;).&lt;/p&gt;
-
-&lt;p&gt;Now clearly the code above won&amp;rsquo;t compile either.&lt;/p&gt;
-
-&lt;p&gt;For one thing, we can&amp;rsquo;t &amp;ldquo;generically&amp;rdquo; implement a trait method across what it&amp;rsquo;d otherwise not; for the other, even if we can, to maintain the subtype-invariance of &lt;code&gt;type Output&lt;/code&gt; (note that &lt;code&gt;FnOnce&lt;/code&gt; and &lt;code&gt;FnMut&lt;/code&gt; shares the same output type, which I think is fairly reasonable), &lt;code&gt;&#39;b&lt;/code&gt; would &lt;em&gt;have&lt;/em&gt; to a subtype of &lt;code&gt;&#39;a&lt;/code&gt; (i.e. it have to outlive &lt;code&gt;&#39;a&lt;/code&gt;, or at least live as long), which makes the method totally useless for us.&lt;/p&gt;
-
-&lt;p&gt;So is there anyway that we can actually solve this?&lt;/p&gt;
-
-&lt;p&gt;Intuitively, one might think that generics can help us out here. If we could make a generic &lt;code&gt;impl&lt;/code&gt; of &lt;code&gt;FnMut&lt;/code&gt; (thus &lt;code&gt;FnOnce&lt;/code&gt; as well) over all possible lifetimes &lt;code&gt;&#39;b&lt;/code&gt;&amp;hellip; Ok, that&amp;rsquo;s apparently impossible either, as &lt;code&gt;type Output&lt;/code&gt; is an associate type rather than an input type.&lt;/p&gt;
-
-&lt;p&gt;For me, I see only one way out, that is, the introducing of higher ranked types (HRT).&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;more to come&amp;hellip;&lt;/em&gt;&lt;/p&gt;
-</description>
+      <description>Intro So here is the thing. Can we write something like
+let mut vector = vec![1, 2, 3]; let mut closure = |x| vector.get_mut(x); println!(&amp;#34;{:?}&amp;#34;, closure(2)); in Rust?
+The answer is, unfortunately, no.
+Compiling it as of rust 1.15.1 would yield some error message like:
+error[E0495]: cannot infer an appropriate lifetime for lifetime parameter in function call due to conflicting requirements--&amp;gt; src\main.rs:100:23|100 | let closure = |x| vector.</description>
     </item>
     
   </channel>

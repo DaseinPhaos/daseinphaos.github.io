@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Burning Ashes</title>
+    <link>https://daseinphaos.github.io/tags/</link>
+    <description>Recent content in Tags on Burning Ashes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 22 Jun 2019 02:55:54 +0800</lastBuildDate>
+    
+	<atom:link href="https://daseinphaos.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>game</title>
+      <link>https://daseinphaos.github.io/tags/game/</link>
+      <pubDate>Sat, 22 Jun 2019 02:55:54 +0800</pubDate>
+      
+      <guid>https://daseinphaos.github.io/tags/game/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>game design</title>
+      <link>https://daseinphaos.github.io/tags/game-design/</link>
+      <pubDate>Sat, 22 Jun 2019 02:55:54 +0800</pubDate>
+      
+      <guid>https://daseinphaos.github.io/tags/game-design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sekiro</title>
+      <link>https://daseinphaos.github.io/tags/sekiro/</link>
+      <pubDate>Sun, 31 Mar 2019 18:44:49 +0800</pubDate>
+      
+      <guid>https://daseinphaos.github.io/tags/sekiro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gaming</title>
+      <link>https://daseinphaos.github.io/tags/gaming/</link>
+      <pubDate>Mon, 31 Dec 2018 23:24:32 +0800</pubDate>
+      
+      <guid>https://daseinphaos.github.io/tags/gaming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>anime</title>
+      <link>https://daseinphaos.github.io/tags/anime/</link>
+      <pubDate>Thu, 12 Jul 2018 21:37:27 +0800</pubDate>
+      
+      <guid>https://daseinphaos.github.io/tags/anime/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>BECK</title>
+      <link>https://daseinphaos.github.io/tags/beck/</link>
+      <pubDate>Thu, 12 Jul 2018 21:37:27 +0800</pubDate>
+      
+      <guid>https://daseinphaos.github.io/tags/beck/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>maid dragon</title>
+      <link>https://daseinphaos.github.io/tags/maid-dragon/</link>
+      <pubDate>Sat, 08 Apr 2017 19:34:18 +0000</pubDate>
+      
+      <guid>https://daseinphaos.github.io/tags/maid-dragon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>closure</title>
+      <link>https://daseinphaos.github.io/tags/closure/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://daseinphaos.github.io/tags/closure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HRT</title>
+      <link>https://daseinphaos.github.io/tags/hrt/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://daseinphaos.github.io/tags/hrt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rust</title>
+      <link>https://daseinphaos.github.io/tags/rust/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://daseinphaos.github.io/tags/rust/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

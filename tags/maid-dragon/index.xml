@@ -1,12 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Maid Dragon on Burning Ashes</title>
-    <link>https://daseinphaos.github.io/tags/maid-dragon/index.xml</link>
-    <description>Recent content in Maid Dragon on Burning Ashes</description>
+    <title>maid dragon on Burning Ashes</title>
+    <link>https://daseinphaos.github.io/tags/maid-dragon/</link>
+    <description>Recent content in maid dragon on Burning Ashes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://daseinphaos.github.io/tags/maid-dragon/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 08 Apr 2017 19:34:18 +0000</lastBuildDate>
+    
+	<atom:link href="https://daseinphaos.github.io/tags/maid-dragon/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>一部童话</title>
@@ -14,28 +17,7 @@
       <pubDate>Sat, 08 Apr 2017 19:34:18 +0000</pubDate>
       
       <guid>https://daseinphaos.github.io/post/meidoragunn/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;现实世界很操蛋的，冲突——个人的到集体的，无伤大雅的到惨绝人寰的——一直都在发生。更加糟糕的是，对于其中的某些冲突，即便聚集了人类社会里的尖端人才，采用了人类智慧的最新结晶；都不一定能够得到解决。而我们每一个个体，仅作为一个个无能的凡人，只有承受一条路可走。&lt;/p&gt;
-
-&lt;p&gt;这就是为什么我们需要童话——一种“通过丰富的想象、幻想和夸张来编写适合于儿童欣赏的故事”&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;的文学体裁。&lt;/p&gt;
-
-&lt;p&gt;对于某些问题，多数普通人所具备的认知，并不比一般意义上的儿童认知更加丰富。对于这些问题，我们需要童话。在架空的幻想里去谈论它们，相比于基于现实生活的论述——往往已被问题精英们进行至焦头烂额却仍无建树；无论对于作者还是读者来说，都是一件更加舒适、更易实施的行动。&lt;/p&gt;
-
-&lt;p&gt;批评家大可认为此类作品避重就轻，毫无“意义”。从某种角度来说，他们没错。&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;但童话之所以被称为童话——而非什么“最佳指南”——其原因也正在于此：它们并不声称自己要去阐述或解决实际问题，而是就这些问题给“儿童”们提供一点引导材料，和一点希望，仅此而已。&lt;/p&gt;
-
-&lt;p&gt;龙女仆就是这样的一部童话。&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;《现代汉语词典（第6版）》，2012，商务印书馆
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;批评家们也可以批评说,&lt;em&gt;一切&lt;/em&gt; 声明从 &lt;em&gt;某种&lt;/em&gt; 角度来说都是对的。
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</description>
+      <description></description>
     </item>
     
   </channel>

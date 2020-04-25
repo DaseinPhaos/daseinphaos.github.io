@@ -1,13 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Burning Ashes</title>
-    <link>https://daseinphaos.github.io/index.xml</link>
+    <link>https://daseinphaos.github.io/</link>
     <description>Recent content on Burning Ashes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 22 Jun 2019 02:55:54 +0800</lastBuildDate>
-    <atom:link href="https://daseinphaos.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://daseinphaos.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>内容作者的责任</title>
@@ -15,46 +17,7 @@
       <pubDate>Sat, 22 Jun 2019 02:55:54 +0800</pubDate>
       
       <guid>https://daseinphaos.github.io/post/content-creator-resonsibility/</guid>
-      <description>&lt;p&gt;现在是2019年6月。打从去年元旦辗转到深圳开始，我作为职业&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;游戏开发者，已经工作了一年半的时间。有学到一些、做到一些，还有更多未尽。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;回忆起来显得有些难于启齿，当时的那个嫩头青在接受面试时，对于游戏开发空有一腔“兴趣”，却没有任何真正意义上的“了解”。&lt;/p&gt;
-
-&lt;p&gt;我想我至少知道游戏很有趣, &lt;em&gt;所以开发它们至少不会无聊&lt;/em&gt;. 我也知道它很难, &lt;em&gt;所以需要很多计算机知识&lt;/em&gt;. 那是17年年底，从受激发立志进入游戏行业起，我已经自学了四年多计算机，最后半年还是以职业C++程序员的身份度过的。&lt;/p&gt;
-
-&lt;p&gt;但事实是，那时的我甚至从未尝试过自行完成一款游戏。&lt;/p&gt;
-
-&lt;p&gt;我明白，游戏开发并不简单，淦, &lt;em&gt;面试时老板说会快速原型，一款原型只用三个月，然后上线持续迭代&lt;/em&gt;; 但那一切并没有发生。一年半过去了，我们仍然没有上线，仍然远离上线，只才刚刚搭完第一个“原型”关卡。&lt;/p&gt;
-
-&lt;p&gt;但难并非不去尝试的理由。恰恰相反，难正是需要提前尝试的理由。从业一年多的时间里，我逐渐意识到游戏开发的难点存在于每个子组件的每个细节。教科书上的系统架构过时且不奏效；论文上的算法无法达到实时性能需求；引擎提供的功能残缺且难以扩充&amp;hellip;一切的一切，只有在实际尝试过之后，才有可能能对其中某些形成先见。而只有在形成先见之后，下次遇见类似问题，才能更加得心应手，才能迅速完成功能并远离BUG。速度和稳健性：游戏程序的制胜基石。&lt;/p&gt;
-
-&lt;p&gt;当时的我自有我的借口：没有美术资源。甩锅成功！冠冕堂皇的借口。但实际上，简单玩法仅仅需要不同颜色的长方体搭配组合就足够展示。更何况还有免费美术素材网站，和Game Jam等活动上很多乐于合作的艺术家&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;无论如何，当时的我没有那么做。那是一个错误，如果能够回滚时间，它是我绝对想要修正的。如今恰逢工作室需要新程序员，角色转换之后，作为招募者，我也希望能够找到没有犯这个错误的程序员。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;技术是电子游戏开发的基础一环。我现在正在开发一款平台动作游戏，正是技术决定着这款游戏的“手感”。固定且流畅的操作反馈，丝滑的动画，炫酷的视觉特效&amp;hellip;一切的一切都是程序的产物。对于我们现在的做法，我还有很多不满，需要走的路还很长。&lt;/p&gt;
-
-&lt;p&gt;正如这个项目——或者任何严肃游戏开发项目——里的一切：游戏性、剧情、音乐&amp;hellip;我们作为内容产出者(抛出审查的外部因素)是内容的绝对掌控者。虽然游戏为消费者提供了自主性，但这一事实并未改变：消费者的自主性完全建立在我们作为产出者为其建立的规则之上。消费者的行为并非我们用炼金术蒙出来的奇迹，它需要我们提供的框架。&lt;/p&gt;
-
-&lt;p&gt;在游戏行业里待了一年半，我也是最近才真正开始意识到这一点。我们的作品跟着Weplay去京都参加了一个大型展会，在试玩现场观察到每一个玩家的困惑和新奇之后，在事后看到同行和媒体的文章之后；我才开始意识到，我们所做的一切，我们产出的每一个细节，都将被传递到消费者那里。往更大的尺度说，这一切都会被抛到这个世界上，并随之引发一系列新的涟漪。&lt;/p&gt;
-
-&lt;p&gt;我们必须为这些可能的涟漪负责。我们必须意识到这一责任的重要性：对世界整体和世界里其他人的影响，对自我实现的推动，以及个人财政成功上的后果。&lt;/p&gt;
-
-&lt;p&gt;日常工作的繁琐细节可能会完全淹没这个认知。我们很容易走捷径，写出混乱的代码，或者做出凑合着用的动画。我们把这些东西丢进游戏项目的大锅里，幻想着某一天能够从里面炼出金子。但它们不能，除非我们搞清楚了化学公式，并严格按照该公式执行。&lt;/p&gt;
-
-&lt;p&gt;终而言之，假设我们想要成功发售，假如我们想要在这个世界上打响名号；那我们就必须承担这个职责。&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;就是收了钱的
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;现在是2019年6月。打从去年元旦辗转到深圳开始，我作为职业&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;游戏开发者，已经工作了一年半的时间。有学到一些、做到一些，还有更多未尽。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -63,44 +26,7 @@
       <pubDate>Sun, 31 Mar 2019 18:44:49 +0800</pubDate>
       
       <guid>https://daseinphaos.github.io/post/approachable-difficulty/</guid>
-      <description>&lt;p&gt;《只狼》难吗？&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;我相信，对于许多知道《只狼》或者其它FS社游戏的人来说，其脑海中浮现出的第一个回答毫无疑问是&lt;strong&gt;难&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;但实际体验过《只狼》后，我得出的是不同的看法。这款游戏的难度，不仅完全无法与纯粹的动作游戏，比如时下流行的《怪物猎人》或《鬼泣》DMD难度作比；从许多方面来看，它甚至比FS社之前的游戏都还要简单。&lt;/p&gt;
-
-&lt;p&gt;当然了，这不是说它很简单。时下许多&amp;rdquo;动作游戏&amp;rdquo;只靠推满摇杆狂按攻击键就可以过关（相信《鬼泣5》的简单模式就是如此），跟它们比，《只狼》当然很难。&lt;/p&gt;
-
-&lt;p&gt;但这种难度并不在于说，它需要玩家像真正的动作游戏——比如《街头霸王》——那样精确到帧地去记忆自己和对手的每一个招式。这种思路下的游戏，配合上数值碾压，的确能够做得非常难，比如《仁王》。玩家需要花极长时间去培养肌肉记忆，然后才可能看见胜利的曙光。&lt;/p&gt;
-
-&lt;p&gt;但《只狼》并非如此。它的难度来源并不在于需要肌肉记忆，或是数值碾压。就拿开局的守门小兵来说，你砍他也是三刀，他砍你也是三刀。你们俩的攻击动画都像是慢动作，帧数极长，前摇及其明显。它的难度仅仅在于它需要你用心去观察。怪物扬起刀了你就得记得摆好招架姿势，就这么简单。&lt;/p&gt;
-
-&lt;p&gt;当然了，这只是第一课。《只狼》里有很多课。突刺攻击可以见切，下挥攻击需要跳跃，蹲在草丛里可以降低敌人的视野&amp;hellip;&amp;hellip;这些方面一旦你学习到，那么整个关卡都会变得比较简单。很多时候你觉得难，比如关卡中的一个弹幕BOSS，只是因为你的观察不够细致，没有找到对应它的简单方法——是的，它们不需要你完美地闪避弹幕就能解决，只是你需要找到方法。这些稍微需要拐一个弯的地方，才是《只狼》其难度——同时也是乐趣——的真正来源。变强不仅只有依靠肌肉记忆这一条路。&lt;/p&gt;
-
-&lt;p&gt;当然了，光是知道这些道理，并不是说玩家就能恪守。特别是初见探索时，失误是很正常的现象。但因为《只狼》有原地重生的概念，首次死亡的惩罚并不大。&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:3&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:3&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;这正是它简单的一个体现。再次死亡的惩罚反倒为复活后抵达佛雕的过程添加了十足的紧张感，成为了游戏乐趣的来源之一。&lt;/p&gt;
-
-&lt;p&gt;这是《只狼》与一干真正难的动作游戏的核心区别：一旦掌握了诀窍，在任何时候，你都能够明显地认知到，自己&lt;strong&gt;有能力&lt;/strong&gt;通关。这个认知十分重要。如果一个游戏直接难到让玩家看不到胜利的希望，那么它会失去非硬核玩家之外的绝大部分受众。很多时候，游戏开发者畏首畏尾不敢让自己的游戏难度太高，正是因为这一点。但这并不意味着游戏应该走向另外一个极端，走向《尼尔》的自动攻击模式。游戏最独特的地方在于可以参与，从参与中得到的乐趣才是其魅力的来源。这种参与如果平白到只有AAAAAAA一个动作，那干嘛不干脆连A也丢掉，去看爽片呢。&lt;/p&gt;
-
-&lt;p&gt;但是设计参与就意味要考虑玩家的能力。能为玩家提供足够参与感的同时不让他们望洋兴叹，如果能做出这种体验，那就不难像《只狼》这样得到叫座又叫好的评价。我一直认为，FS社的游戏，在玩家的“可接受度”上处理得很好。而这一作比起魂系列作品则更容易接受了。游戏机制也好，剧情也好，游戏内都给到了充分但不平白的提示——相比魂系列要充分得多，所以开头才说它更简单了。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;我能说它简单，也不仅只是主观感受。从全球玩家通关数据的横向对比中，也可以看到一些端倪。截至写稿日19年3月31号，steam已有12.2%的玩家通关了部分结局的关底BOSS剑圣一心&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;。对比比它早两周发售的《鬼泣5》，截至今天全球也只有8.5%的玩家打通了sos难度&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;。有如此多玩家能在不到半个月内够达成通关的游戏，我认为可以说明它在绝对难度上算不上难。&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:3&#34;&gt;这个机制的精妙之处在于，它是gameplay和叙事的完美结合。在以前的文章里我也提到过，FS社游戏让我最喜欢的地方就在于这儿之结合的一致性。游戏内的绝大部分地方都在第四面墙的另一边，天衣无缝。这一作里引入了跌落悬崖重生在崖边反倒让我觉得有些出戏。
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:3&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:1&#34;&gt;由于存在其它不需要对峙此boss的结局，通关玩家的总百分比高于此数值。
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;当然了，normal模式通关的人更多，高达26%。但该模式是鬼泣5九个难度模式的最低端，相对来说，sos难度作为一周目可选用的最高难度，更能代表鬼泣5的整体难度。
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;《只狼》难吗？&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -109,27 +35,7 @@
       <pubDate>Mon, 11 Feb 2019 15:26:26 +0800</pubDate>
       
       <guid>https://daseinphaos.github.io/post/plans-yof/</guid>
-      <description>&lt;p&gt;我迎来了人生中第二个本命年。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;为什么今年是我的本命年？每每要给别人解释我的生肖属相，我都会感觉有些拗口。我出生于公历96年，所以第一时间会被推测属鼠。但实际上，由于出生在一月，我的生日对应在农历的乙亥猪年腊月，我其实该属猪。&lt;/p&gt;
-
-&lt;p&gt;说来有愧于腊月出生，在来深圳待了一年之后，我已经变得无法适应冬天的寒冷。老家冬天刺人的干冽寒风，因而给我这次春节长假返乡过年的经历，带来了大于其乐趣的煎熬。&lt;/p&gt;
-
-&lt;p&gt;十二年前，我对于寒冷并不感到害怕。也许我会像现在自己的妹妹——她刚好比我小十二岁——一样，即便手被冻肿出疮，仍不介意继续在户外玩雪。&lt;/p&gt;
-
-&lt;p&gt;但在十二年后的今天，寒冷，如同其它许多沉重的概念一样，已经深深扎进了我的脑海里，取代寒假作业，成为了我新的担忧来源。&lt;/p&gt;
-
-&lt;p&gt;站在今天去回想自己学生时代对于寒假作业的担忧，难免会觉得有几分可笑。但即使现在再怎么想要否定掩饰，对于当时的我来说，那种担忧无疑是真实的。它是当时的我建立社会认同所需的重要组件，也因而或多或少成为了我部分自我认同的来源。&lt;/p&gt;
-
-&lt;p&gt;但今天的我早已脱离了那个由学校-家组成的社会结构，对于世界和自身也有了新的认知，因而也产生了新的自我认同体系。&lt;/p&gt;
-
-&lt;p&gt;我成为了一名游戏开发者。办公室-寝室成为了我主要活动的社会结构，游戏产品则成为了社会对于我的新期待，以及我部分自我认同的新来源。在这个本命年，我也必然需要在这方面深入钻研：不仅在我目前主业的游戏编程方面，也需要——甚至更需要——在游戏设计方面产生一些可完整陈述的个人意见。&lt;/p&gt;
-
-&lt;p&gt;下个十二年后再次回望，我不知道自己是否会位于又一个完全不同的社会结构之中。鉴于当前社会变化之多样和迅速，其可能性很大。因此，为了完善我的社会认知，为将来空出更多可能性；除了对于游戏开发的钻研外，我还需要关注其它方面一些较为深入的项目，目前我最想做一些对于互联网文化产品评论的统计角度研究。&lt;/p&gt;
-
-&lt;p&gt;本命年，你好！&lt;/p&gt;</description>
+      <description>&lt;p&gt;我迎来了人生中第二个本命年。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -138,53 +44,7 @@
       <pubDate>Mon, 31 Dec 2018 23:24:32 +0800</pubDate>
       
       <guid>https://daseinphaos.github.io/post/gaming-notes-2018-2/</guid>
-      <description>&lt;p&gt;平成最后的游戏录。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;2018年马上就要结束了。这一年我正式进入了游戏产业，也以之为契机决定记录自己的游玩历程和感触。这将是今年的最后一篇记录。&lt;/p&gt;
-
-&lt;p&gt;在上篇感触发布后的两个多月里，我又新玩了三款值得提及的游戏。&lt;/p&gt;
-
-&lt;h3 id=&#34;刺客信条-奥德赛&#34;&gt;刺客信条：奥德赛&lt;/h3&gt;
-
-&lt;p&gt;虽然有《起源》大众口碑和我个人体验差异巨大的前车之鉴；但在“更强的RPG要素”，“可选女主人翁”，&amp;rdquo;堪比《巫师》的分支选择&amp;rdquo;和漫天好评的狂轰滥炸下，我还是没能狠下心去不玩《奥德赛》。&lt;/p&gt;
-
-&lt;p&gt;实际游玩体验的确没有今年尝的另外两款育碧罐头那么糟糕。旅行出发前后的几个小时甚至可以说是相当愉快的：我实实在在地感受到了它被好评的方面对于游戏体验的提升。RPG元素清晰可见，三方面的分支技能决定了三种截然不同的战斗思路；女主人翁让爬山爬墙焕发出了新的生机；而与NPC进行交互对话时的各种要素齐全的分支选项，则大大增加了交接任务的乐趣。&lt;/p&gt;
-
-&lt;p&gt;直到游戏步入中期，兄妹二人再会之后，育碧罐头熟悉的味道才又变得明显了起来。动作系统的深度不够；满世界都是山而女主的时装花样【雾】又不够；对话样式模板化严重导致变化不够。这些在游戏初期让我感到新颖的亮点，并没有随着游戏的进程而展现出更多花样，然而性质相似的地图模块倒是一个接着一个越探索越多，导致中期感到疲劳的我选择了AFK。&lt;/p&gt;
-
-&lt;h3 id=&#34;celeste&#34;&gt;Celeste&lt;/h3&gt;
-
-&lt;p&gt;剧情方面，由于尚未通关，暂时没有办法评价。下面只讨论游戏性。&lt;/p&gt;
-
-&lt;p&gt;这是一款特别纯粹的横版游戏。你可以跳，可以冲，碰到障碍物就会死。
-操作感没什么可以挑剔的，长短跳、爬墙、反跳、各种冲刺的手感都非常好。
-游戏关卡由一系列小房间组成，玩家的主要游戏过程分为两段。
-首先要找到通向下一房间的可行路径。这种路径实际上是静态的，即不存在诸如突然冒出来的怪物来扰乱你的前进道路，但找到路径仅仅是完成了相对简单的那部分。
-更难的是后半部分：实际操作主人翁完成该路径。这种路径需要在短时间内完成一连串（极端状况下精确到帧）没有任何失误的操作序列。绝大部分玩家需要花很长很长时间练习，形成肌肉记忆之后才有可能完成。&lt;/p&gt;
-
-&lt;p&gt;目前我仅仅通过了前三章，累积死亡次数已经接近3000回，而在游戏内置的8位机模式的关卡里又死了3000+回。&lt;/p&gt;
-
-&lt;p&gt;实际上我比较享受前半部分过程，即找路线的过程；所以在后半部分上花去如此多的时间实际上有些没有必要。也许之后我会考虑降低难度在辅助模式下通关。&lt;/p&gt;
-
-&lt;h3 id=&#34;super-smash-bros-ultimate&#34;&gt;Super Smash Bros Ultimate&lt;/h3&gt;
-
-&lt;p&gt;一直听说这个系列很受追捧，但在实际接触这个游戏之前，我万万没有想到一款游戏能在适合阖家欢的同时拥有如此强的竞技性。&lt;/p&gt;
-
-&lt;p&gt;对于高竞技性本身，就像对于Celeste的高动作难度一样，我本人(不仅是)由于手残并不是特别地感冒。但它所提供的一些对战理念和搓招样板，绝对是日后做横板动作冒险游戏时值得参考的。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;以上就是今年玩过的所有游戏。&lt;/p&gt;
-
-&lt;p&gt;总结来说，我认为黑暗之魂在玩法以及叙事的一致性和完整性上超越了所有其它游戏，拔得头筹。但神界原罪2因为其多种build多种选择分支的可能性给我带来了最多的快乐。&lt;/p&gt;
-
-&lt;p&gt;未来我想制作一款能够达到高完整性和高一致性的横板或垂直的ARPG游戏。在关卡设计上，这款游戏可能需要吸纳黑暗之魂的许多优点。盐与避难所、Hyper Light Drifer和Celeste提供了一些能直接采用的2d关卡样板，也值得参考。在角色动作性设计上，盐与避难所同样值得参考，但我认为还不够出彩。也许可以借助更多来自于Super Smash Bros这类动作游戏的经验。&lt;/p&gt;
-
-&lt;p&gt;为了能够制作这样一款游戏，未来我也需要更多关注类似的游戏，并不断从中提取出我认为好的可用的部分。在游戏设计方面，我也需要读更多资料。在动作系统实现方面亦然。&lt;/p&gt;
-
-&lt;p&gt;2018再见，希望2019年能够玩到更多好游戏。&lt;/p&gt;</description>
+      <description>&lt;p&gt;平成最后的游戏录。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -193,29 +53,7 @@
       <pubDate>Sun, 21 Oct 2018 03:13:45 +0800</pubDate>
       
       <guid>https://daseinphaos.github.io/post/gaming-notes-2018-1/</guid>
-      <description>&lt;p&gt;书接上文。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;在上个月的文章里，我列举了自己对开年来玩过的一些游戏的大致印象。&lt;/p&gt;
-
-&lt;p&gt;梳理中我发现自己目前最喜欢的还是魂式游戏，一来当然在于其游戏性强的同时又不至于太难。但跟同类型的动作游戏相比，我觉得更为主要的，其实在于其玩法与叙事的结合并不突兀：这给了我一个去玩它而非去躺尸的理由。&lt;/p&gt;
-
-&lt;p&gt;这里谈游戏，是指其作为媒介的身份：一种传递信息的手段。具体来说，是指开发者通过构建情境，并邀请玩家参与情境，来让玩家接触到既定信息并获得既定类型体验的手段。&lt;/p&gt;
-
-&lt;p&gt;作为媒介，游戏的特殊性，在于玩家的主动参与。主动参与为游戏带来了很多可能性。在规则驱动的游戏里尤其重要：规则本身并不能带来任何多于它纸面意义本身的东西，但一旦有了玩家的参与演绎，就能得出无数多的富有启发价值的丰富体验。&lt;/p&gt;
-
-&lt;p&gt;但这类游戏并非本文话题。本文主要讨论在叙事类游戏中，玩家参与为叙事所带来的影响。&lt;/p&gt;
-
-&lt;p&gt;最显而易见的影响之一，是能为玩家提供参与感。传统叙事结构下的读者或听众，在叙事内是没有身份的。它充其量只能是一个旁观者，充其量只能跟着勇者走出村子最终杀掉恶龙。但游戏能为玩家提供叙事内的身份，玩家得以比如说扮演这位勇者。这正是此类游戏能够吸引到叙事爱好者的原因，不过我认为现在的多数叙述游戏作品都做得很不好，因为主动参与并没能为叙事提供帮助，反倒拖了后腿。&lt;/p&gt;
-
-&lt;p&gt;我认为这其中最为“登峰造极”的例子就是传统日式RPG。它们直接选择把玩法和叙事割裂成两套明显独立的系统，再用502胶水把二者生硬粘在一起。两者不互相膈应就已经是谢天谢地，更不用谈互相补足。从叙事爱好者的角度来说这是十分可悲的。比如玩绯夜传说时，一面我操控角色走在赤裸裸空荡荡的地图上，考虑自己如何避开长相十分滑稽、体验过于重复的敌人雷；一面又必须假装自己正在扮演贝姐进行她可歌可泣的复仇之旅。单独从游戏性上来说，踩上雷之后的砍杀体验虽然谈不上好，但也不能说差；单独从叙事上讲，我觉得游戏的角色塑造和过场演出也没有什么问题，我其实很想把它看完。但为了能看完它，我就必须去玩这整个平庸的踩雷游戏机制——后者其实跟前者毫无关联。这种必须反倒让我的叙事体验变得十分糟糕，以至于没办法继续下去。&lt;/p&gt;
-
-&lt;p&gt;而魂式游戏则不同，因为其叙事和玩法是完全咬合的。从在不死院醒来开始，玩家的每一个行为其实都很自然地是游戏叙事的一部分。每一个主动动作——被救出、被攻击、死去、复活、寻找武器还击、到达火祭场、探索王城，击败薪王——都是叙事的一部分。这种紧密结合为玩家的行为赋予了更为深刻的意义：它不仅仅是在摁几个手柄上的按键，也不仅是在砍杀什么毫无所谓的僵尸，它是在&lt;strong&gt;传火&lt;/strong&gt;。&lt;/p&gt;
-
-&lt;p&gt;这才真正展现了游戏在叙事上该有的优势：参与感。我就是想听个故事而已，如果不能提供参与感，那我大可躺着尸看电视剧，为什么非得正坐在电脑前面握着个手柄去踩雷呢。&lt;/p&gt;
-
-&lt;p&gt;想要做好游戏叙事必须做到这种与玩法的紧密咬合。像日式RPG那种生粘两套在一起的做法，其实就是设计的偷懒和妥协。玩家如果有得选，相信也都会要么选择玩法更加精致的规则驱动游戏，要么直接去看叙事更加连贯的电视剧。它们之所以还有一些生存空间，只不过是因为现在玩家的选择并不够多而已。&lt;/p&gt;</description>
+      <description>&lt;p&gt;书接上文。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -224,137 +62,7 @@
       <pubDate>Wed, 12 Sep 2018 02:00:13 +0800</pubDate>
       
       <guid>https://daseinphaos.github.io/post/gaming-notes-2018/</guid>
-      <description>&lt;p&gt;我是一名(云)玩家。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;直到现在，我仍能清楚回忆起自己在云通关 &lt;em&gt;the last of us&lt;/em&gt; 时所得到的冲击和享受。是它让我真正开始考量游戏在简单的“打打杀杀”之外的可能性，既而间接促使我进入了游戏行业。&lt;/p&gt;
-
-&lt;p&gt;但在我所有有关游戏的经历里，留下了像它那样深刻印象的，实在是屈指可数。这一方面当然是因为没有那么多游戏足够震撼，但更多还是因为人脑的记忆没有那么靠谱。我在最近开始意识到，单是情感或经历本身，无论在其当下显得多么丰富，也没有胜过遗忘的可能。这是我需要记录游戏经历的第一个原因。同时，作为一个对游戏设计感兴趣、想要做出好设计的开发者，我肯定也需要对玩过的游戏进行有组织的思考。&lt;/p&gt;
-
-&lt;p&gt;因此，我决定开始这个记录话题，用来存放我对自己玩过的游戏的感受和思考。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;就先列举列举2018年我在steam/ns上买下、玩过并有记忆的游戏吧。我将按照大致分类-游玩时间来进行排序，来列举自己对它们的印象。&lt;/p&gt;
-
-&lt;h2 id=&#34;动作-动作角色扮演类&#34;&gt;动作/动作角色扮演类&lt;/h2&gt;
-
-&lt;p&gt;我很喜欢黑暗之魂3。事实上，在之前玩过的动作游戏里，我最喜欢的就是它。当然了，这很大程度上是因为我没有主机去玩血源。&lt;/p&gt;
-
-&lt;p&gt;在很多方面，我都认为黑暗之魂3是一个优秀的典范。&lt;/p&gt;
-
-&lt;p&gt;最为突出的一点无疑是它的难度设定。作为一个动作游戏，它足够难，以至于能够让玩家把它当作一个严肃游戏（而非，比如说，无双游戏）来看待。但同时它的难度堆积又并非无脑或者无情的：只要肯下一点点心思和注意力去观察，再配合上不必太长时间的联系，手残如我都能够通关游戏。它最大的难点，在于玩家的血量少得可怜。但光光是把游戏做难并非难事，也并非能让玩家买账的模式。但这种难度配合上敌人们动作鲜明的招式，就成为了一个好的设计。它给玩家设下了恰到好处的门槛：你不必是个反应精确到毫秒的天才，但我们需要你集中自己的注意力。这正是大部分动作玩家梦寐以求的G点。&lt;/p&gt;
-
-&lt;p&gt;在关卡设计上，我也觉得它很优秀。也许谈不上十分出色，但在大部分游戏都是诸如“嗨，这是一条摆在你脸上的岔路！”“嗨，岔路的尽头必定是一个没有任何真正好东西的宝箱！“”(｡･∀･)ﾉﾞ嗨，你抽到了一张SSR!“这类毫无任何设计可言的衬托下；我在探索地图时所体验到的紧张感和找到宝藏时的满足感都是非常大的。你能感受到FS的设计，而不是一堆赤裸裸的方便了是的堆砌。&lt;/p&gt;
-
-&lt;p&gt;在叙事上，它使用的所谓”碎片化“模式也十分独特。坦白地说，在游玩的过程中，对于主人公所经历的故事，我可能连半点头绪都谈不上有。我的专注度并没有高到能够通读所有物品的描述，或者找到任何场景中的叙事暗示。但在网路时代里，总有人能找到。许多玩家一同拼凑碎片、交流发现的过程本身成为了一种元游戏，造就了一个十分有趣而且传播性极强的模因。&lt;/p&gt;
-
-&lt;p&gt;好了，说了这么多，终于该轮到我玩过的新作了。&lt;/p&gt;
-
-&lt;h3 id=&#34;仁王&#34;&gt;仁王&lt;/h3&gt;
-
-&lt;p&gt;我觉得这个游戏比黑暗之魂3难很多。你的血量更低，敌人的动作更快更不明显，最糟糕的是你的装备要靠他妈的刷。这些特点在很多玩家里可能是梦寐以求的加分点，但我并不喜欢它们。&lt;/p&gt;
-
-&lt;p&gt;我喜欢它的两个地方。第一，脱裤魔的女性角色建模很好看，而且主角能幻化成她们（只要你不介意刷到吐）；第二，动作系统更加丰富，而且是真正有用的那种。&lt;/p&gt;
-
-&lt;p&gt;但它剩下的地方几乎都是我想吐槽的。地图方面，有些关卡——特别是主线的——其实还不错，但很多那种Right On Your Face的关卡让人感受不到诚意。难度方面，如果想线性进行游戏的话，数值设计可能会让人崩溃：因为装备和等级不够，我到现在都没打DLC。也许我根本不会去打了。剧情我觉得也没有什么亮点，套个壳子、走走过场的程度。最让我闹心的是优化，80多GB的硬盘空间，30-40帧的不稳定帧率，真佩服我自己能把本体给打通了。&lt;/p&gt;
-
-&lt;h3 id=&#34;黑暗之魂重制版&#34;&gt;黑暗之魂重制版&lt;/h3&gt;
-
-&lt;p&gt;黑暗之魂3的前身。动作、场景、人物当然都比不上新科技，但核心的东西已经全在那儿了。特别是地图设计可以说比3更加优秀：由于前期无法传送，大地图上不同场景间存在很多巧妙的岔路，能让玩家享受到很多探索的乐趣。数值递进也很平滑，能让玩家体验到自己一步一步变强的感觉。氛围比3代更加严肃孤独。&lt;/p&gt;
-
-&lt;h3 id=&#34;怪物猎人世界&#34;&gt;怪物猎人世界&lt;/h3&gt;
-
-&lt;p&gt;这就是个动作游戏。快感完全来自于玩家对其不同武器动作系统的了解和掌握的过程。其它没啥亮眼的地方。实际上，刷子系统很让人讨厌。怪物的变化不够多也很让人讨厌。gtmd世界警察是真的很让人讨厌。&lt;/p&gt;
-
-&lt;h3 id=&#34;二之国2&#34;&gt;二之国2&lt;/h3&gt;
-
-&lt;p&gt;亮点是渲染风格，这是为数不多的几款真正把卡通渲染做出日本动画风格的游戏。但在设计上，它可以说是集日本游戏可有可无元素的”大成“了：系统很多，每一个都很没劲。正太很好看，但故事还是不够有吸引力。没能通关。很贵。&lt;/p&gt;
-
-&lt;h3 id=&#34;绯夜传说&#34;&gt;绯夜传说&lt;/h3&gt;
-
-&lt;p&gt;我很喜欢玩女主人翁的剧情游戏。这款游戏的剧情（到目前我玩到的为止）看起来还非常不错，所以我想自己大概还算得上是喜欢它。只不过在游戏性方面它跟二之国2一样也是日本游戏元素负分的集合。动作系统还算凑合，但是地图设计真的是又大又空还丑，女主跑图还很慢，简直了。不知道会不会捡起来接着玩。&lt;/p&gt;
-
-&lt;h2 id=&#34;音游&#34;&gt;音游&lt;/h2&gt;
-
-&lt;h3 id=&#34;摇滚少女&#34;&gt;摇滚少女（?）&lt;/h3&gt;
-
-&lt;p&gt;看到一个大手子的视频，出于对架子鼓和joycon玩法的好奇所尝试的游戏。玩了一下发现我跟大手子可能还是差太多了。&lt;/p&gt;
-
-&lt;h2 id=&#34;育碧罐头&#34;&gt;育碧罐头&lt;/h2&gt;
-
-&lt;p&gt;是的，它们应该被单独分类！&lt;/p&gt;
-
-&lt;h3 id=&#34;刺客信条起源&#34;&gt;刺客信条起源&lt;/h3&gt;
-
-&lt;p&gt;一开始我还以为它会很有趣？失手杀死了自己儿子的父亲&amp;hellip;可惜进展到城邦之后就玩不下去了。人物没能立起来。所以剩下的一切，除了风景之外，也都没什么意义了。&lt;/p&gt;
-
-&lt;h3 id=&#34;远哭5&#34;&gt;远哭5&lt;/h3&gt;
-
-&lt;p&gt;一切请以实物为准，剧情就是笑话，预告片都是骗人的。但开直升机的体验很不错，飞鼠装的体验很不错。优化不错。&lt;/p&gt;
-
-&lt;h2 id=&#34;文字冒险&#34;&gt;文字冒险&lt;/h2&gt;
-
-&lt;h3 id=&#34;寻找天堂&#34;&gt;寻找天堂&lt;/h3&gt;
-
-&lt;p&gt;它严肃所想讲的那个故事并不是很吸引我，反倒很多kuso game的地方让我觉得很有意思。也很感谢作者只放了一个奖牌，我终于也有了一款达成所有成就的游戏。&lt;/p&gt;
-
-&lt;h3 id=&#34;奇异人生-风暴前夜&#34;&gt;奇异人生：风暴前夜&lt;/h3&gt;
-
-&lt;p&gt;在奇异人生之后，这部作品并没有什么突破。但整个故事其实讲得比奇异人生要完整。只可惜无法改变瑞秋的命运&amp;hellip;&lt;/p&gt;
-
-&lt;h2 id=&#34;垂直卷轴&#34;&gt;垂直卷轴&lt;/h2&gt;
-
-&lt;h3 id=&#34;legend-of-wizards&#34;&gt;Legend of Wizards&lt;/h3&gt;
-
-&lt;p&gt;我现在更加确信，自己不喜欢随机生成的关卡了。我不喜欢那种感受不到设计的感觉。&lt;/p&gt;
-
-&lt;h3 id=&#34;hyper-light-drifter&#34;&gt;Hyper Light Drifter&lt;/h3&gt;
-
-&lt;p&gt;好了，能感受到一些设计！但它很难，不知道我能否坚持到通关。&lt;/p&gt;
-
-&lt;h2 id=&#34;横向卷轴&#34;&gt;横向卷轴&lt;/h2&gt;
-
-&lt;h3 id=&#34;iconoclasts&#34;&gt;Iconoclasts&lt;/h3&gt;
-
-&lt;p&gt;在同事的推荐下购入的游戏。比较奇怪的是，我到现在都没搞清楚怎么出教学区域。横板游戏迷路其一。&lt;/p&gt;
-
-&lt;h3 id=&#34;忍者之印&#34;&gt;忍者之印&lt;/h3&gt;
-
-&lt;p&gt;经典之作，但人物移动速度太慢导致我放弃游玩。&lt;/p&gt;
-
-&lt;h3 id=&#34;盐与避难所&#34;&gt;盐与避难所&lt;/h3&gt;
-
-&lt;p&gt;经典！BOSS战很刺激。但我又迷路了。&lt;/p&gt;
-
-&lt;h3 id=&#34;死亡细胞&#34;&gt;死亡细胞&lt;/h3&gt;
-
-&lt;p&gt;操控感不错。但随机要素导致我放弃游玩。&lt;/p&gt;
-
-&lt;h2 id=&#34;crpg&#34;&gt;CRPG&lt;/h2&gt;
-
-&lt;h3 id=&#34;神界-原罪2&#34;&gt;神界：原罪2&lt;/h3&gt;
-
-&lt;p&gt;剧情合理，地图丰富，战斗系统优秀。第一次打开它竟然连续玩了三十多个小时。可惜到最后一张大地图之后明显感觉到赶工痕迹。&lt;/p&gt;
-
-&lt;h3 id=&#34;神界-原罪加强版&#34;&gt;神界：原罪加强版&lt;/h3&gt;
-
-&lt;p&gt;基本上是二代的全面退化版。可以感受到制作团队在两作之间明显的进步。未能完成。&lt;/p&gt;
-
-&lt;h3 id=&#34;永恒之柱&#34;&gt;永恒之柱&lt;/h3&gt;
-
-&lt;p&gt;中文翻译并不是很好，优化也不好。最主要的，我不是很能玩进它的即时暂停制战斗系统。&lt;/p&gt;
-
-&lt;h3 id=&#34;永恒之柱2-死火&#34;&gt;永恒之柱2：死火&lt;/h3&gt;
-
-&lt;p&gt;基本同上。&lt;/p&gt;
-
-&lt;h3 id=&#34;暴君&#34;&gt;暴君&lt;/h3&gt;
-
-&lt;p&gt;和上面两款游戏的弱点相同，但它的剧情对我的吸引力足够大，所以我玩的时间足够长。也许之后调低一下难度后我能打完它。&lt;/p&gt;
-
-&lt;p&gt;TBD afterthoughts&lt;/p&gt;</description>
+      <description>&lt;p&gt;我是一名(云)玩家。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -363,136 +71,7 @@
       <pubDate>Sun, 29 Jul 2018 05:35:07 +0800</pubDate>
       
       <guid>https://daseinphaos.github.io/post/reboot/</guid>
-      <description>&lt;p&gt;写作的起点在哪？&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;作为一个接受素质教育的中国大陆人，不难猜到，我的起点，是语文老师布置的习作。&lt;/p&gt;
-
-&lt;p&gt;从小学的第一篇周记开始，贯穿应试教育十二年的作文，既是起点，也——不出预料地——是我坚持时间最长、成文最多的写作项目。&lt;/p&gt;
-
-&lt;p&gt;但它们的内容甚至题目，到今天，我却基本都已经忘了。倒不是说它们重要。正相反，它们——尤其是高中三年写的——奠定了我写作的根基。毕竟最长最多，它们的影响，是我想避都没法避开的。更不用说，我能用得出的所有技法，也都是通过它们而得以系统性学到的。&lt;/p&gt;
-
-&lt;p&gt;忘记的原因也很单纯。作业和试题毕竟是别人布置的任务，再加上任务说明里明确指示了，只要“积极健康”；我作为一个满脑子想着睡觉、上网以及隔壁女同学的健全男学生，自然很难把真正想展示的那些低劣罪恶的想法写进去。但作业总不能不交，试也不能不考， &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:-&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:-&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; 那就只能瞎写，假大空的话扯上一堆，扯完也就过去了，自然就忘了。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;那有没有还没忘的写作经验呢？&lt;/p&gt;
-
-&lt;p&gt;说实在话，很少。逻辑性强如代码，过六个月，是我自己写的基本上也忘了。我写的其它东西通常又更缺乏逻辑，能记下来的更加少。&lt;/p&gt;
-
-&lt;p&gt;但一些印象总归是留了下来，那些真正因为自己想写才主动去写了的东西。&lt;/p&gt;
-
-&lt;p&gt;最早的印象是初中——不，是小学。当我打下“初中”这两个字时，脑海里浮现出的是一个小孩，正捧着心仪女生的日记。日记本很好看，女生的字更好看。小孩当即想，自己也要去买个一样的本子，也要记日记——模仿他喜欢的女生。思绪到这里突然跳转，一段更早的印象进入视野，小学，也是为了模仿自己喜欢的女生，她们正在写当时流行的交换言情小说，小孩自己就也买了个本子写小说。&lt;/p&gt;
-
-&lt;p&gt;那究竟是什么样的小说呢。现在的我是想不出了。&lt;/p&gt;
-
-&lt;p&gt;女生们的小说本传来传去被班主任发现，发鬓斑白的她翻看了一会儿，竟然没有开始说教，而是抬起头，深吸一口气，然后稍稍舒展出笑容，“写得还挺好的呀！”&lt;/p&gt;
-
-&lt;p&gt;那究竟是什么样的小说呢。&lt;/p&gt;
-
-&lt;p&gt;我现在有点感到诧异，因为自己当时竟然没要求过，要看她们的那本小说。她们当然也没要求看我的——我压根没告诉过她们自己也写。当然啦，几页之后，也许是自己都看不懂了，我就把这整件事忘记，直到刚刚又想起来。&lt;/p&gt;
-
-&lt;p&gt;因为年纪比较小，小学初中时，我一直很受关照。同学们都把我当成弟弟又护又逗，她们也不例外。现在回想的话，我如果主动去要来看，应该也不会被拒绝吧。但当年害怕温暖关系被打破的小胆子小孩，一直都是被动地让交互发生，从来不敢自己主动把心意挑明。可惜给我看小说这个交互事件，终究是没有发生。&lt;/p&gt;
-
-&lt;p&gt;初中的日记本，差不多就是小学情形的再度演绎。我写了一段时间，大概也是没告诉过她，然后就没有然后了。&lt;/p&gt;
-
-&lt;p&gt;也许我只是想接近她们吧。最终，我没能写出什么值得记得的东西；写这事儿本身，也没能成为拉近我和她们之间距离的契机。什么也没有发生。&lt;/p&gt;
-
-&lt;p&gt;直到初中毕业前，我才鼓起勇气，主动给初中阶段自己喜欢的最后一个女生买礼物、打电话。虽然再然后也没有然后了。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;日记本后不久，QQ空间开始在我们那儿流行了。网络日志，我记得住内容的，真正的写作起点。&lt;/p&gt;
-
-&lt;p&gt;还是因为看了那位女同学的，给我看日记本的那位。她的空间也很漂亮。不过具体是怎么漂亮法呢？粉色，还是黑色点缀着星星点点的红？我不记得了。只记得自己看过之后，就决心自己也选一个酷炫的模板，然后把网络日志写起来。&lt;/p&gt;
-
-&lt;p&gt;她总归是看过我在空间里写的东西的。网络帮我伸出了自己犹豫着不敢伸出去的邀请的手。当然这邀请的力度要下降了不少，回应的分量相应的也变得难以判断。那个时候，只要是开通了QQ空间的同学，男生女生都会互相来往。&lt;/p&gt;
-
-&lt;p&gt;那么，那时候我写了些什么？&lt;/p&gt;
-
-&lt;p&gt;在某些时间段，回想那些内容应该是非常羞耻的，以至于在大概高一高二前后，我清空了自己所有的QQ日志。&lt;/p&gt;
-
-&lt;p&gt;剧变的青春期，每一天都会打心底觉得，前一天的自己是个傻逼。可能就在那一天，我突然意识到，自己那些关于生活、关于情情爱爱的傻逼看法，参与的那些傻逼点名活动，以及那些被钓鱼发的傻逼贴子，仍然停留在网络上供人瞻仰，是一件非常尴尬的事情。&lt;/p&gt;
-
-&lt;p&gt;这次清洗，让现在正回头考古的我感到难办。我还记得曾有一些自己写或翻译的小诗，它们在清洗中消失了。我的初中生涯在清洗中消失了一部分。向高二的自己提出严正抗议。&lt;/p&gt;
-
-&lt;p&gt;清洗过后，我就很少在QQ空间写日志了。一方面，新兴的人人网抢占了我大部分网络时间；另一方面，我自己也吸取了清洗的教训，变得更加不愿下笔，害怕一不留神又留下更多的黑历史。&lt;/p&gt;
-
-&lt;p&gt;不过终究还是又写了四篇，可供现在的我瞻仰。&lt;/p&gt;
-
-&lt;p&gt;第一篇写在高二下学期，典型的网络日记，流水账，强社交性，说当时外公检查出癌症，我的生活又有诸多不顺，很伤心；然后点名几个当时关系亲密的朋友，说说心里话，然后再自责发泄一下。&lt;/p&gt;
-
-&lt;p&gt;我记得自己写过这篇，但没想到它的社交成分能有这么地强。在现在的我看来，这简直是不可想象的。现在我也发微博、推特，但都是为了我本人的开心和发泄；已经不再把听众的想法纳入考量。&lt;/p&gt;
-
-&lt;p&gt;思考了一会，我觉得应该把这种写作目的转换，归因于听众的消失。初高中时，尽管和亲近的同学们每天都在见面，但一回到家里，总又还能想到更多的事情没能和他们聊完。还有更多虽然暂时没法见面，但是仍然希望能够互相保持联系的前同学。我甚至还有 &lt;strong&gt;真正的&lt;/strong&gt; 网友。&lt;/p&gt;
-
-&lt;p&gt;但不知不觉间，那些亲近的同学、前同学和网友们，渐渐都从我的网路空间里消失了。我的QQ空间凉了，人人网凉了，微博也凉了。但我自己想要谈话的欲望却不像他们走得那样迅速而决绝，仍然不时会从胃里涌起。我只好让它吐出来，流向真空。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;之后三篇QQ日志，发布时间分散在高三下到大一期间。主要描述了自己当时的生活和情绪状态。可以看到它们从高三的顶点到大学直线下行的轨迹。这种下行也是驱动我后来写作的动力之一。&lt;/p&gt;
-
-&lt;p&gt;就在高中毕业、才进入大学那段时间里，我开始突然或者渐渐意识到很多事情没有意义。跟女朋友的热恋甚至也丢失了意义。&lt;/p&gt;
-
-&lt;p&gt;在高中，我的存在目标很明确：考大学。在我的周围，是跟我目标一致，兴趣相投的一众好友。但真到了大学，一切都显得世故而无聊。社团很无聊，我在高中玩过非常棒的；同学很无聊，半点共同话题都谈不拢。课程也很无聊，繁文缛节也很无聊，起床也开始变得很无聊&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;我不是在控诉大学生活本身不好。我见过的，过得很充实的人生赢家也不少。但出于种种原因——可以认为主要是出于自身摆烂——这种“好的”大学生活，跟我的距离十分遥远。恰恰相反，我陷在无聊、无意义的泥潭里，一年又一年，不去上课，也不去参加考试，可以说是就窝在宿舍里，厮混了五年。我的大学生活就是厮混。&lt;/p&gt;
-
-&lt;p&gt;但我当然不可能满足于厮混。咸鱼可能没有梦想，但总归是会感到恐慌的。有那么一些深夜，我熬到了宿舍断电断网，但仍然睡不着觉，也不知道能干什么转移注意力。恐慌会在这种夜里找上我，一个预备废人，也没有老本可吃，正在泥潭里挣扎的样子。&lt;/p&gt;
-
-&lt;p&gt;有那么一些夜里，我甚至没有人可以倾诉。女朋友早就吹了。亲密朋友们——无论有多亲密——总是要睡觉的，他们也不可能对一滩烂泥感同身受。父母亲人更加不可能。我的烂泥状态，我的恐慌，终究只能由我自己承受或者解决。&lt;/p&gt;
-
-&lt;p&gt;就是这种时候，我重新捡起了写作。&lt;/p&gt;
-
-&lt;p&gt;选在一个没人认识的博客网站，放弃社交性，放弃身份限制，只就自己想谈的话题去写。一篇文章写到大半，身体疲惫和倾诉过后的清爽终于能够压过恐慌之后，我得以入眠。&lt;/p&gt;
-
-&lt;p&gt;回头考古，才发现自己从大二下开始写，到大四结束封笔，竟然在那里发布了总计79篇文章。&lt;/p&gt;
-
-&lt;p&gt;第一篇文章是参加博客网站的话题，写了写大学开始困扰自己的疾病。那是我第一次那样——只为了内容、只为了自己——写文章，也是我第一次真正去谈自己的疾病：平山病，自限性肌肉萎缩。并不严重，跟ALS这种杀人越货的家伙比，简直算得上是仁慈。所以长久以来，环境——甚至我自己——也都一直期望，它不会对我的生活带来多少影响。但即便是仁慈得跟被蚊子叮咬差不多，它所带来的影响终究还是存在的，压抑得久了，而不见自己被正视或释放，它就会以种种更细微，但更加扭曲的方式干扰你。&lt;/p&gt;
-
-&lt;p&gt;我很庆幸自己参加了那个话题活动。虽然仍然放得不是太开：即使在一个没有人认识、没有人关心我的地方，我仍然纠结着自己并不存在的面子，纠结于文章必须有一个阳光的主题种种。但总归是把自己对它的想法放在台面上厘了一遍，并且释放了出来。这样做帮助很大。&lt;/p&gt;
-
-&lt;p&gt;在那时候，我还没意识到它有多么重要。那时候的我，觉得自己对人间百态大多都看得明白。我并没能意识到，这种明白仅仅是我浅尝辄止的思考带来的一种错觉。&lt;/p&gt;
-
-&lt;p&gt;人的思路，如果完全停留在脑海里，可以称得上是没有思路。停留在脑海里的思路，互相交织，揉成一团，不断变动——这种高度相关、高度可变的特性，固然是人类思维称得上闪光的地方，但同时也是它们无法逾越的形态界限。只有把它们固定成为书面语言记录下来，你才能得以从前、向后把它厘直，并去检验它究竟能否构成一条真正没有断点的“道路”。内容写作的重要作用之一，就是给人提供一个这样的厘直台。&lt;/p&gt;
-
-&lt;p&gt;后来陆陆续续写了更多文章。从谈微博取关，到谈信仰，到读书笔记，甚至小说——一篇借鉴her和黑镜里人工智能的短篇，我现在看竟然觉得还不错。当然了，也有我觉得写得不好的文章。有一些甚至都称不上真诚。但至少比我高中那会儿回看初中空间日志的时候感觉好多了。我对不真诚感到羞耻，但尚不觉得有删除的必要。 &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:Aaron-Swartz&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:Aaron-Swartz&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;p&gt;不真诚的来源也可以说一说。很意外地，我写的东西竟然有网友点赞。当时沾沾自喜的我，在自己其它社交平台转发了博客里的一些文章。现实生活中的熟人(包括父母)涌入后，我在现实中的身份和认同焦虑随之一同涌入，开始反过来渗透写作本身。其所导致的不诚实，除了反映出我对现实问题的逃避，还有一层更加严重的对我道德的暗示，即我无法做到言行一致。&lt;/p&gt;
-
-&lt;p&gt;我能感受到这些对写作的影响。要求主题健康的应试作文无法出现真正好的文章，正是因为脱离了真诚。这里也是一样的，如果文字成为一种借口，脱离了真诚，那所成的文章自然也不可能跟好挂钩。&lt;/p&gt;
-
-&lt;p&gt;另外一方面，在某个时间点，我读了一个外号特师的豆瓣作者所写的一些文章。我不可回避的意识到，自己这种不够真诚的写作，正好处于它解构大锤的某个受击范围之内。被击中之后我更是元气大减，无法再像以前那样写作了。&lt;/p&gt;
-
-&lt;p&gt;一旦脱离真诚，就像做了贼一样，在遇见到自己会被解构大锤砸中之后，首先想的不是乖乖自首，而是选择逃得更远。我试图把自己的真实和对期望现实的谎言藏在所谓“小说”的伟大虚构大旗之下，试图用这种冠冕堂皇的方式来正当化自己的虚伪。我的小说甚至想要模仿特师的某些文风。&lt;/p&gt;
-
-&lt;p&gt;尚不说产物的质量如何，一个可见的后果，是写作热情的下降。无法真诚、无法摆脱解构之锤之后，写作里它厘直台的作用越来越远，渐渐单纯地变为我失眠或者恐慌时的发泄手段。当我发现自己只能重复之前说过的话，而且博客热度本身也下降到基本没有之后，我最后选择了退出。&lt;/p&gt;
-
-&lt;p&gt;那是两年前。&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;时间过的真的很快。转眼两年过去，我参与工作也有一年了。一开始在上海，今年年初辗转到深圳。&lt;/p&gt;
-
-&lt;p&gt;参与工作的这段时间，繁忙让我有借口假装麻木，但我还是会恐慌，会失眠。问题在于，我没有时间去学习或者写作了：在大学里，我有足够多的时间去发呆，看肥皂剧，玩游戏种种，但剩下的时间仍然有空隙去阅读、思考。但工作挤压了我发呆的时间，发呆的时间转而&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;但终究我还是没办法——也不能——成为一个完全麻木的人。发呆和业务代码绝对不能称为我生活的全部。&lt;/p&gt;
-
-&lt;p&gt;我在Github搭建这个博客，最初是想做技术写作，但没能坚持。现在我准备重启它。&lt;/p&gt;
-
-&lt;p&gt;我仍然有很多思考需要厘直，还有更多思考尚待我去学习发现。我要重启这里，作为自己的厘直台，真诚地就一些自己感兴趣的话题做探讨。&lt;/p&gt;
-
-&lt;p&gt;这是我现在写作的方向。&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:-&#34;&gt;实际上，是不是真就不能呢？那时候我没有看到选择，很遗憾。 &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:-&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:Aaron-Swartz&#34;&gt;比较意外的是，登上许久没有登陆的博客考古时，竟然发现站点管理员删了我的两篇老文章，一篇是Aaron Swartz的纪录片观后感，里面提到了对意识形态和国家宣传机器的怀疑，另外一篇是关于射手网被封停的抱怨。几年之后才屏蔽，也从侧面反映了近来中文互联网舆论封紧的趋势。 &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:Aaron-Swartz&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</description>
+      <description>&lt;p&gt;写作的起点在哪？&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -501,20 +80,12 @@
       <pubDate>Thu, 12 Jul 2018 21:37:27 +0800</pubDate>
       
       <guid>https://daseinphaos.github.io/post/beck/</guid>
-      <description>&lt;iframe frameborder=&#34;no&#34; border=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; width=&#34;320&#34; height=86 src=&#34;//music.163.com/outchain/player?type=2&amp;id=22793552&amp;auto=0&amp;height=66&#34;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;有这么一些动画，看过之后，会让我产生纠结。&lt;/p&gt;
-
-&lt;p&gt;一方面是饱餐美食的心满意足，另外一方面则是一种更深的饥饿。一种懊恼。&lt;/p&gt;
-
-&lt;p&gt;懊恼自己年轻的时候错过了它。如果是年轻的时候，看到它，我会是什么心情呢。我的人生轨迹又会发生什么变化呢。&lt;/p&gt;
-
-&lt;p&gt;我不知道。一时间也难以想象。&lt;/p&gt;
-
-&lt;p&gt;听一首歌吧，闷一口酒吧，唱出声来吧。&lt;/p&gt;
-
-&lt;p&gt;讴歌青春！&lt;/p&gt;
-</description>
+      <description>有这么一些动画，看过之后，会让我产生纠结。
+一方面是饱餐美食的心满意足，另外一方面则是一种更深的饥饿。一种懊恼。
+懊恼自己年轻的时候错过了它。如果是年轻的时候，看到它，我会是什么心情呢。我的人生轨迹又会发生什么变化呢。
+我不知道。一时间也难以想象。
+听一首歌吧，闷一口酒吧，唱出声来吧。
+讴歌青春！</description>
     </item>
     
     <item>
@@ -523,38 +94,7 @@
       <pubDate>Sat, 08 Apr 2017 19:34:18 +0000</pubDate>
       
       <guid>https://daseinphaos.github.io/post/meidoragunn/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;
-
-&lt;p&gt;现实世界很操蛋的，冲突——个人的到集体的，无伤大雅的到惨绝人寰的——一直都在发生。更加糟糕的是，对于其中的某些冲突，即便聚集了人类社会里的尖端人才，采用了人类智慧的最新结晶；都不一定能够得到解决。而我们每一个个体，仅作为一个个无能的凡人，只有承受一条路可走。&lt;/p&gt;
-
-&lt;p&gt;这就是为什么我们需要童话——一种“通过丰富的想象、幻想和夸张来编写适合于儿童欣赏的故事”&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;的文学体裁。&lt;/p&gt;
-
-&lt;p&gt;对于某些问题，多数普通人所具备的认知，并不比一般意义上的儿童认知更加丰富。对于这些问题，我们需要童话。在架空的幻想里去谈论它们，相比于基于现实生活的论述——往往已被问题精英们进行至焦头烂额却仍无建树；无论对于作者还是读者来说，都是一件更加舒适、更易实施的行动。&lt;/p&gt;
-
-&lt;p&gt;批评家大可认为此类作品避重就轻，毫无“意义”。从某种角度来说，他们没错。&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;但童话之所以被称为童话——而非什么“最佳指南”——其原因也正在于此：它们并不声称自己要去阐述或解决实际问题，而是就这些问题给“儿童”们提供一点引导材料，和一点希望，仅此而已。&lt;/p&gt;
-
-&lt;p&gt;龙女仆就是这样的一部童话。&lt;/p&gt;
-&lt;div class=&#34;footnotes&#34;&gt;
-
-&lt;hr /&gt;
-
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34;&gt;《现代汉语词典（第6版）》，2012，商务印书馆
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34;&gt;批评家们也可以批评说,&lt;em&gt;一切&lt;/em&gt; 声明从 &lt;em&gt;某种&lt;/em&gt; 角度来说都是对的。
- &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;[return]&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/div&gt;</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://daseinphaos.github.io/about/</link>
-      <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://daseinphaos.github.io/about/</guid>
-      <description>&lt;p&gt;This is the personal blog of Luxko, a game developer.&lt;/p&gt;
-</description>
+      <description></description>
     </item>
     
     <item>
@@ -563,169 +103,11 @@
       <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>https://daseinphaos.github.io/post/closure-lifetime-hrt/</guid>
-      <description>
-
-&lt;h2 id=&#34;intro&#34;&gt;Intro&lt;/h2&gt;
-
-&lt;p&gt;So here is the thing. Can we write something like&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;let mut vector = vec![1, 2, 3];
-let mut closure = |x| vector.get_mut(x);
-println!(&amp;quot;{:?}&amp;quot;, closure(2));
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;in Rust?&lt;/p&gt;
-
-&lt;p&gt;The answer is, unfortunately, no.&lt;/p&gt;
-
-&lt;p&gt;Compiling it as of &lt;code&gt;rust 1.15.1&lt;/code&gt; would yield some error message like:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;error[E0495]: cannot infer an appropriate lifetime for lifetime parameter in function call due to conflicting requirements
-   --&amp;gt; src\main.rs:100:23
-    |
-100 |     let closure = |x| vector.get_mut(x);
-    |                       ^^^^^^
-    |
-note: first, the lifetime cannot outlive the lifetime  as defined on the body at 100:22...
-   --&amp;gt; src\main.rs:100:23
-    |
-100 |     let closure = |x| vector.get_mut(x);
-    |                       ^^^^^^^^^^^^^^^^^
-note: ...so that closure can access `vector`
-   --&amp;gt; src\main.rs:100:23
-    |
-100 |     let closure = |x| vector.get_mut(x);
-    |                       ^^^^^^
-note: but, the lifetime must be valid for the scope of call-site for function at 100:22...
-   --&amp;gt; src\main.rs:100:23
-    |
-100 |     let closure = |x| vector.get_mut(x);
-    |                       ^^^^^^^^^^^^^^^^^
-note: ...so that return value is valid for the call
-   --&amp;gt; src\main.rs:100:19
-    |
-100 |     let closure = |x| vector.get_mut(x);
-    |                   ^^^^^^^^^^^^^^^^^^^^^
-
-error: aborting due to previous error
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;One got to admit that such an error message is nowhere near helpful. So let&amp;rsquo;s try to figure out what&amp;rsquo;s &lt;em&gt;really&lt;/em&gt; going on here on our own.&lt;/p&gt;
-
-&lt;p&gt;Back to the original closure. The intention was quiet simple: we wanted the closure to capture the &lt;code&gt;vector&lt;/code&gt; in its environment. Upon subsequent invocations to the closure, a mutable reference to an element of the captured &lt;code&gt;vector&lt;/code&gt; would be returned. Nothing fancy, just a tiny bit of a wrapper of the &lt;code&gt;get_mut&lt;/code&gt; method.&lt;/p&gt;
-
-&lt;p&gt;However, to our surprise, such a tiny code snippet failed the borrow checker, leaving us some mysterious error message.&lt;/p&gt;
-
-&lt;p&gt;To solve the mystery, let&amp;rsquo;s try to implement such a closure struct by hand - closure by itself is already mysterious enough, maybe we can figure this out if we get that mess cleared out of the picture.&lt;/p&gt;
-
-&lt;p&gt;So, a trip into manually implementing closures&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;First thing first, let&amp;rsquo;s try to define how our &lt;code&gt;Closure&lt;/code&gt; would layout.&lt;/p&gt;
-
-&lt;p&gt;As a simple glimpse, we&amp;rsquo;d like the closure to be able to return a mutable reference into its captured &lt;code&gt;vector&lt;/code&gt;. As such, at the minimum, the &lt;code&gt;Closure&lt;/code&gt; struct should also take such a mutable reference:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;struct Closure&amp;lt;&#39;a&amp;gt; {
-    inner: &amp;amp;&#39;a mut Vec&amp;lt;i32&amp;gt;, // Assuming `i32` for simplicity
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Next, let&amp;rsquo;s try adding function-like behavior for our struct. To achieve this we would have to implement &lt;code&gt;FnMut&lt;/code&gt;: we wanted the closure to be reusable (once the last returned borrow gets out of scope), thus it can&amp;rsquo;t simply be an one-off shot. However, due to the current definition of the &lt;code&gt;Fn&lt;/code&gt;-series of traits, implementing &lt;code&gt;FnMut&lt;/code&gt; would also require the &lt;code&gt;FnOnce&lt;/code&gt; trait to be implemented. Also, we have to pack the input parameters into a tuple ( even if under our cases there is only one input parameter). Anyway, let&amp;rsquo;s just get the &lt;code&gt;FnOnce&lt;/code&gt; done first.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;// Requeried as custom-implementing `Fn`s is unstable for now
-#![feature(unboxed_closures)]
-#![feature(fn_traits)]
-
-// struct definition here...
-
-impl&amp;lt;&#39;a&amp;gt; FnOnce&amp;lt;(usize,)&amp;gt; for Closure&amp;lt;&#39;a&amp;gt; {
-    // directy returning reference rather than `Option` for simplicity
-    type Output = &amp;amp;&#39;a mut i32;
-
-    extern &amp;quot;rust-call&amp;quot; 
-    fn call_once(self, (i,): (usize, )) -&amp;gt; &amp;amp;&#39;a mut i32 {
-        self.inner.get_mut(i).unwrap()
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;So far, so good. Now let&amp;rsquo;s try to implement &lt;code&gt;FnMut&lt;/code&gt; as well:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;// ...
-
-impl&amp;lt;&#39;a&amp;gt; FnMut&amp;lt;(usize,)&amp;gt; for Closure&amp;lt;&#39;a&amp;gt; {
-    extern &amp;quot;rust-call&amp;quot;
-    fn call_mut(&amp;amp;mut self, (i,): (usize, )) -&amp;gt; &amp;amp;&#39;a mut i32 {
-        self.inner.get_mut(i).unwrap()
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Boom! Now here is that error once again:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;error[E0495]: cannot infer an appropriate lifetime for lifetime parameter in function call due to conflicting requirements
-   --&amp;gt; src\main.rs:120:9
-    |
-120 |         self.inner.get_mut(i).unwrap()
-    |         ^^^^^^^^^^
-    |
-note: first, the lifetime cannot outlive the anonymous lifetime #1 defined on the body at 119:59...
-   --&amp;gt; src\main.rs:119:60
-    |
-119 |       fn call_mut(&amp;amp;mut self, (i,): (usize, )) -&amp;gt; &amp;amp;&#39;a mut i32 {
-    |  ____________________________________________________________^ starting here...
-120 | |         self.inner.get_mut(i).unwrap()
-121 | |     }
-    | |_____^ ...ending here
-note: ...so that reference does not outlive borrowed content
-   --&amp;gt; src\main.rs:120:9
-    |
-120 |         self.inner.get_mut(i).unwrap()
-    |         ^^^^^^^^^^
-note: but, the lifetime must be valid for the lifetime &#39;a as defined on the body at 119:59...
-   --&amp;gt; src\main.rs:119:60
-    |
-119 |       fn call_mut(&amp;amp;mut self, (i,): (usize, )) -&amp;gt; &amp;amp;&#39;a mut i32 {
-    |  ____________________________________________________________^ starting here...
-120 | |         self.inner.get_mut(i).unwrap()
-121 | |     }
-    | |_____^ ...ending here
-note: ...so that reference does not outlive borrowed content
-   --&amp;gt; src\main.rs:120:9
-    |
-120 |         self.inner.get_mut(i).unwrap()
-    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-error: aborting due to previous error
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Although this time, one might reasonably argue that the error message is indeed helpful.&lt;/p&gt;
-
-&lt;p&gt;It turns out that, returning &lt;code&gt;&amp;amp;&#39;a mut i32&lt;/code&gt; is not feasible for the shorter-live invocation of &lt;code&gt;call_mut&lt;/code&gt;. What we&amp;rsquo;ve really wanted for the return type of &lt;code&gt;call_mut&lt;/code&gt;, was something like:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-rust&#34;&gt;// ...
-
-impl&amp;lt;&#39;a&amp;gt; FnMut&amp;lt;(usize,)&amp;gt; for Closure&amp;lt;&#39;a&amp;gt; {
-    extern &amp;quot;rust-call&amp;quot;
-    fn&amp;lt;&#39;b&amp;gt; call_mut(&amp;amp;&#39;b mut self, (i,): (usize, )) -&amp;gt; &amp;amp;&#39;b mut i32 {
-        self.inner.get_mut(i).unwrap()
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;That is, we want the returned reference to live only as long as the invocation scope of &lt;code&gt;call_mut&lt;/code&gt; ( i.e. &lt;code&gt;&#39;b&lt;/code&gt;), nothing more. Certainly not the entire scope of the &lt;code&gt;Closure&lt;/code&gt; ( i.e. &lt;code&gt;&#39;a&lt;/code&gt;).&lt;/p&gt;
-
-&lt;p&gt;Now clearly the code above won&amp;rsquo;t compile either.&lt;/p&gt;
-
-&lt;p&gt;For one thing, we can&amp;rsquo;t &amp;ldquo;generically&amp;rdquo; implement a trait method across what it&amp;rsquo;d otherwise not; for the other, even if we can, to maintain the subtype-invariance of &lt;code&gt;type Output&lt;/code&gt; (note that &lt;code&gt;FnOnce&lt;/code&gt; and &lt;code&gt;FnMut&lt;/code&gt; shares the same output type, which I think is fairly reasonable), &lt;code&gt;&#39;b&lt;/code&gt; would &lt;em&gt;have&lt;/em&gt; to a subtype of &lt;code&gt;&#39;a&lt;/code&gt; (i.e. it have to outlive &lt;code&gt;&#39;a&lt;/code&gt;, or at least live as long), which makes the method totally useless for us.&lt;/p&gt;
-
-&lt;p&gt;So is there anyway that we can actually solve this?&lt;/p&gt;
-
-&lt;p&gt;Intuitively, one might think that generics can help us out here. If we could make a generic &lt;code&gt;impl&lt;/code&gt; of &lt;code&gt;FnMut&lt;/code&gt; (thus &lt;code&gt;FnOnce&lt;/code&gt; as well) over all possible lifetimes &lt;code&gt;&#39;b&lt;/code&gt;&amp;hellip; Ok, that&amp;rsquo;s apparently impossible either, as &lt;code&gt;type Output&lt;/code&gt; is an associate type rather than an input type.&lt;/p&gt;
-
-&lt;p&gt;For me, I see only one way out, that is, the introducing of higher ranked types (HRT).&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;more to come&amp;hellip;&lt;/em&gt;&lt;/p&gt;
-</description>
+      <description>Intro So here is the thing. Can we write something like
+let mut vector = vec![1, 2, 3]; let mut closure = |x| vector.get_mut(x); println!(&amp;#34;{:?}&amp;#34;, closure(2)); in Rust?
+The answer is, unfortunately, no.
+Compiling it as of rust 1.15.1 would yield some error message like:
+error[E0495]: cannot infer an appropriate lifetime for lifetime parameter in function call due to conflicting requirements--&amp;gt; src\main.rs:100:23|100 | let closure = |x| vector.</description>
     </item>
     
   </channel>

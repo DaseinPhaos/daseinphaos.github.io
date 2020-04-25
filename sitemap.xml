@@ -1,9 +1,40 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://daseinphaos.github.io/</loc>
+    <lastmod>2019-06-22T02:55:54+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daseinphaos.github.io/tags/game/</loc>
+    <lastmod>2019-06-22T02:55:54+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daseinphaos.github.io/tags/game-design/</loc>
+    <lastmod>2019-06-22T02:55:54+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daseinphaos.github.io/post/</loc>
+    <lastmod>2019-06-22T02:55:54+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daseinphaos.github.io/tags/</loc>
+    <lastmod>2019-06-22T02:55:54+08:00</lastmod>
+  </url>
   
   <url>
     <loc>https://daseinphaos.github.io/post/content-creator-resonsibility/</loc>
     <lastmod>2019-06-22T02:55:54+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daseinphaos.github.io/tags/sekiro/</loc>
+    <lastmod>2019-03-31T18:44:49+08:00</lastmod>
   </url>
   
   <url>
@@ -18,6 +49,11 @@
   
   <url>
     <loc>https://daseinphaos.github.io/post/gaming-notes-2018-2/</loc>
+    <lastmod>2018-12-31T23:24:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daseinphaos.github.io/tags/gaming/</loc>
     <lastmod>2018-12-31T23:24:32+08:00</lastmod>
   </url>
   
@@ -37,8 +73,23 @@
   </url>
   
   <url>
+    <loc>https://daseinphaos.github.io/tags/anime/</loc>
+    <lastmod>2018-07-12T21:37:27+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daseinphaos.github.io/tags/beck/</loc>
+    <lastmod>2018-07-12T21:37:27+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://daseinphaos.github.io/post/beck/</loc>
     <lastmod>2018-07-12T21:37:27+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daseinphaos.github.io/tags/maid-dragon/</loc>
+    <lastmod>2017-04-08T19:34:18+00:00</lastmod>
   </url>
   
   <url>
@@ -47,7 +98,7 @@
   </url>
   
   <url>
-    <loc>https://daseinphaos.github.io/about/</loc>
+    <loc>https://daseinphaos.github.io/tags/closure/</loc>
     <lastmod>2017-03-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -57,80 +108,17 @@
   </url>
   
   <url>
-    <loc>https://daseinphaos.github.io/tags/anime/</loc>
-    <lastmod>2018-07-12T21:37:27+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://daseinphaos.github.io/tags/beck/</loc>
-    <lastmod>2018-07-12T21:37:27+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://daseinphaos.github.io/</loc>
-    <lastmod>2019-06-22T02:55:54+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://daseinphaos.github.io/tags/closure/</loc>
-    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://daseinphaos.github.io/tags/game/</loc>
-    <lastmod>2019-03-31T18:44:49+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://daseinphaos.github.io/tags/game-design/</loc>
-    <lastmod>2019-06-22T02:55:54+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://daseinphaos.github.io/tags/gaming/</loc>
-    <lastmod>2018-12-31T23:24:32+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://daseinphaos.github.io/tags/hrt/</loc>
     <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://daseinphaos.github.io/tags/maid-dragon/</loc>
-    <lastmod>2017-04-08T19:34:18+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://daseinphaos.github.io/post/</loc>
-    <lastmod>2019-06-22T02:55:54+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://daseinphaos.github.io/tags/rust/</loc>
     <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://daseinphaos.github.io/tags/sekiro/</loc>
-    <lastmod>2019-03-31T18:44:49+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://daseinphaos.github.io/tags/</loc>
-    <priority>0</priority>
+    <loc>https://daseinphaos.github.io/topics/</loc>
   </url>
   
 </urlset>

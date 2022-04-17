@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.69.2" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="" />
+  <meta property="og:url" content="https://daseinphaos.github.io/post/anti-aliasing_in_haak/" />
+  <link rel="canonical" href="https://daseinphaos.github.io/post/anti-aliasing_in_haak/" /><link rel="alternate" type="application/atom+xml" href="https://daseinphaos.github.io/index.xml" title="Burning Ashes">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/daseinphaos.github.io\/"
+      },
+      "articleSection" : "post",
+      "name" : "Anti-aliasing in HAAK: a 2D Case Study",
+      "headline" : "Anti-aliasing in HAAK: a 2D Case Study",
+      "description" : "Why bother? It’s a 2D game! Note: videos in this post are recorded in-game at 1080p\/60FPS with bitrates between 5-10M, unless explicitly stated otherwise. Please view them in fullscreen to get the experience closest to the in-game experience.\n  The improvements made by our implementation should be obivous.\nAdderss Aliasing point samplers One source of aliasing that we’ve addressed early on in devlopment is the naive use of point samplers.",
+      "inLanguage" : "en-US",
+      "author" : "",
+      "creator" : "",
+      "publisher": "",
+      "accountablePerson" : "",
+      "copyrightHolder" : "",
+      "copyrightYear" : "2022",
+      "datePublished": "2022-04-16 17:24:49 \x2b0800 \x2b0800",
+      "dateModified" : "2022-04-16 17:24:49 \x2b0800 \x2b0800",
+      "url" : "https:\/\/daseinphaos.github.io\/post\/anti-aliasing_in_haak\/",
+      "keywords" : [ "game programming","rendering","unity", ]
+  }
+</script>
+<title>Anti-aliasing in HAAK: a 2D Case Study</title>
+  <meta property="og:title" content="Anti-aliasing in HAAK: a 2D Case Study" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="Why bother? It’s a 2D game! Note: videos in this post are recorded in-game at 1080p/60FPS with bitrates between 5-10M, unless explicitly stated otherwise. Please view them in fullscreen to get the experience closest to the in-game experience.
+  The improvements made by our implementation should be obivous.
+Adderss Aliasing point samplers One source of aliasing that we’ve addressed early on in devlopment is the naive use of point samplers." />
+  <meta name="description" content="Why bother? It’s a 2D game! Note: videos in this post are recorded in-game at 1080p/60FPS with bitrates between 5-10M, unless explicitly stated otherwise. Please view them in fullscreen to get the experience closest to the in-game experience.
+  The improvements made by our implementation should be obivous.
+Adderss Aliasing point samplers One source of aliasing that we’ve addressed early on in devlopment is the naive use of point samplers." />
+  <meta property="og:locale" content="en-us" />
+
+  
+    <style>body{font-family:arvo,microsoft yahei,sans-serif;-webkit-font-smoothing:antialiased;margin:0 20px;font-weight:420}.chroma{font-size:14px}code{font-family:dm mono,monospace;line-height:110%;padding:.2em;word-break:normal}article{max-width:800px;margin-left:auto;margin-right:auto}a{color:#000;text-decoration:none}a:hover{font-weight:600;text-decoration:underline}.post-ads{margin:50px 0}.markdown-body{font-size:18px;max-width:100%}.markdown-body a{text-decoration:underline;text-decoration-color:#000}.markdown-body pre{padding:16px;overflow:auto;border-radius:10px}.markdown-body code{padding:.2em .4em;font-size:85%;background-color:#f6f8fa;border-radius:6px}.markdown-body pre>code{padding:0;font-size:100%;background-color:inherit;border:0}.Chinese .markdown-body{line-height:200%}.site-date-catalog{font-size:2rem}.header-title{font-size:2rem;font-weight:700;margin-top:32px;font-family:bungee shade,sans-serif}.header-title a{text-decoration:none}.header-subtitle{color:#666}.header-items{margin:10px 0}.header-item{margin:0 5px}.header-line{width:100%;border-width:2px;border-color:#482936;border-style:solid none none none}.lang-switch{font-weight:600}#posts-list{min-height:600px}.posts-line{font-size:1.2rem;margin:12px 0}.posts-categories{font-size:.8rem;margin:auto;text-align:center}.posts-category{padding:3px 0;border:#000 2px solid;border-radius:5px}.site-footer{margin-top:50px}.site-footer-item{margin-right:12px}.post-content img{max-width:100%;display:block;margin-right:auto;margin-top:12px}.post-header{margin-bottom:50px}.post-title{font-size:2rem;font-weight:600}.post-tags{display:inline;font-weight:600;padding:2px 5px;margin-right:6px;border:#000 2px solid;border-radius:5px}.post-date{font-weight:600;font-style:italic}.post-author{float:right;font-weight:600}.page-content{min-height:60%}.post-content{margin-bottom:50px}.post-content p{hyphens:auto;line-height:1.8;text-justify:ideographic;margin-bottom:1em}.related-content{border-width:3px;border-style:solid;border-color:#000;padding:0 10px;margin-bottom:50px;margin-top:100px}.related-content li{margin:5px 0}.taxonomy-term{font-size:3rem}.gallery-img{text-align:center}.gallery-img span{text-align:center}.gallery-img-desc{font-size:.8em;font-weight:600}#disqus_thread{position:relative}#disqus_thread:after{content:"";display:block;height:55px;width:100%;position:absolute;bottom:0;background:#fff}@media screen and (max-width:600px){.header-title,.header-subtitle,.header-items{text-align:center}.posts-line{font-size:16px}.markdown-body{font-size:16px}.post-title{font-size:2rem}.post-content p{letter-spacing:.05em}}@media screen and (max-width:48em){.posts-category{display:none}}</style>
+  
+  
+    <style>.container,.container-fluid{margin-right:auto;margin-left:auto}.container-fluid{padding-right:2rem;padding-left:2rem}.row{box-sizing:border-box;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:0;-ms-flex:0 1 auto;flex:0 1 auto;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-.5rem;margin-left:-.5rem}.row.reverse{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}.col.reverse{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}.col-xs,.col-xs-1,.col-xs-10,.col-xs-11,.col-xs-12,.col-xs-2,.col-xs-3,.col-xs-4,.col-xs-5,.col-xs-6,.col-xs-7,.col-xs-8,.col-xs-9,.col-xs-offset-0,.col-xs-offset-1,.col-xs-offset-10,.col-xs-offset-11,.col-xs-offset-12,.col-xs-offset-2,.col-xs-offset-3,.col-xs-offset-4,.col-xs-offset-5,.col-xs-offset-6,.col-xs-offset-7,.col-xs-offset-8,.col-xs-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;padding-right:.5rem;padding-left:.5rem}.col-xs{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-xs-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-xs-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-xs-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-xs-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-xs-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-xs-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-xs-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-xs-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-xs-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-xs-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-xs-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-xs-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-xs-offset-0{margin-left:0}.col-xs-offset-1{margin-left:8.33333333%}.col-xs-offset-2{margin-left:16.66666667%}.col-xs-offset-3{margin-left:25%}.col-xs-offset-4{margin-left:33.33333333%}.col-xs-offset-5{margin-left:41.66666667%}.col-xs-offset-6{margin-left:50%}.col-xs-offset-7{margin-left:58.33333333%}.col-xs-offset-8{margin-left:66.66666667%}.col-xs-offset-9{margin-left:75%}.col-xs-offset-10{margin-left:83.33333333%}.col-xs-offset-11{margin-left:91.66666667%}.start-xs{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-xs{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-xs{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-xs{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-xs{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-xs{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-xs{-ms-flex-pack:distribute;justify-content:space-around}.between-xs{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-xs{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-xs{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}@media only screen and (min-width:48em){.container{width:49rem}.col-sm,.col-sm-1,.col-sm-10,.col-sm-11,.col-sm-12,.col-sm-2,.col-sm-3,.col-sm-4,.col-sm-5,.col-sm-6,.col-sm-7,.col-sm-8,.col-sm-9,.col-sm-offset-0,.col-sm-offset-1,.col-sm-offset-10,.col-sm-offset-11,.col-sm-offset-12,.col-sm-offset-2,.col-sm-offset-3,.col-sm-offset-4,.col-sm-offset-5,.col-sm-offset-6,.col-sm-offset-7,.col-sm-offset-8,.col-sm-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;padding-right:.5rem;padding-left:.5rem}.col-sm{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-sm-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-sm-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-sm-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-sm-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-sm-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-sm-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-sm-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-sm-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-sm-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-sm-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-sm-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-sm-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-sm-offset-0{margin-left:0}.col-sm-offset-1{margin-left:8.33333333%}.col-sm-offset-2{margin-left:16.66666667%}.col-sm-offset-3{margin-left:25%}.col-sm-offset-4{margin-left:33.33333333%}.col-sm-offset-5{margin-left:41.66666667%}.col-sm-offset-6{margin-left:50%}.col-sm-offset-7{margin-left:58.33333333%}.col-sm-offset-8{margin-left:66.66666667%}.col-sm-offset-9{margin-left:75%}.col-sm-offset-10{margin-left:83.33333333%}.col-sm-offset-11{margin-left:91.66666667%}.start-sm{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-sm{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-sm{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-sm{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-sm{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-sm{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-sm{-ms-flex-pack:distribute;justify-content:space-around}.between-sm{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-sm{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-sm{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:64em){.container{width:65rem}.col-md,.col-md-1,.col-md-10,.col-md-11,.col-md-12,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8,.col-md-9,.col-md-offset-0,.col-md-offset-1,.col-md-offset-10,.col-md-offset-11,.col-md-offset-12,.col-md-offset-2,.col-md-offset-3,.col-md-offset-4,.col-md-offset-5,.col-md-offset-6,.col-md-offset-7,.col-md-offset-8,.col-md-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;padding-right:.5rem;padding-left:.5rem}.col-md{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-md-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-md-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-md-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-md-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-md-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-md-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-md-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-md-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-md-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-md-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-md-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-md-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-md-offset-0{margin-left:0}.col-md-offset-1{margin-left:8.33333333%}.col-md-offset-2{margin-left:16.66666667%}.col-md-offset-3{margin-left:25%}.col-md-offset-4{margin-left:33.33333333%}.col-md-offset-5{margin-left:41.66666667%}.col-md-offset-6{margin-left:50%}.col-md-offset-7{margin-left:58.33333333%}.col-md-offset-8{margin-left:66.66666667%}.col-md-offset-9{margin-left:75%}.col-md-offset-10{margin-left:83.33333333%}.col-md-offset-11{margin-left:91.66666667%}.start-md{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-md{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-md{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-md{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-md{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-md{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-md{-ms-flex-pack:distribute;justify-content:space-around}.between-md{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-md{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-md{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}@media only screen and (min-width:75em){.container{width:76rem}.col-lg,.col-lg-1,.col-lg-10,.col-lg-11,.col-lg-12,.col-lg-2,.col-lg-3,.col-lg-4,.col-lg-5,.col-lg-6,.col-lg-7,.col-lg-8,.col-lg-9,.col-lg-offset-0,.col-lg-offset-1,.col-lg-offset-10,.col-lg-offset-11,.col-lg-offset-12,.col-lg-offset-2,.col-lg-offset-3,.col-lg-offset-4,.col-lg-offset-5,.col-lg-offset-6,.col-lg-offset-7,.col-lg-offset-8,.col-lg-offset-9{box-sizing:border-box;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;padding-right:.5rem;padding-left:.5rem}.col-lg{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-ms-flex-preferred-size:0;flex-basis:0;max-width:100%}.col-lg-1{-ms-flex-preferred-size:8.33333333%;flex-basis:8.33333333%;max-width:8.33333333%}.col-lg-2{-ms-flex-preferred-size:16.66666667%;flex-basis:16.66666667%;max-width:16.66666667%}.col-lg-3{-ms-flex-preferred-size:25%;flex-basis:25%;max-width:25%}.col-lg-4{-ms-flex-preferred-size:33.33333333%;flex-basis:33.33333333%;max-width:33.33333333%}.col-lg-5{-ms-flex-preferred-size:41.66666667%;flex-basis:41.66666667%;max-width:41.66666667%}.col-lg-6{-ms-flex-preferred-size:50%;flex-basis:50%;max-width:50%}.col-lg-7{-ms-flex-preferred-size:58.33333333%;flex-basis:58.33333333%;max-width:58.33333333%}.col-lg-8{-ms-flex-preferred-size:66.66666667%;flex-basis:66.66666667%;max-width:66.66666667%}.col-lg-9{-ms-flex-preferred-size:75%;flex-basis:75%;max-width:75%}.col-lg-10{-ms-flex-preferred-size:83.33333333%;flex-basis:83.33333333%;max-width:83.33333333%}.col-lg-11{-ms-flex-preferred-size:91.66666667%;flex-basis:91.66666667%;max-width:91.66666667%}.col-lg-12{-ms-flex-preferred-size:100%;flex-basis:100%;max-width:100%}.col-lg-offset-0{margin-left:0}.col-lg-offset-1{margin-left:8.33333333%}.col-lg-offset-2{margin-left:16.66666667%}.col-lg-offset-3{margin-left:25%}.col-lg-offset-4{margin-left:33.33333333%}.col-lg-offset-5{margin-left:41.66666667%}.col-lg-offset-6{margin-left:50%}.col-lg-offset-7{margin-left:58.33333333%}.col-lg-offset-8{margin-left:66.66666667%}.col-lg-offset-9{margin-left:75%}.col-lg-offset-10{margin-left:83.33333333%}.col-lg-offset-11{margin-left:91.66666667%}.start-lg{-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;text-align:start}.center-lg{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;text-align:center}.end-lg{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;text-align:end}.top-lg{-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.middle-lg{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.bottom-lg{-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end}.around-lg{-ms-flex-pack:distribute;justify-content:space-around}.between-lg{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.first-lg{-webkit-box-ordinal-group:0;-ms-flex-order:-1;order:-1}.last-lg{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1}}</style>
+  
+
+  <link rel="stylesheet" href="https://daseinphaos.github.io/css/syntax.css">
+
+  <link href="https://daseinphaos.github.io/index.xml" rel="alternate" type="application/rss+xml"
+    title="Burning Ashes">
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Mono|Arvo:400,700">
+  
+  
+
+  
+  
+</head>
+
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          
+<header>
+  <div class="header-title">
+    <a href="https://daseinphaos.github.io/"
+      ></a
+    >
+  </div>
+  <div class="header-subtitle"></div>
+</header>
+<div class="row end-md center-xs header-items">
+  
+</div>
+<div class="row end-xs">
+   
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Anti-aliasing in HAAK: a 2D Case Study</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2022-04-16 17:24:49 &#43;0800">
+                16 Apr 2022
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <h1 id="why-bother-its-a-2d-game">Why bother? It’s a 2D game!</h1>
+<p><strong>Note</strong>: <em>videos in this post are recorded in-game at 1080p/60FPS with bitrates between 5-10M, unless explicitly stated otherwise. Please view them in fullscreen to get the experience closest to the in-game experience.</em></p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/haak_aa.mp4" type="video/mp4">
+  <span></span>
+</video>
+<p>The improvements made by our implementation should be obivous.</p>
+<h1 id="adderss-aliasing">Adderss Aliasing</h1>
+<h3 id="point-samplers">point samplers</h3>
+<p>One source of aliasing that we’ve addressed early on in devlopment is the naive use of point samplers.</p>
+<p>When rendering our little pixel game on player’s screen, we definitely want to preserve the texel-by-texel sharpness of our artists’ precious sprites. This immediately rules out the usage of the bilinear sampler, as the results would have been too blurry, especially if zoomed in too close(i.e. under magnification).</p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/cat_sampler_bilinear.mp4" type="video/mp4">
+  <span></span>
+</video>
+<p>A no-brainer replacement would be the good old point sampler.</p>
+<p><img src="cat_sampler_point.png" /></p>
+<p>Perfectly sharp, right? However, let’s not forget why bilinear sampling got introduced into games in the first place: point sampling is “blocky” under movement:</p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/cat_sampler_point.mp4" type="video/mp4">
+  <span></span>
+</video>
+<p>Notice the abrupt jump of the actually sampled texels, especially along sprite edges. This is extremely noticeable if the camera is moving slowly, a common scenario when the camera is decelerating to a full stop.</p>
+<p>The solution is to introduce a new sampling procedural that does the following:</p>
+<ul>
+<li>if a pixel completely falls inside one texel, sample it simply as a pont sampler would, retaining the sharpness of the underlying sprite</li>
+<li>if a pixel crosses texel boundaries, smoothly interpolate among the underlying texels based on coverage, resulting in a smooth transition to get rid of the abrupt jump</li>
+</ul>
+<p>The sampling procedural as a whole then gets to be both sharp and smooth.</p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/cat_sampler_modified.mp4" type="video/mp4">
+  <span></span>
+</video>
+<p>After accounting for 2D scaling and rotation, the implementation detail can get a bit messy, at least my attempt was, so I’m not going to spell it out here confusing people&hellip; Please refer to <a href="https://guide.handmadehero.org/chat/chat018/">Casey Muratori’s talk</a> for an in-depth explanation on this topic.</p>
+<h3 id="minification">minification</h3>
+<p>If your game is one of those classical-looking pixel games like <a href="https://youtu.be/FqBj2IGg6Uw">Celeste</a>, where the render resolution is guaranteed to be at least as big as the underlying texture resolution, then that’s it for the texture sampling part.</p>
+<p>Unfortunately no such guarantee exists in our case. All of our sprites are drawn with the assumption of being displayed in 1440p under normal camera sizes, a resolution requirement that lots of our target platforms ain&rsquo;t gonna met. Not to mention that the camera gets zoomed out quite frequently during gameplay. Minification thus kicks in, furthur complicating our sampling problem.</p>
+<p>Let&rsquo;s look at an example with target resolution 1280x720, notice high-frequency glitches on the wall:</p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/wall_minification_on.mp4" type="video/mp4">
+  <span></span>
+</video>
+<p>Fortunately, mipmapping is already there for the rescue. The basic idea is to do a modified version of trilinear sampling, replacing only the ceiling mipmap sampling with our modified sampler:</p>
+<ul>
+<li>determine the mipmap depth from uv derivatives</li>
+<li>find the ceiling(smaller) and floor(larger) mipmap slice based on depth</li>
+<li>use the above-mentioned modified sampler to sample the ceiling slice</li>
+<li>bilinearly sample the floor slice</li>
+<li>bilinearly interpolate results from the two slices based on depth to get the final result</li>
+</ul>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/wall_minification_resolved.mp4" type="video/mp4">
+  <span></span>
+</video>
+<h3 id="low-res-light-buffer">low-res light buffer</h3>
+<p>HAAK features a 2D lighting system where 2D lights are first rendered into a screen-space light buffer, which then got accessed during shading.</p>
+<p>In order to achieve a soft-looking shadow boundary as well as to reduce render costs, light buffer are lower-res comparing to the frame buffer, usually half or quarter res depending on the target platform.</p>
+<p>Naive upsampling of the light buffer introduces cellular artifacts into the frame buffer, which is again extremely noticable by human eye. Let&rsquo;s look at the same example in 1280x720, notice how glitchy and blocky the edge of light is:</p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/light_dither_off.mp4" type="video/mp4">
+  <span></span>
+</video>
+<p>This can be mitigated by dithering the light buffer sampling uv with a world-space aligned blue noise, replacing the artifacts with a pleasant and consistent looking noise pattern that is a better fit for our environment.</p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/light_dither_on.mp4" type="video/mp4">
+  <span></span>
+</video>
+<p>Dithering is a extremly useful technique to addressing banding artifacts, it was utilized extensively in the game. Details about this technique can be found <a href="https://loopit.dk/banding_in_games.pdf">here</a>.</p>
+<h3 id="everything-else">everything else</h3>
+<p>For the most part during our early-access phase on steam, we were shipping with only the techniques described above (hack our public release branch still is!&hellip;). It mostly works fine, only breaking at geometry seams where there is a hard discontinuity between the underlying sampled textures, such cases our texture-only techniques cannot cover.</p>
+<p>The most obvious example are walls rendered with Unity&rsquo;s vanilla TilemapRenderer, meaning that they are just a bunch of tiles(i.e. quad meshes) rendered in adjacent to each other, without fancy features like virtual texturing that might&rsquo;ve taken care of the seams for us. We&rsquo;ve taken some special sampling tricks trying to mitigate it, but the problem was still noticable, for example notice glitches along horizontal seams on wall in the following video:</p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/hseam.mp4" type="video/mp4">
+  <span></span>
+</video>
+<p>The problem got significantly worse after we switched to a front-to-back rendering pipeline. It was necessary as an optimization step (to utilize early z-culling and stuff) for some mobile platforms we wanted to ship on (looking at you Nintendo Switch).</p>
+<p>The problematic side effect is that, in order to actually utilize z-culling, a fragment from an &ldquo;opaque&rdquo;-pass object now has to decide between</p>
+<ul>
+<li>either being completely opaque(the fragment gets written into the back buffer completely, both color and z values),</li>
+<li>or being completely transparent(the fragment gets completely discarded).</li>
+</ul>
+<p>Good old alpha blending no longer applies.</p>
+<p>Notice that, unlike a traditional 3D setup, the “opaque”ness of our objects is not a given across the whole mesh. Instead this “opaque”ness information is encoded in the texture as well. We have to wait until the texture being sampled in the fragment shader, only then can we decide what to do about it.</p>
+<p>However, it is almost guaranteed that the sampled alpha wouldn’t be a 0/1 clear-cut:</p>
+<ul>
+<li>either the underlying texture has semi-transparent alpha values baked in (it is hard enforce any policy on artists about how to draw their pixels)</li>
+<li>or we are sampling across a 0/1 border on the texture and, as the result of our sampling methods, an interpolated semi-transparent alpha value gets returned anyway.</li>
+</ul>
+<p>So we have to find a way to deal with these semi-transparent alphas, and report them back as 0/1 clear-cuts. Alpha clipping at a uniformly chosen threshold(e.g. 0.5) will do, but doesn&rsquo;t look so good. So we utilized image dithering instead. (The terminology gets a bit confusing here, as we&rsquo;re not dithering the sampling uv as with the light buffer case above, but utilizing a halftoning technique called image-independent dithering, with another world-space aligned blue-noise texture.) It handles large semi-transparent regions more gracefully, even allows us to smoothly dissolve an “opaque” object by alpha, in a way that is visually closer to alpha-blending:</p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/netbar_dissolve.mp4" type="video/mp4">
+  <span></span>
+</video>
+<p>Anyway, these 0/1 cuts introduce aliasing along the edges of the “opaque” objects. Dithering with world-space noise makes these artifacts extremely noticable when camera is moving. These new artifacts, coupled with the already existing geometry aliasing, bacame too much to ignore. Notice the glichness along object edges in the following 2 examples.</p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/taa_off.mp4" type="video/mp4">
+  <span></span>
+</video>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/ps_off.mp4" type="video/mp4">
+  <span></span>
+</video>
+<p>We finally called TAA for help:</p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/ps_on.mp4" type="video/mp4">
+  <span></span>
+</video>
+<p>We won&rsquo;t outline TAA as a whole, please refer to <a href="https://www.elopezr.com/temporal-aa-and-the-quest-for-the-holy-trail/">this post</a> for the general concepts. It is an comprehensive and complete guide for curious readers unfamiliar with TAA. We followed it almost step by step to get the basics working. From now on we only take notes on specific details that turned out to be new or extremely helpful for us.</p>
+<p>We ended up choosing Balten2x3,16 as our camera jittering pattern, coupled with a default blending factor of 0.125. Values are determined by our empherical testing as well as by hints on effective sample count graphed in <a href="http://behindthepixels.io/assets/files/TemporalAA.pdf">this survey on TAA</a>.</p>
+<p>Color clamping does almost all the heavy lifting on rejecting false histories. However, all three clamping methods we’ve tested yield similiar results, leaving the more complex clamping schemes with no clear benefits.</p>
+<p>Velocity buffer turned out to be really useful as well, drastically improving sharpness of moving objects such as the player.</p>
+<p>An essential step for us to get right is to retain the overall sharpness of the final image. Let&rsquo;s first look at a scene rendered <em>without</em> TAA as reference:</p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/his_off.mp4" type="video/mp4">
+  <span></span>
+</video>
+<p>then with the most popular Catmull-Rom filter:</p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/his_catmull-rom.mp4" type="video/mp4">
+  <span></span>
+</video>
+<p>While the sharpness is drastically improved compairing to bilinear filtering, we wanted something even sharper. After some experimentes, we landed on another <a href="https://en.wikipedia.org/wiki/Mitchell%E2%80%93Netravali_filters">Mitchell–Netravali filter</a> with B=0, C=7/9 (with some corner-cutting). Results are sharp, have no noticable ringing artifacts, while remains temporally stable. It seems to be a good fit for our use case:</p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/his_b0-c7on9.mp4" type="video/mp4">
+  <span></span>
+</video>
+<p>Since it is also a bicubic filter just like Catmull-Rom, the same 16 to 9 tap optimization trick popularized by UE4 still apply, yielding the following shader code:</p>
+<div class="highlight"><pre class="chroma"><code class="language-c" data-lang="c"><span class="c1">// originally stolen from https://gist.github.com/TheRealMJP/c83b8c0f46b63f3a88a5986f4fa982b1
+</span><span class="c1"></span><span class="n">half4</span> <span class="nf">SampleTextureBicubic9</span><span class="p">(</span><span class="n">Texture2D</span> <span class="n">tex</span><span class="p">,</span> <span class="n">float2</span> <span class="n">uv</span><span class="p">,</span> <span class="n">float2</span> <span class="n">texSize</span> <span class="p">){</span>
+    <span class="c1">// We&#39;re going to sample a 4x4 grid of texels surrounding the target UV coords
+</span><span class="c1"></span>    <span class="c1">// We&#39;ll do this by rounding down the sample location to get the exact center
+</span><span class="c1"></span>    <span class="c1">// of our &#34;starting&#34; texel. The starting texel will be at
+</span><span class="c1"></span>    <span class="c1">// location [1, 1] in the grid, where [0, 0] is the top left corner.
+</span><span class="c1"></span>    <span class="n">float2</span> <span class="n">samplePos</span> <span class="o">=</span> <span class="n">uv</span> <span class="o">*</span> <span class="n">texSize</span><span class="p">;</span>
+    <span class="n">float2</span> <span class="n">tp1</span> <span class="o">=</span> <span class="n">floor</span><span class="p">(</span><span class="n">samplePos</span> <span class="o">-</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">;</span>
+
+    <span class="c1">// Compute the fractional offset from our starting texel to our original
+</span><span class="c1"></span>    <span class="c1">// sample location, which we&#39;ll feed into the filter function to get our
+</span><span class="c1"></span>    <span class="c1">// filter weights.
+</span><span class="c1"></span>    <span class="n">float2</span> <span class="n">f</span> <span class="o">=</span> <span class="n">samplePos</span> <span class="o">-</span> <span class="n">tp1</span><span class="p">;</span>
+
+    <span class="c1">// evaulated from BC-splines when B=0, C=0.7777778,
+</span><span class="c1"></span>    <span class="c1">// sharper than catmull-rom(B=0,C=0.5)
+</span><span class="c1"></span>    <span class="n">float2</span> <span class="n">w0</span> <span class="o">=</span> <span class="n">f</span><span class="o">*</span><span class="p">((</span><span class="o">-</span><span class="mf">0.7777782</span><span class="p">)</span><span class="o">+</span><span class="n">f</span><span class="o">*</span><span class="p">((</span><span class="mf">1.555556</span><span class="p">)</span><span class="o">+</span><span class="n">f</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mf">0.7777779</span><span class="p">)));</span>
+    <span class="n">float2</span> <span class="n">w1</span> <span class="o">=</span> <span class="mi">1</span><span class="o">+</span><span class="n">f</span><span class="o">*</span><span class="p">(</span><span class="n">f</span><span class="o">*</span><span class="p">((</span><span class="o">-</span><span class="mf">2.222222</span><span class="p">)</span><span class="o">+</span><span class="n">f</span><span class="o">*</span><span class="p">(</span><span class="mf">1.222222</span><span class="p">)));</span>
+    <span class="n">float2</span> <span class="n">w2</span> <span class="o">=</span> <span class="n">f</span><span class="o">*</span><span class="p">((</span><span class="mf">0.7777776</span><span class="p">)</span><span class="o">+</span><span class="n">f</span><span class="o">*</span><span class="p">((</span><span class="mf">1.444445</span><span class="p">)</span><span class="o">+</span><span class="n">f</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mf">1.222222</span><span class="p">)));</span>
+    <span class="n">float2</span> <span class="n">w3</span> <span class="o">=</span> <span class="n">f</span><span class="o">*</span><span class="p">(</span><span class="n">f</span><span class="o">*</span><span class="p">((</span><span class="o">-</span><span class="mf">0.777778</span><span class="p">)</span><span class="o">+</span><span class="n">f</span><span class="o">*</span><span class="p">(</span><span class="mf">0.7777779</span><span class="p">)));</span>
+
+    <span class="c1">// Work out weighting factors and sampling offsets that will let us use 
+</span><span class="c1"></span>    <span class="c1">// bilinear filtering to simultaneously evaluate the middle 2 samples
+</span><span class="c1"></span>    <span class="c1">// from the 4x4 grid.
+</span><span class="c1"></span>    <span class="n">float2</span> <span class="n">w12</span> <span class="o">=</span> <span class="n">w1</span> <span class="o">+</span> <span class="n">w2</span><span class="p">;</span>
+    <span class="n">float2</span> <span class="n">offset12</span> <span class="o">=</span> <span class="n">w2</span> <span class="o">/</span> <span class="p">(</span><span class="n">w1</span> <span class="o">+</span> <span class="n">w2</span><span class="p">);</span>
+
+    <span class="c1">// Compute the final UV coordinates we&#39;ll use for sampling the texture
+</span><span class="c1"></span>    <span class="n">float2</span> <span class="n">tp0</span> <span class="o">=</span> <span class="n">tp1</span> <span class="o">-</span> <span class="mf">1.0f</span><span class="p">.</span><span class="n">xx</span><span class="p">;</span>
+    <span class="n">float2</span> <span class="n">tp3</span> <span class="o">=</span> <span class="n">tp1</span> <span class="o">+</span> <span class="mf">2.0</span><span class="p">.</span><span class="n">xx</span><span class="p">;</span>
+    <span class="n">float2</span> <span class="n">tp12</span> <span class="o">=</span> <span class="n">tp1</span> <span class="o">+</span> <span class="n">offset12</span><span class="p">;</span>
+
+    <span class="n">tp0</span> <span class="o">/=</span> <span class="n">texSize</span><span class="p">;</span>
+    <span class="n">tp3</span> <span class="o">/=</span> <span class="n">texSize</span><span class="p">;</span>
+    <span class="n">tp12</span> <span class="o">/=</span> <span class="n">texSize</span><span class="p">;</span>
+
+    <span class="n">half4</span> <span class="n">ret</span> <span class="o">=</span> <span class="mf">0.0f</span><span class="p">.</span><span class="n">xxxx</span><span class="p">;</span>
+
+    <span class="n">ret</span> <span class="o">+=</span> <span class="n">tex</span><span class="p">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">_bilinear_sampler</span><span class="p">,</span> <span class="n">float2</span><span class="p">(</span><span class="n">tp0</span><span class="p">.</span><span class="n">x</span><span class="p">,</span>  <span class="n">tp0</span><span class="p">.</span><span class="n">y</span><span class="p">))</span> <span class="o">*</span> <span class="n">w0</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">w0</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+    <span class="n">ret</span> <span class="o">+=</span> <span class="n">tex</span><span class="p">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">_bilinear_sampler</span><span class="p">,</span> <span class="n">float2</span><span class="p">(</span><span class="n">tp12</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">tp0</span><span class="p">.</span><span class="n">y</span><span class="p">))</span> <span class="o">*</span> <span class="n">w12</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">w0</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+    <span class="n">ret</span> <span class="o">+=</span> <span class="n">tex</span><span class="p">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">_bilinear_sampler</span><span class="p">,</span> <span class="n">float2</span><span class="p">(</span><span class="n">tp3</span><span class="p">.</span><span class="n">x</span><span class="p">,</span>  <span class="n">tp0</span><span class="p">.</span><span class="n">y</span><span class="p">))</span> <span class="o">*</span> <span class="n">w3</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">w0</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+
+    <span class="n">ret</span> <span class="o">+=</span> <span class="n">tex</span><span class="p">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">_bilinear_sampler</span><span class="p">,</span> <span class="n">float2</span><span class="p">(</span><span class="n">tp0</span><span class="p">.</span><span class="n">x</span><span class="p">,</span>  <span class="n">tp12</span><span class="p">.</span><span class="n">y</span><span class="p">))</span> <span class="o">*</span> <span class="n">w0</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">w12</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+    <span class="n">ret</span> <span class="o">+=</span> <span class="n">tex</span><span class="p">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">_bilinear_sampler</span><span class="p">,</span> <span class="n">float2</span><span class="p">(</span><span class="n">tp12</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">tp12</span><span class="p">.</span><span class="n">y</span><span class="p">))</span> <span class="o">*</span> <span class="n">w12</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">w12</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+    <span class="n">ret</span> <span class="o">+=</span> <span class="n">tex</span><span class="p">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">_bilinear_sampler</span><span class="p">,</span> <span class="n">float2</span><span class="p">(</span><span class="n">tp3</span><span class="p">.</span><span class="n">x</span><span class="p">,</span>  <span class="n">tp12</span><span class="p">.</span><span class="n">y</span><span class="p">))</span> <span class="o">*</span> <span class="n">w3</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">w12</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+
+    <span class="n">ret</span> <span class="o">+=</span> <span class="n">tex</span><span class="p">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">_bilinear_sampler</span><span class="p">,</span> <span class="n">float2</span><span class="p">(</span><span class="n">tp0</span><span class="p">.</span><span class="n">x</span><span class="p">,</span>  <span class="n">tp3</span><span class="p">.</span><span class="n">y</span><span class="p">))</span> <span class="o">*</span> <span class="n">w0</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">w3</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+    <span class="n">ret</span> <span class="o">+=</span> <span class="n">tex</span><span class="p">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">_bilinear_sampler</span><span class="p">,</span> <span class="n">float2</span><span class="p">(</span><span class="n">tp12</span><span class="p">.</span><span class="n">x</span><span class="p">,</span> <span class="n">tp3</span><span class="p">.</span><span class="n">y</span><span class="p">))</span> <span class="o">*</span> <span class="n">w12</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">w3</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+    <span class="n">ret</span> <span class="o">+=</span> <span class="n">tex</span><span class="p">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">_bilinear_sampler</span><span class="p">,</span> <span class="n">float2</span><span class="p">(</span><span class="n">tp3</span><span class="p">.</span><span class="n">x</span><span class="p">,</span>  <span class="n">tp3</span><span class="p">.</span><span class="n">y</span><span class="p">))</span> <span class="o">*</span> <span class="n">w3</span><span class="p">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">w3</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div><p>You can read more about how this optimization works in <a href="https://vec3.ca/bicubic-filtering-in-fewer-taps/">this article</a>.</p>
+<p>As a furthur optimization, we dropped the 4 cornering samples as well, as suggested by <a href="https://research.activision.com/publications/archives/filmic-smaasharp-morphological-and-temporal-antialiasing">Filmic SMAA</a> for their Catmull-Rom implementation. We too haven’t spot any noticeable difference on filter quality.</p>
+<p>Compare all 4 filters in a row:</p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/his_filters.mp4" type="video/mp4">
+  <span></span>
+</video>
+<p>“Transparent”(i.e. tradionally back-to-front alpha-blended) objects are rendered without velocity writes. As such, render results from these objects moving with highspeed, such as electrical wiring or projectile trails, can get quite blurry after TAA. Sometimes this is unwanted (video recorded in 720p):</p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/rid_off.mp4" type="video/mp4">
+  <span></span>
+</video>
+<p>To retain sharpness we ended up writing into an additional markup buffer, then adjust the taa blending factor accordingly. For example, blending factor is increased if either history or current markup sample is equal to a specific markup ref-value. This concept was again learned from <a href="https://de45xmedrsdbp.cloudfront.net/Resources/files/TemporalAA_small-59732822.pdf#page=38">UE4</a>.</p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/rid_on.mp4" type="video/mp4">
+  <span></span>
+</video>
+<h1 id="limitations">Limitations</h1>
+<p>Sticking with Unity&rsquo;s vanilla GameObjects and Renderers limits our ability to construct correct velocity buffer for every objects in the opaque pass. For example, getting and retaining correct local to world transforms for moving LineRenderers and TilemapRenderers are just painfully hard, if not impractical at all.</p>
+<p>Movements of opaque objects encoded by flipbook animation are also unaccounted by the velocity buffer.</p>
+<p>These unaccounted movements introduce incorrect history samples, which can only be partially caught by color clamping, eventually introducing blurryness in the final image.</p>
+<p>More complicated workarounds such as more utilization of the markup buffer might help mitigate the issue, but we ended up just not bothering for the moment.</p>
+<h1 id="bonus-temporal-upsampling">Bonus: temporal upsampling</h1>
+<p>For devices with lower graphic capabilities such as Nintendo Switch, we were still struggling to hit the 60fps target framerate, despite all the optimization efforts. One of the low hanging fruit was to simply reduce the backbuffer resolution, however if performed naively the result are too ugly to be considered usable. Check this example of directly upsampling from a 1302x742 backbuffer to 1080p:</p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/upsample_off.mp4" type="video/mp4">
+  <span></span>
+</video>
+<p>Now with TAA in place we get another shot: render new frames in lower res, but keep the taa history color buffer in full res, essentially performing an temporal upsampling. With the same frame buffer size, new result looks significantly better:</p>
+<video controls preload="auto" width="100%"  loop muted playsinline class="html-video">
+    <source src="https://daseinphaos.github.io/post/anti-aliasing_in_haak/upsample_on.mp4" type="video/mp4">
+  <span></span>
+</video>
+<hr>
+<p>That concludes the anti-aliasing work I did for HAAK. Hope you find it useful!</p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-tags">
+              <a href="https://daseinphaos.github.io/tags/game-programming/">
+                game programming
+              </a>
+            </div>
+            
+            <div class="post-tags">
+              <a href="https://daseinphaos.github.io/tags/rendering/">
+                rendering
+              </a>
+            </div>
+            
+            <div class="post-tags">
+              <a href="https://daseinphaos.github.io/tags/unity/">
+                unity
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+
+
+          
+          
+          <div style="height: 50px;"></div>
+          
+        
+
+        <div class="site-footer">
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  
+
+<script>
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

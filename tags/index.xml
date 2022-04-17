@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Burning Ashes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Jun 2019 02:55:54 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 16 Apr 2022 17:24:49 +0800</lastBuildDate>
     
 	<atom:link href="https://daseinphaos.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,36 @@
     <item>
       <title>game</title>
       <link>https://daseinphaos.github.io/tags/game/</link>
-      <pubDate>Sat, 22 Jun 2019 02:55:54 +0800</pubDate>
+      <pubDate>Sat, 16 Apr 2022 17:24:49 +0800</pubDate>
       
       <guid>https://daseinphaos.github.io/tags/game/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>game programming</title>
+      <link>https://daseinphaos.github.io/tags/game-programming/</link>
+      <pubDate>Sat, 16 Apr 2022 17:24:49 +0800</pubDate>
+      
+      <guid>https://daseinphaos.github.io/tags/game-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rendering</title>
+      <link>https://daseinphaos.github.io/tags/rendering/</link>
+      <pubDate>Sat, 16 Apr 2022 17:24:49 +0800</pubDate>
+      
+      <guid>https://daseinphaos.github.io/tags/rendering/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>unity</title>
+      <link>https://daseinphaos.github.io/tags/unity/</link>
+      <pubDate>Sat, 16 Apr 2022 17:24:49 +0800</pubDate>
+      
+      <guid>https://daseinphaos.github.io/tags/unity/</guid>
       <description></description>
     </item>
     
@@ -71,33 +98,6 @@
       <pubDate>Sat, 08 Apr 2017 19:34:18 +0000</pubDate>
       
       <guid>https://daseinphaos.github.io/tags/maid-dragon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>closure</title>
-      <link>https://daseinphaos.github.io/tags/closure/</link>
-      <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://daseinphaos.github.io/tags/closure/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>HRT</title>
-      <link>https://daseinphaos.github.io/tags/hrt/</link>
-      <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://daseinphaos.github.io/tags/hrt/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rust</title>
-      <link>https://daseinphaos.github.io/tags/rust/</link>
-      <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://daseinphaos.github.io/tags/rust/</guid>
       <description></description>
     </item>
     

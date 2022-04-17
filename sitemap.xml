@@ -3,27 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://daseinphaos.github.io/post/anti-aliasing_in_haak/</loc>
+    <lastmod>2022-04-16T17:24:49+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://daseinphaos.github.io/</loc>
-    <lastmod>2019-06-22T02:55:54+08:00</lastmod>
+    <lastmod>2022-04-16T17:24:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://daseinphaos.github.io/tags/game/</loc>
-    <lastmod>2019-06-22T02:55:54+08:00</lastmod>
+    <lastmod>2022-04-16T17:24:49+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://daseinphaos.github.io/tags/game-design/</loc>
-    <lastmod>2019-06-22T02:55:54+08:00</lastmod>
+    <loc>https://daseinphaos.github.io/tags/game-programming/</loc>
+    <lastmod>2022-04-16T17:24:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://daseinphaos.github.io/post/</loc>
-    <lastmod>2019-06-22T02:55:54+08:00</lastmod>
+    <lastmod>2022-04-16T17:24:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daseinphaos.github.io/tags/rendering/</loc>
+    <lastmod>2022-04-16T17:24:49+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://daseinphaos.github.io/tags/</loc>
+    <lastmod>2022-04-16T17:24:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daseinphaos.github.io/tags/unity/</loc>
+    <lastmod>2022-04-16T17:24:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://daseinphaos.github.io/tags/game-design/</loc>
     <lastmod>2019-06-22T02:55:54+08:00</lastmod>
   </url>
   
@@ -95,26 +115,6 @@
   <url>
     <loc>https://daseinphaos.github.io/post/meidoragunn/</loc>
     <lastmod>2017-04-08T19:34:18+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://daseinphaos.github.io/tags/closure/</loc>
-    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://daseinphaos.github.io/post/closure-lifetime-hrt/</loc>
-    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://daseinphaos.github.io/tags/hrt/</loc>
-    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://daseinphaos.github.io/tags/rust/</loc>
-    <lastmod>2017-03-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>

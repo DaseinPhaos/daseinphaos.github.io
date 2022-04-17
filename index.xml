@@ -6,10 +6,21 @@
     <description>Recent content on Burning Ashes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 22 Jun 2019 02:55:54 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 16 Apr 2022 17:24:49 +0800</lastBuildDate>
     
 	<atom:link href="https://daseinphaos.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Anti-aliasing in HAAK: a 2D Case Study</title>
+      <link>https://daseinphaos.github.io/post/anti-aliasing_in_haak/</link>
+      <pubDate>Sat, 16 Apr 2022 17:24:49 +0800</pubDate>
+      
+      <guid>https://daseinphaos.github.io/post/anti-aliasing_in_haak/</guid>
+      <description>Why bother? It’s a 2D game! Note: videos in this post are recorded in-game at 1080p/60FPS with bitrates between 5-10M, unless explicitly stated otherwise. Please view them in fullscreen to get the experience closest to the in-game experience.
+  The improvements made by our implementation should be obivous.
+Adderss Aliasing point samplers One source of aliasing that we’ve addressed early on in devlopment is the naive use of point samplers.</description>
+    </item>
     
     <item>
       <title>内容作者的责任</title>
@@ -95,19 +106,6 @@
       
       <guid>https://daseinphaos.github.io/post/meidoragunn/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Closure, Lifetime, and HRT</title>
-      <link>https://daseinphaos.github.io/post/closure-lifetime-hrt/</link>
-      <pubDate>Wed, 01 Mar 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://daseinphaos.github.io/post/closure-lifetime-hrt/</guid>
-      <description>Intro So here is the thing. Can we write something like
-let mut vector = vec![1, 2, 3]; let mut closure = |x| vector.get_mut(x); println!(&amp;#34;{:?}&amp;#34;, closure(2)); in Rust?
-The answer is, unfortunately, no.
-Compiling it as of rust 1.15.1 would yield some error message like:
-error[E0495]: cannot infer an appropriate lifetime for lifetime parameter in function call due to conflicting requirements--&amp;gt; src\main.rs:100:23|100 | let closure = |x| vector.</description>
     </item>
     
   </channel>
